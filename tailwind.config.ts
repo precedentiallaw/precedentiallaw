@@ -64,12 +64,13 @@ export default {
         },
         precedential: {
           black: '#1A1F2C',
-          gold: '#C4A86A',
-          goldLight: '#D6C08F',
-          goldDark: '#9F885A',
-          white: '#F6F6F7',
-          offWhite: '#F3F3F3',
-          gray: '#403E43'
+          navy: '#1B2A4A',
+          gold: '#B08D57',
+          goldLight: '#C4A375',
+          goldDark: '#96774A',
+          white: '#FEFEFE',
+          offWhite: '#F8F8FA',
+          gray: '#4A4D55'
         }
       },
       fontFamily: {
