@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 const HeroSection: React.FC = () => {
@@ -36,9 +37,9 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 py-12 sm:py-24 text-center z-10">
+      <div className="relative container mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center z-10">
         <div className="max-w-3xl mx-auto">
-          <h1 className="opacity-0 animate-fade-in text-white font-playfair font-bold mb-4 sm:mb-6">
+          <h1 className="opacity-0 animate-fade-in text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 sm:mb-6">
             Setting a <span className="text-gold-gradient">Precedential</span> Standard in Legal Services
           </h1>
           
