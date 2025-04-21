@@ -22,7 +22,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed z-50 flex items-center justify-center rounded-full bg-green-600 text-white shadow-lg transition-all hover:bg-green-700 ${
+      className={`fixed z-50 flex items-center justify-center rounded-full bg-green-600 text-white shadow-lg transition-all hover:bg-green-700 hover:scale-105 animate-fade-in ${
         isMobile 
           ? 'bottom-20 right-4 h-12 w-12'
           : 'bottom-8 right-8 h-14 w-14'
