@@ -12,6 +12,7 @@ import LegalServiceSchema from '@/components/ui/schema-markup';
 import KeywordStrip from '@/components/KeywordStrip';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FloatingCTA from '@/components/FloatingCTA';
+import StorySection from '@/components/StorySection';
 
 const Index: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Index: React.FC = () => {
         <HeroSection />
         <ServicesSection />
         <KeywordStrip />
+        <StorySection />
         <AboutSection />
         <WhyChooseUs />
         <PracticeAreasSection />

@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
           </h1>
           
           <p className="opacity-0 animate-fade-in stagger-1 text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Contact us now and be <span className="font-semibold text-precedential-gold">Precedentially Protected</span>. Trust the legal consultancy that sets the standard in Dubai.
+            When You Need More Than a Lawyer—You Need <span className="font-semibold text-precedential-gold">Precedential Protection</span>.
           </p>
           
           <div className="opacity-0 animate-fade-in stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
