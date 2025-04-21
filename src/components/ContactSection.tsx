@@ -1,5 +1,6 @@
-
 import React, { useState } from 'react';
+import FAQ from './FAQ';
+import { MessageSquare } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -7,30 +8,33 @@ const ContactSection: React.FC = () => {
     email: '',
     phone: '',
     service: '',
-    message: ''
+    message: '',
+    consent: false
   });
   
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // In a real application, you would send this data to your backend
     setFormSubmitted(true);
     
-    // Reset form after submission (in a real app you might want different behavior)
     setTimeout(() => {
       setFormData({
         name: '',
         email: '',
         phone: '',
         service: '',
-        message: ''
+        message: '',
+        consent: false
       });
       setFormSubmitted(false);
     }, 5000);
@@ -48,7 +52,7 @@ const ContactSection: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-white">
-              Contact <span className="text-gold-gradient">Precedential</span> Law
+              Let's Solve Your Legal Issue, <span className="text-gold-gradient">Together</span>
             </h2>
             <p className="text-white/70 max-w-2xl mx-auto">
               Ready to experience precedential legal services? Contact us today for a consultation with our expert team.
@@ -123,11 +127,29 @@ const ContactSection: React.FC = () => {
                     ))}
                   </div>
                 </div>
+                
+                {/* WhatsApp Button */}
+                <div className="mt-8">
+                  <a 
+                    href="https://wa.me/YOUR_WHATSAPP_NUMBER" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-medium transition-all duration-300 bg-green-600 hover:bg-green-700 text-white"
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    Speak with a Legal Expert Now
+                  </a>
+                </div>
+                
+                {/* FAQ Section */}
+                <div className="mt-10">
+                  <FAQ />
+                </div>
               </div>
               
               {/* Contact Form */}
               <div className="bg-white p-8 md:p-10">
-                <h3 className="text-2xl font-playfair font-bold mb-6">Send Us a Message</h3>
+                <h3 className="text-2xl font-playfair font-bold mb-6">Request Precedential Protection Now</h3>
                 
                 {formSubmitted ? (
                   <div className="bg-green-50 text-green-800 p-4 rounded-xl">
@@ -180,27 +202,27 @@ const ContactSection: React.FC = () => {
                     </div>
                     
                     <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">Service Interested In</label>
+                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">Legal Concern</label>
                       <select 
                         id="service" 
                         name="service" 
                         value={formData.service}
                         onChange={handleChange}
+                        required
                         className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-precedential-gold/50 focus:border-precedential-gold transition-colors"
                       >
-                        <option value="">Select a service</option>
-                        <option value="Corporate Law">Corporate Law</option>
-                        <option value="Litigation">Litigation</option>
-                        <option value="Real Estate Law">Real Estate Law</option>
+                        <option value="">Select your legal concern</option>
                         <option value="Family Law">Family Law</option>
-                        <option value="Intellectual Property">Intellectual Property</option>
+                        <option value="Business Law">Business Law</option>
                         <option value="Criminal Defense">Criminal Defense</option>
+                        <option value="Property Law">Property Law</option>
+                        <option value="Immigration">Immigration</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
                     
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                       <textarea 
                         id="message" 
                         name="message" 
@@ -211,6 +233,21 @@ const ContactSection: React.FC = () => {
                         className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-precedential-gold/50 focus:border-precedential-gold transition-colors"
                         placeholder="How can we help you?"
                       ></textarea>
+                    </div>
+                    
+                    <div className="flex items-start gap-2">
+                      <input
+                        type="checkbox"
+                        id="consent"
+                        name="consent"
+                        checked={formData.consent}
+                        onChange={handleChange}
+                        required
+                        className="mt-1"
+                      />
+                      <label htmlFor="consent" className="text-sm text-gray-600">
+                        I consent to having my data processed in accordance with the privacy policy
+                      </label>
                     </div>
                     
                     <div>
