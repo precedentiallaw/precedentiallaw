@@ -9,6 +9,9 @@ import TeamSection from '@/components/TeamSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import LegalServiceSchema from '@/components/ui/schema-markup';
+import KeywordStrip from '@/components/KeywordStrip';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import FloatingCTA from '@/components/FloatingCTA';
 
 const Index: React.FC = () => {
   return (
@@ -18,13 +21,16 @@ const Index: React.FC = () => {
       <main>
         <HeroSection />
         <ServicesSection />
+        <KeywordStrip />
         <AboutSection />
+        <WhyChooseUs />
         <PracticeAreasSection />
         <TeamSection />
         <ContactSection />
       </main>
       
       <Footer />
+      <FloatingCTA />
       
       {/* SEO Schema Markup */}
       <LegalServiceSchema />
