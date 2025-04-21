@@ -12,13 +12,16 @@ import KeywordStrip from '@/components/KeywordStrip';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FloatingCTA from '@/components/FloatingCTA';
 import StorySection from '@/components/StorySection';
+import WhatsAppButton from '@/components/WhatsAppButton';
+import FinalCTA from '@/components/FinalCTA';
+import FAQ from '@/components/FAQ';
 
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
       
-      <main>
+      <main className="flex-grow">
         <HeroSection />
         <ServicesSection />
         <KeywordStrip />
@@ -27,10 +30,12 @@ const Index: React.FC = () => {
         <WhyChooseUs />
         <PracticeAreasSection />
         <ContactSection />
+        <FinalCTA />
       </main>
       
       <Footer />
       <FloatingCTA />
+      <WhatsAppButton phoneNumber="971501234567" />
       
       {/* SEO Schema Markup */}
       <LegalServiceSchema />

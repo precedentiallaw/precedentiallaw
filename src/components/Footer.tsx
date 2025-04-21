@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Logo from './Logo';
+import { Linkedin, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -14,20 +15,49 @@ const Footer: React.FC = () => {
               <span className="font-playfair font-bold text-xl">Precedential Law</span>
             </div>
             <p className="text-white/70 text-sm">
-              Setting a precedential standard in legal services across Dubai and the UAE.
+              Precedential Law delivers elite legal protection across Dubai, including family law, immigration, business, real estate, and criminal defense.
             </p>
             <div className="flex space-x-4 pt-2">
-              {['facebook', 'twitter', 'linkedin', 'instagram'].map((social) => (
-                <a 
-                  key={social} 
-                  href={`#${social}`} 
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-precedential-gold hover:text-precedential-black transition-colors"
-                  aria-label={`Follow us on ${social}`}
-                >
-                  <span className="sr-only">{social}</span>
-                  <div className="w-4 h-4"></div>
-                </a>
-              ))}
+              <a 
+                href="https://linkedin.com" 
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-precedential-gold hover:text-precedential-black transition-colors"
+                aria-label="Follow us on LinkedIn"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="sr-only">LinkedIn</span>
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-precedential-gold hover:text-precedential-black transition-colors"
+                aria-label="Follow us on Facebook"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="sr-only">Facebook</span>
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-precedential-gold hover:text-precedential-black transition-colors"
+                aria-label="Follow us on Twitter"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="sr-only">Twitter</span>
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-precedential-gold hover:text-precedential-black transition-colors"
+                aria-label="Follow us on Instagram"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="sr-only">Instagram</span>
+                <Instagram className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -35,7 +65,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-playfair text-lg font-bold mb-4 text-precedential-gold">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'About Us', 'Our Services', 'Practice Areas', 'Our Team', 'Contact'].map((link) => (
+              {['Home', 'About Us', 'Our Services', 'Practice Areas', 'Contact', 'Privacy Policy'].map((link) => (
                 <li key={link}>
                   <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="text-white/70 hover:text-precedential-gold transition-colors text-sm">
                     {link}
@@ -49,7 +79,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-playfair text-lg font-bold mb-4 text-precedential-gold">Practice Areas</h4>
             <ul className="space-y-2">
-              {['Corporate Law', 'Family Law', 'Criminal Defense', 'Real Estate', 'Intellectual Property', 'Litigation'].map((area) => (
+              {['Corporate Law', 'Family Law', 'Criminal Defense', 'Real Estate', 'Immigration', 'Dispute Resolution', 'Personal Injury'].map((area) => (
                 <li key={area}>
                   <a href="#practice-areas" className="text-white/70 hover:text-precedential-gold transition-colors text-sm">
                     {area}
