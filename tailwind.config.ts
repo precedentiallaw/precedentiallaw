@@ -61,8 +61,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // Custom colors for Precedential Law
+                precedential: {
+                    black: '#000000',
+                    gold: '#D4AF37',
+                    goldLight: '#E5C76B',
+                    goldDark: '#B8860B',
+                    white: '#FFFFFF',
+                    offWhite: '#F8F8F8',
+                    gray: '#222222'
+                }
 			},
+            fontFamily: {
+                'playfair': ['Playfair Display', 'serif'],
+                'montserrat': ['Montserrat', 'sans-serif'],
+                'cormorant': ['Cormorant Garamond', 'serif'],
+            },
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
