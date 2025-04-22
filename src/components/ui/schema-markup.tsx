@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const LegalServiceSchema: React.FC = () => {
@@ -91,17 +90,16 @@ export const LegalServiceSchema: React.FC = () => {
     }
   };
 
-  // FAQ Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Can my employer terminate my contract without a valid reason under the current UAE Labour Law?",
+        "name": "What are the key differences between fixed-term and flexible employment contracts under the new UAE Labour Law?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The UAE Labour Law aims to protect both employer and employee rights, establishing that termination should generally be based on a legitimate reason related to work performance or operational requirements. While the concept seems straightforward, determining what constitutes a \"valid reason\" in practice involves careful interpretation of the law and the specific circumstances. Simply disagreeing with your employer or minor issues may not suffice as grounds for dismissal. The law also explicitly prohibits termination for discriminatory reasons or because an employee filed a legitimate complaint. Furthermore, employers must follow specific procedures, including providing proper notice periods as stated in your contract (usually 30-90 days). Failure to adhere to these procedures or terminating employment based on grounds deemed unlawful can lead to disputes and potential claims for arbitrary dismissal compensation. Assessing whether a termination is legally sound requires analysing the stated reason against the legal benchmarks, reviewing the employer's adherence to process, and understanding the nuances of recent court interpretations. This information provides a general overview and does not constitute legal advice. Navigating a potential termination requires understanding your specific rights and the employer's obligations under the law. Missteps can be costly. To confidently assess your situation and explore the best course of action, securing personalized guidance from the experienced employment law team at Precedential Law is a crucial step."
+          "text": "The UAE Labour Law (Federal Decree-Law No. 33 of 2021) introduced more flexibility in employment contracts. A Fixed-Term Contract has a specific end date (maximum 3 years, but renewable). A Flexible Work Contract allows work hours or days to change based on the employer's needs and volume of work. Other models like part-time or temporary work contracts also exist. Key differences lie in duration, renewal terms, notice periods for termination (which apply even in fixed-term contracts now), and potentially how end-of-service gratuity accrues. Choosing the right contract type depends on the nature of the role and the business requirements. The shift away from 'unlimited' contracts under the old law means all contracts now require careful attention to their specific terms and conditions."
         }
       },
       {
