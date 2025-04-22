@@ -24,8 +24,17 @@ const HeroSection: React.FC = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center bg-precedential-black overflow-hidden"
+      className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2000&auto=format&fit=crop')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
+      {/* Dark overlay with gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-precedential-black via-precedential-black/85 to-precedential-black/70"></div>
+
       {/* Background Elements with improved styling */}
       <div className="absolute inset-0 opacity-20 parallax" data-speed="0.1">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-precedential-gold blur-[100px]"></div>
@@ -38,24 +47,24 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center z-10">
+      <div className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 text-center z-10">
         <div className="max-w-4xl mx-auto">
           {/* Award Badge */}
-          <div className="mb-8 opacity-0 animate-fade-in flex justify-center">
-            <div className="bg-gradient-to-b from-precedential-gold/20 to-precedential-gold/5 backdrop-blur-sm rounded-full p-4">
-              <Award className="w-12 h-12 text-precedential-gold" />
+          <div className="mb-12 sm:mb-16 opacity-0 animate-fade-in flex justify-center">
+            <div className="bg-gradient-to-b from-precedential-gold/20 to-precedential-gold/5 backdrop-blur-sm rounded-full p-4 sm:p-5">
+              <Award className="w-12 h-12 sm:w-14 sm:h-14 text-precedential-gold" />
             </div>
           </div>
 
-          <h1 className="opacity-0 animate-fade-in text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6">
+          <h1 className="opacity-0 animate-fade-in text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-8 sm:mb-10">
             Setting a <span className="text-gold-gradient">Precedential</span> Standard in Legal Services
           </h1>
           
-          <p className="opacity-0 animate-fade-in stagger-1 text-white/80 text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          <p className="opacity-0 animate-fade-in stagger-1 text-white/90 text-base sm:text-lg md:text-xl mb-10 sm:mb-12 max-w-2xl mx-auto">
             Your Shield in Dubai's Legal Landscape: Expert Guidance, Clear Solutions, Client Protection
           </p>
           
-          <div className="opacity-0 animate-fade-in stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="opacity-0 animate-fade-in stagger-2 flex flex-col sm:flex-row gap-6 justify-center">
             <a 
               href="#contact" 
               className="btn-primary group"
@@ -75,13 +84,13 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Trust Indicators with improved styling */}
-          <div className="mt-16 opacity-0 animate-fade-in stagger-3">
-            <p className="text-white/60 italic text-sm mb-4">Trusted by clients across UAE</p>
-            <div className="flex flex-wrap justify-center gap-3">
+          <div className="mt-20 opacity-0 animate-fade-in stagger-3">
+            <p className="text-white/60 italic text-sm mb-6">Trusted by clients across UAE</p>
+            <div className="flex flex-wrap justify-center gap-4">
               {['Premium', 'Reliable', 'Experienced', 'Trusted'].map((trait) => (
                 <div 
                   key={trait}
-                  className="text-white/80 text-sm font-medium px-4 py-2 
+                  className="text-white/80 text-sm font-medium px-5 py-2.5 
                            rounded-full bg-white/5 border border-white/10
                            hover:border-precedential-gold/30 transition-colors"
                 >
@@ -94,8 +103,8 @@ const HeroSection: React.FC = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#services" className="text-white/70 flex flex-col items-center text-sm">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#services" className="text-white/70 flex flex-col items-center text-sm transition-colors duration-300 hover:text-precedential-gold">
           <span>Scroll Down</span>
           <svg className="w-6 h-6 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />

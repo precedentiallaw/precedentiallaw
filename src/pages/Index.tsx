@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
 import AchievementsSection from '@/components/AchievementsSection';
@@ -16,24 +16,77 @@ import StorySection from '@/components/StorySection';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
 import FAQ from '@/components/FAQ';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const Index: React.FC = () => {
+  // Add smooth scrolling for anchor links
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A') {
+        const href = target.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const element = document.getElementById(href.substring(1));
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
       
       <main className="flex-grow">
         <HeroSection />
-        <AchievementsSection />
-        <ServicesSection />
-        <KeywordStrip />
-        <StorySection />
-        <AboutSection />
-        <WhyChooseUs />
-        <PracticeAreasSection />
-        <FAQ />
-        <ContactSection />
-        <FinalCTA />
+        
+        <ScrollReveal>
+          <AchievementsSection />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <ServicesSection />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <KeywordStrip />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-left">
+          <StorySection />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-right">
+          <AboutSection />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="zoom-in">
+          <WhyChooseUs />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <PracticeAreasSection />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <FAQ />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <ContactSection />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="zoom-in">
+          <FinalCTA />
+        </ScrollReveal>
       </main>
       
       <Footer />

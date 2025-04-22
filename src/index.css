@@ -154,8 +154,24 @@
            hover:bg-precedential-gold hover:text-precedential-black 
            hover:shadow-[0_0_15px_rgba(212,175,55,0.5)];
   }
+  
+  /* New interactive components */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .link-hover {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 
+           after:bg-precedential-gold after:transition-all after:duration-300 
+           hover:after:w-full;
+  }
+  
+  .pulse-slow {
+    @apply animate-[pulse_3s_infinite];
+  }
 }
 
+/* Existing animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -191,6 +207,67 @@
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+/* New animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes border-pulse {
+  0% { border-color: rgba(212, 175, 55, 0.2); }
+  50% { border-color: rgba(212, 175, 55, 0.8); }
+  100% { border-color: rgba(212, 175, 55, 0.2); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-left {
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-right {
+  opacity: 0;
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-zoom-in {
+  opacity: 0;
+  animation: zoomIn 0.6s ease-out forwards;
+}
+
+.animate-border-pulse {
+  animation: border-pulse 2s ease-in-out infinite;
+}
+
+/* Animation delays for scroll reveals */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
 
 .stagger-1 { animation-delay: 0.1s; }
 .stagger-2 { animation-delay: 0.2s; }
