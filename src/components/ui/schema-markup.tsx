@@ -91,8 +91,59 @@ export const LegalServiceSchema: React.FC = () => {
     }
   };
 
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can my employer terminate my contract without a valid reason under the current UAE Labour Law?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The UAE Labour Law aims to protect both employer and employee rights, establishing that termination should generally be based on a legitimate reason related to work performance or operational requirements. While the concept seems straightforward, determining what constitutes a \"valid reason\" in practice involves careful interpretation of the law and the specific circumstances. Simply disagreeing with your employer or minor issues may not suffice as grounds for dismissal. The law also explicitly prohibits termination for discriminatory reasons or because an employee filed a legitimate complaint. Furthermore, employers must follow specific procedures, including providing proper notice periods as stated in your contract (usually 30-90 days). Failure to adhere to these procedures or terminating employment based on grounds deemed unlawful can lead to disputes and potential claims for arbitrary dismissal compensation. Assessing whether a termination is legally sound requires analysing the stated reason against the legal benchmarks, reviewing the employer's adherence to process, and understanding the nuances of recent court interpretations. This information provides a general overview and does not constitute legal advice. Navigating a potential termination requires understanding your specific rights and the employer's obligations under the law. Missteps can be costly. To confidently assess your situation and explore the best course of action, securing personalized guidance from the experienced employment law team at Precedential Law is a crucial step."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who usually gets custody of children after an expat divorce in the UAE under the latest regulations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Recent UAE laws, particularly Federal Decree-Law No. 41 of 2022 for non-Muslims, have introduced concepts like joint custody following divorce, aiming to prioritize the child's well-being. The guiding principle is always the \"best interests of the child.\" While joint custody is now a default possibility, how it's implemented—or whether sole custody is awarded instead—depends heavily on the specific family situation. Factors considered include the parents' ability to cooperate, living arrangements, each parent's capacity to provide care, and importantly, ensuring the child's stability and welfare. The application of these principles can become complex, especially when parents disagree or if one party intends to relocate outside the UAE. Furthermore, expats retain the option to request their home country's law apply to custody matters, adding another layer of legal consideration. Understanding which legal framework applies and how UAE courts interpret 'best interests' in a cross-cultural context is vital. Presenting a compelling case requires careful preparation and knowledge of local judicial practices. This information provides a general overview and does not constitute legal advice. Child custody arrangements are profoundly impactful and legally intricate. Ensuring the outcome truly serves your child's best interests while protecting your parental rights requires navigating complex legal standards. For clear, strategic advice tailored to your family's unique circumstances, consulting with Precedential Law's dedicated family law specialists is the wisest path forward."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the first legal steps I should take if my business partner breaches our partnership agreement in the UAE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Discovering a potential breach of your partnership agreement by a business partner is understandably concerning. The immediate steps often involve carefully reviewing the specific terms of your agreement regarding breaches, dispute resolution clauses (like mediation or arbitration), and gathering clear evidence of the alleged violation. Sending a formal notification or 'legal notice' outlining the breach and demanding rectification is a common initial step, creating a formal record. However, the situation is rarely simple. The nature of the breach, the potential damages incurred, the specific legal structure of your partnership (e.g., LLC, Civil Company), and the governing laws all influence the best strategy. Acting rashly or without understanding the full legal implications could weaken your position or even expose you to counterclaims. Deciding whether to pursue negotiation, mediation, arbitration, or litigation requires a strategic assessment of the potential outcomes, costs, and timelines involved. This information provides a general overview and does not constitute legal advice. Partnership disputes can escalate quickly and threaten the viability of your business. Protecting your interests requires swift, informed, and strategic legal action. To understand your options fully and navigate the complexities of UAE commercial law effectively, seeking counsel from Precedential Law's experienced commercial litigation team is essential for achieving a resolution that safeguards your investment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my landlord increase my rent whenever they want, or are there restrictions in Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Landlords in Dubai cannot arbitrarily increase rent whenever they wish. Rent increases are regulated, primarily through the framework provided by the Real Estate Regulatory Agency (RERA). Generally, landlords can only propose a rent increase upon renewal of the tenancy contract, and they must provide tenants with at least 90 days' written notice before the contract expiry date if they intend to do so. Crucially, the permissible amount of increase is often tied to the RERA Rental Index calculator, which compares your current rent to the average market rate for similar properties in your area. If your rent is already aligned with or above the market average indicated by the index, an increase may not be permitted. However, understanding how the RERA index applies to your specific property type and location, knowing the exceptions, and following the correct procedures for disputing an unlawful increase through the Rental Dispute Centre (RDC) involves specific knowledge of Dubai's rental laws and RDC processes. This information provides a general overview and does not constitute legal advice. Navigating rent increase notices and potential disputes requires clarity on your rights and the landlord's legal limitations. Ensuring you aren't subjected to unfair increases involves understanding complex regulations. For precise advice based on your tenancy contract and current RERA guidelines, consulting with Precedential Law's real estate law experts provides the clarity needed to protect your position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my assets in the UAE if I pass away without a registered will as a non-Muslim expatriate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For non-Muslim expats dying in the UAE without a registered Will, the consequences can be complex and potentially distressing for their families. While recent laws offer options, the default position without a valid Will often leads to the application of local laws, potentially including Sharia principles, for the distribution of UAE-based assets (like property, bank accounts, end-of-service benefits). This involves pre-determined shares for specific relatives, which may significantly differ from your personal wishes. Furthermore, the process can be lengthy, potentially involving court proceedings to determine heirs and distribute assets, during which bank accounts and other assets may be frozen. Appointing guardians for minor children also becomes subject to court decisions based on local law evaluations, creating uncertainty during a difficult time. While mechanisms exist to potentially apply home country law, invoking them without a Will is often more complicated and uncertain. This information provides a general overview and does not constitute legal advice. The absence of a registered Will creates significant legal uncertainty and potential hardship for your loved ones in the UAE. Proactively securing your legacy and ensuring your wishes regarding assets and guardianship are respected requires navigating specific UAE legal frameworks for Wills. To understand the best options for your situation and gain peace of mind, discussing your estate planning needs with Precedential Law's specialists is a critical step."
+        }
+      }
+    ]
+  };
+
   return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}></script>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}></script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}></script>
+    </>
   );
 };
 
