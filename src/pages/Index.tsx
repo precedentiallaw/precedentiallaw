@@ -1,7 +1,7 @@
-
 import React from 'react';
 import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
+import AchievementsSection from '@/components/AchievementsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AboutSection from '@/components/AboutSection';
 import PracticeAreasSection from '@/components/PracticeAreasSection';
@@ -23,6 +23,7 @@ const Index: React.FC = () => {
       
       <main className="flex-grow">
         <HeroSection />
+        <AchievementsSection />
         <ServicesSection />
         <KeywordStrip />
         <StorySection />
