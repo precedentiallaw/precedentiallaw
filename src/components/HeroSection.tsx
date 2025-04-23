@@ -43,7 +43,13 @@ const HeroSection: React.FC = () => {
 
       {/* Large Logo Watermark with trophy image */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5 parallax" data-speed="0.15">
-        <img src="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" alt="" className="w-1/2 max-w-2xl" />
+        <img 
+          src="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" 
+          alt="" 
+          className="w-1/2 max-w-2xl"
+          width="600"
+          height="300" 
+        />
       </div>
 
       {/* Content */}
@@ -63,6 +69,12 @@ const HeroSection: React.FC = () => {
           <p className="opacity-0 animate-fade-in stagger-1 text-white/90 text-base sm:text-lg md:text-xl mb-10 sm:mb-12 max-w-2xl mx-auto">
             Your Shield in Dubai's Legal Landscape: Expert Guidance, Clear Solutions, Client Protection
           </p>
+
+          <div className="hidden md:block opacity-0 animate-fade-in stagger-1">
+            <p className="text-white/80 text-base sm:text-lg mb-10 sm:mb-12 max-w-3xl mx-auto">
+              Welcome to Precedential Law, a premier Dubai-based legal consultancy committed to delivering clear, effective, and client-focused legal solutions. We understand the unique and dynamic legal environment of Dubai and the wider UAE. Our dedication lies in protecting your interests, acting as your trusted shield against legal complexities.
+            </p>
+          </div>
           
           <div className="opacity-0 animate-fade-in stagger-2 flex flex-col sm:flex-row gap-6 justify-center">
             <a 

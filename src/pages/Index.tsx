@@ -17,6 +17,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
 import FAQ from '@/components/FAQ';
 import ScrollReveal from '@/components/ScrollReveal';
+import { Helmet } from 'react-helmet';
 
 const Index: React.FC = () => {
   // Add smooth scrolling for anchor links
@@ -43,6 +44,10 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <meta name="description" content="Precedential Law: Expert Dubai legal services & consultation. Top business law firm, family law, divorce & immigration lawyer Dubai. Setting the standard. Contact us." />
+      </Helmet>
+      
       <NavBar />
       
       <main className="flex-grow">
@@ -91,7 +96,7 @@ const Index: React.FC = () => {
       
       <Footer />
       <FloatingCTA />
-      <WhatsAppButton phoneNumber="971501234567" />
+      <WhatsAppButton phoneNumber="971509014120" />
       
       {/* SEO Schema Markup */}
       <LegalServiceSchema />

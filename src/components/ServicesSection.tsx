@@ -62,22 +62,22 @@ const ServicesSection: React.FC = () => {
   const services = [
     {
       title: "Commercial & Business Law",
-      description: "Expert legal guidance for business formation, contracts, compliance, and corporate governance in Dubai's dynamic commercial environment.",
+      description: "Safeguard your business interests with our expert guidance. From navigating company formation and drafting robust contracts to ensuring regulatory compliance and resolving complex disputes, we provide the strategic support needed to thrive in Dubai's competitive commercial landscape.",
       icon: "🏢"
     },
     {
       title: "Family Law & Wills",
-      description: "Compassionate legal support for divorce, custody, inheritance, and succession planning that protects your family's interests.",
+      description: "Receive sensitive and strategic advice tailored for expats and nationals alike. We handle divorce proceedings, child custody arrangements, and the crucial process of securing your family's future through UAE-compliant Wills and guardianship planning.",
       icon: "👪"
     },
     {
       title: "Real Estate Law",
-      description: "Navigate property transactions, leasing disputes, development contracts, and regulatory compliance with expert legal guidance.",
+      description: "Navigate Dubai's property market with confidence. We assist with property transactions, lease agreements, Ejari registration, and resolving rental disputes effectively through the Dubai Rental Dispute Centre (RDC).",
       icon: "🏗️"
     },
     {
       title: "Debt Settlement & Civil Litigation",
-      description: "Strategic representation for debt resolution, contract disputes, and civil claims to protect your financial interests.",
+      description: "Address financial challenges proactively. We assist with debt recovery, negotiate settlements, and guide clients through civil court proceedings in the UAE. This includes navigating the current legal landscape regarding bounced cheques following recent legislative changes.",
       icon: "⚖️"
     },
   ];

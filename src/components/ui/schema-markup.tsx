@@ -27,11 +27,18 @@ const LegalServiceSchema: React.FC = () => {
           'Monday',
           'Tuesday',
           'Wednesday',
-          'Thursday',
-          'Sunday'
+          'Thursday'
         ],
         'opens': '09:00',
-        'closes': '18:00'
+        'closes': '17:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': [
+          'Friday'
+        ],
+        'opens': '09:00',
+        'closes': '12:30'
       }
     ],
     'sameAs': [
