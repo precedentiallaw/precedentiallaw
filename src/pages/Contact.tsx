@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FAQ from '@/components/FAQ';
 import ScrollReveal from '@/components/ScrollReveal';
-import { Helmet } from 'react-helmet';
 import { Map, MessageSquare, Mail, Phone, Clock, MapPin } from 'lucide-react';
 
 const Contact: React.FC = () => {

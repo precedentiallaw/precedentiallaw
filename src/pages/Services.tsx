@@ -1,11 +1,10 @@
-
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
-import { Helmet } from 'react-helmet';
 
 const ServiceDetails: React.FC<{ title: string; description: React.ReactNode }> = ({ title, description }) => {
   return (

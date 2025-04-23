@@ -1,5 +1,5 @@
-
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
 import AchievementsSection from '@/components/AchievementsSection';
@@ -17,10 +17,8 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
 import FAQ from '@/components/FAQ';
 import ScrollReveal from '@/components/ScrollReveal';
-import { Helmet } from 'react-helmet';
 
 const Index: React.FC = () => {
-  // Add smooth scrolling for anchor links
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -98,7 +96,6 @@ const Index: React.FC = () => {
       <FloatingCTA />
       <WhatsAppButton phoneNumber="971509014120" />
       
-      {/* SEO Schema Markup */}
       <LegalServiceSchema />
     </div>
   );

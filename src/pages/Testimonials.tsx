@@ -1,11 +1,10 @@
-
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
 import ScrollReveal from '@/components/ScrollReveal';
-import { Helmet } from 'react-helmet';
 import { MessageSquare } from 'lucide-react';
 
 interface TestimonialProps {
