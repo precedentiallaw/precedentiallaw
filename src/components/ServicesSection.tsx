@@ -1,5 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 
 interface ServiceCardProps {
   title: string;
@@ -60,34 +61,24 @@ const ServicesSection: React.FC = () => {
 
   const services = [
     {
-      title: "Corporate Law",
-      description: "Comprehensive legal solutions for businesses, from startups to multinational corporations operating in the UAE.",
+      title: "Commercial & Business Law",
+      description: "Expert legal guidance for business formation, contracts, compliance, and corporate governance in Dubai's dynamic commercial environment.",
       icon: "🏢"
     },
     {
-      title: "Litigation",
-      description: "Expert representation in courts across the UAE, ensuring your legal rights are protected at every stage.",
-      icon: "⚖️"
-    },
-    {
-      title: "Real Estate Law",
-      description: "Navigate complex property transactions and disputes with our specialized real estate legal expertise.",
-      icon: "🏗️"
-    },
-    {
-      title: "Family Law",
-      description: "Sensitive and professional handling of family matters, including divorce, custody and inheritance issues.",
+      title: "Family Law & Wills",
+      description: "Compassionate legal support for divorce, custody, inheritance, and succession planning that protects your family's interests.",
       icon: "👪"
     },
     {
-      title: "Intellectual Property",
-      description: "Protect your innovations and creative works with our comprehensive IP registration and enforcement services.",
-      icon: "💡"
+      title: "Real Estate Law",
+      description: "Navigate property transactions, leasing disputes, development contracts, and regulatory compliance with expert legal guidance.",
+      icon: "🏗️"
     },
     {
-      title: "Criminal Defense",
-      description: "Strong defense strategies and representation for those facing criminal charges in the UAE legal system.",
-      icon: "🛡️"
+      title: "Debt Settlement & Civil Litigation",
+      description: "Strategic representation for debt resolution, contract disputes, and civil claims to protect your financial interests.",
+      icon: "⚖️"
     },
   ];
 
@@ -96,16 +87,16 @@ const ServicesSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4">
-            Our <span className="text-gold-gradient">Premium</span> Legal Services
+            Comprehensive Legal Services <span className="text-gold-gradient">Tailored for Dubai</span>
           </h2>
           <p className="text-precedential-black/70">
-            Accessible legal protection with impact. We provide comprehensive legal solutions tailored to your specific needs.
+            From business protection to personal matters, our legal team delivers the expertise, clarity, and results that Dubai's unique landscape demands.
           </p>
         </div>
 
         <div 
           ref={servicesRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {services.map((service, index) => (
             <ServiceCard 
@@ -116,6 +107,15 @@ const ServicesSection: React.FC = () => {
               index={index}
             />
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button 
+            onClick={() => window.location.href = "#practice-areas"}
+            className="bg-precedential-black hover:bg-precedential-black/90 text-white px-8 py-6 text-base rounded-xl"
+          >
+            Explore All Practice Areas
+          </Button>
         </div>
       </div>
     </section>
