@@ -1,5 +1,5 @@
+
 import React, { useState } from 'react';
-import FAQ from './FAQ';
 import { MessageSquare } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
@@ -141,10 +141,7 @@ const ContactSection: React.FC = () => {
                   </a>
                 </div>
                 
-                {/* FAQ Section */}
-                <div className="mt-10">
-                  <FAQ />
-                </div>
+                {/* Removed redundant FAQ section */}
               </div>
               
               {/* Contact Form */}

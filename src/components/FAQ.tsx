@@ -1,8 +1,17 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { ChevronDown, ChevronRight, Info } from 'lucide-react';
 
 const FAQ: React.FC = () => {
+  const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Define the comprehensive FAQ data
   const faqData = [
     // Business & Corporate
@@ -106,32 +115,46 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="py-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="py-6 md:py-8 w-full">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-8 text-center">
+      <h2 className="text-xl md:text-2xl lg:text-3xl font-playfair font-bold mb-6 md:mb-8 text-center">
         Frequently Asked Questions
       </h2>
       
-      <div className="space-y-8">
+      <div className="space-y-4 md:space-y-6">
         {faqData.map((category, index) => (
-          <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <h3 className="text-xl font-playfair font-semibold mb-4 text-precedential-gold">
-              {category.category}
-            </h3>
-            <Accordion type="single" collapsible className="w-full space-y-4">
+          <div 
+            key={index} 
+            className="bg-white rounded-lg md:rounded-xl p-4 md:p-6 shadow-sm border border-gray-100 animate-fade-up"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <div className="flex items-center gap-3 mb-3 md:mb-4">
+              <Info className="text-precedential-gold w-5 h-5" />
+              <h3 className="text-lg md:text-xl font-playfair font-semibold text-precedential-gold">
+                {category.category}
+              </h3>
+            </div>
+            
+            <Accordion type="single" collapsible className="w-full space-y-3">
               {category.items.map((faq, faqIndex) => (
                 <AccordionItem 
                   key={faqIndex} 
                   value={`${category.category}-${faqIndex}`}
-                  className="border border-gray-200 rounded-lg"
+                  className="border border-gray-200 rounded-lg overflow-hidden"
                 >
-                  <AccordionTrigger className="text-left font-medium px-4 py-3 hover:bg-gray-50">
+                  <AccordionTrigger 
+                    className="text-left font-medium px-3 md:px-4 py-2 md:py-3 hover:bg-gray-50 text-sm md:text-base"
+                    iconComponent={mounted && !isMobile ? 
+                      <ChevronDown className="h-4 w-4 text-precedential-gold shrink-0 transition-transform duration-200" /> : 
+                      <ChevronRight className="h-4 w-4 text-precedential-gold shrink-0 transition-transform duration-200" />
+                    }
+                  >
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-4 py-3">
+                  <AccordionContent className="px-3 md:px-4 py-2 md:py-3 text-sm md:text-base">
                     <p className="text-precedential-black/70 leading-relaxed">
                       {faq.answer}
                     </p>
