@@ -155,7 +155,7 @@
            hover:shadow-[0_0_15px_rgba(212,175,55,0.5)];
   }
   
-  /* New interactive components */
+  /* Enhanced interactive components */
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
@@ -168,6 +168,42 @@
   
   .pulse-slow {
     @apply animate-[pulse_3s_infinite];
+  }
+
+  /* New UI elements */
+  .highlight-box {
+    @apply border-l-4 border-precedential-gold bg-precedential-gold/5 pl-4 py-2;
+  }
+
+  .fancy-link {
+    @apply relative text-precedential-gold font-medium inline-flex items-center
+           after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 
+           after:bg-precedential-gold after:scale-x-0 hover:after:scale-x-100
+           after:origin-right hover:after:origin-left after:transition-transform after:duration-300;
+  }
+
+  .feature-card {
+    @apply bg-white rounded-xl p-6 border border-gray-100 shadow-sm 
+           hover:shadow-md hover:border-precedential-gold/20 
+           transition-all duration-300;
+  }
+
+  .floating-label-input {
+    @apply relative pt-5;
+  }
+
+  .floating-label-input input {
+    @apply peer h-10 w-full border-b border-gray-300 bg-transparent 
+           px-0 py-2.5 text-sm text-gray-900 focus:border-precedential-gold 
+           focus:outline-none;
+  }
+
+  .floating-label-input label {
+    @apply absolute top-2 left-0 -z-10 origin-[0] -translate-y-6 scale-75 
+           transform text-sm text-gray-500 duration-300 
+           peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 
+           peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 
+           peer-focus:text-precedential-gold;
   }
 }
 
