@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Shield, Award } from 'lucide-react';
+import Logo from './Logo';
 
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -41,24 +42,18 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-precedential-gold blur-[100px]"></div>
       </div>
 
-      {/* Large Logo Watermark with trophy image */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5 parallax" data-speed="0.15">
-        <img 
-          src="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" 
-          alt="" 
-          className="w-1/2 max-w-2xl"
-          width="600"
-          height="300" 
-        />
+      {/* Large Logo Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-10 parallax" data-speed="0.15">
+        <Logo variant="icon-only" size="large" className="w-1/2 max-w-2xl" />
       </div>
 
       {/* Content */}
       <div className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 text-center z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Award Badge */}
+          {/* Logo Badge */}
           <div className="mb-12 sm:mb-16 opacity-0 animate-fade-in flex justify-center">
-            <div className="bg-gradient-to-b from-precedential-gold/20 to-precedential-gold/5 backdrop-blur-sm rounded-full p-4 sm:p-5">
-              <Award className="w-12 h-12 sm:w-14 sm:h-14 text-precedential-gold" />
+            <div className="flex flex-col items-center gap-3">
+              <Logo variant="gold-on-black" size="large" className="w-32 h-32" />
             </div>
           </div>
 
@@ -82,7 +77,7 @@ const HeroSection: React.FC = () => {
               className="btn-primary group"
             >
               <Shield className="w-5 h-5 mr-2 inline-block transition-transform group-hover:scale-110" />
-              Request Confidential Consultation
+              Request Precedential Protection
             </a>
             
             <a 

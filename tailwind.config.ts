@@ -73,10 +73,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Custom colors for Precedential Law
+                // Updated brand colors per brand guidelines
                 precedential: {
-                    black: '#000000',
-                    gold: '#D4AF37',
+                    black: '#0A0A1F', // Deep Navy per brand guidelines
+                    gold: '#D4AF37', // Primary Gold per brand guidelines
                     goldLight: '#E5C76B',
                     goldDark: '#B8860B',
                     white: '#FFFFFF',
@@ -86,8 +86,10 @@ export default {
 			},
             fontFamily: {
                 'playfair': ['Playfair Display', 'serif'],
-                'montserrat': ['Montserrat', 'sans-serif'],
+                'montserrat': ['Montserrat', 'sans-serif'], 
                 'cormorant': ['Cormorant Garamond', 'serif'],
+                'inter': ['Inter', 'sans-serif'],
+                'opensans': ['Open Sans', 'sans-serif']
             },
 			borderRadius: {
 				lg: 'var(--radius)',

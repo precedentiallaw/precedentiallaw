@@ -1,0 +1,14 @@
+
+# Redirect all routes from old domain to new domain
+https://precedential.pro/* https://precedentiallaw.com/:splat 301!
+http://precedential.pro/* https://precedentiallaw.com/:splat 301!
+
+# Handle www to non-www redirects
+https://www.precedential.pro/* https://precedentiallaw.com/:splat 301!
+http://www.precedential.pro/* https://precedentiallaw.com/:splat 301!
+
+# Handle www to non-www for new domain
+https://www.precedentiallaw.com/* https://precedentiallaw.com/:splat 301!
+
+# SPA routing fallback
+/* /index.html 200

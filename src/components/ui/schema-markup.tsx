@@ -2,75 +2,58 @@
 import React from 'react';
 
 const LegalServiceSchema: React.FC = () => {
-  // Create a JSON-LD schema for LegalService
-  const legalServiceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LegalService',
-    'name': 'Precedential Law',
-    'description': 'Precedential Law delivers elite legal protection across Dubai, including family law, immigration, business, real estate, and criminal defense.',
-    'url': 'https://precedential.pro/',
-    'logo': 'https://precedential.pro/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png',
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': 'City Tower 2 - Sheikh Zayed Rd',
-      'addressLocality': 'Dubai',
-      'addressRegion': 'Dubai',
-      'addressCountry': 'United Arab Emirates',
-      'postalCode': ''
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Precedential Law",
+    "url": "https://precedentiallaw.com/",
+    "logo": "https://precedentiallaw.com/lovable-uploads/65175c09-4b39-47fe-b83b-2560ac58cf1e.png",
+    "image": "https://precedentiallaw.com/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png",
+    "description": "Premier Dubai-based legal consultancy providing expert legal services across corporate, family, real estate, immigration law and more.",
+    "telephone": "+971509014120",
+    "email": "info@precedentiallaw.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "City Tower 2 - Sheikh Zayed Road",
+      "addressLocality": "Dubai",
+      "addressRegion": "Dubai",
+      "addressCountry": "AE"
     },
-    'telephone': '+971509014120',
-    'email': 'info@uaeprecedentiallaw.com',
-    'openingHoursSpecification': [
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "25.2048",
+      "longitude": "55.2708"
+    },
+    "openingHoursSpecification": [
       {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday'
-        ],
-        'opens': '09:00',
-        'closes': '17:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': [
-          'Friday'
-        ],
-        'opens': '09:00',
-        'closes': '12:30'
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "09:00",
+        "closes": "18:00"
       }
     ],
-    'sameAs': [
-      'https://www.facebook.com/precedentiallaw',
-      'https://www.linkedin.com/company/precedentiallaw',
-      'https://twitter.com/precedential_law',
-      'https://www.instagram.com/precedentiallaw'
+    "areaServed": ["Dubai", "United Arab Emirates"],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/precedentiallaw",
+      "https://www.linkedin.com/company/precedentiallaw",
+      "https://twitter.com/precedential_law",
+      "https://www.instagram.com/precedentiallaw"
     ],
-    'areaServed': {
-      '@type': 'GeoCircle',
-      'geoMidpoint': {
-        '@type': 'GeoCoordinates',
-        'latitude': '25.2048',
-        'longitude': '55.2708'
-      },
-      'geoRadius': '50000'
-    },
-    'priceRange': '$$',
-    'serviceType': [
-      'Commercial & Business Law',
-      'Family Law & Wills',
-      'Real Estate Law',
-      'Debt Settlement & Civil Litigation',
-      'Immigration Law',
-      'Criminal Defense'
+    "serviceType": [
+      "Corporate & Business Law",
+      "Family Law & Wills",
+      "Real Estate Law",
+      "Immigration Law",
+      "Debt Settlement & Civil Litigation",
+      "Criminal Defense Advisory"
     ]
   };
-
+  
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceSchema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
     />
   );
 };

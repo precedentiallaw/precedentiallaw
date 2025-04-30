@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { PhoneCall, Mail, ArrowRight } from 'lucide-react';
+import { PhoneCall, Mail, Shield } from 'lucide-react';
 
 const FinalCTA: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const FinalCTA: React.FC = () => {
         </h2>
         
         <p className="text-white/80 max-w-3xl mx-auto mb-10 opacity-0 animate-fade-in stagger-1 text-base md:text-lg">
-          Don't navigate complex legal challenges alone. Contact Precedential Law today for expert legal services in Dubai. We offer confidential consultations to understand your situation and explore how our dedicated team can help you achieve your objectives.
+          When You Need More Than a Lawyer—You Need Precedential Protection. Contact Precedential Law today for expert legal services in Dubai. We offer confidential consultations to understand your situation and explore how our dedicated team can help you achieve your objectives.
         </p>
         
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-10 opacity-0 animate-fade-in stagger-2">
@@ -31,7 +31,7 @@ const FinalCTA: React.FC = () => {
           </div>
           <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-precedential-gold/20 transition-all duration-300 hover:border-precedential-gold/50">
             <Mail className="text-precedential-gold mr-3 h-5 w-5" />
-            <a href="mailto:info@uaeprecedentiallaw.com" className="text-white hover:text-precedential-gold transition-colors">info@uaeprecedentiallaw.com</a>
+            <a href="mailto:info@precedentiallaw.com" className="text-white hover:text-precedential-gold transition-colors">info@precedentiallaw.com</a>
           </div>
         </div>
         
@@ -41,8 +41,8 @@ const FinalCTA: React.FC = () => {
           size="xl"
           className="animate-fade-in stagger-3 transform hover:scale-105 transition-all duration-300 px-8 py-6 h-auto rounded-xl"
         >
-          Get Legal Support Now
-          <ArrowRight className="ml-2 h-5 w-5" />
+          Request Precedential Protection
+          <Shield className="ml-2 h-5 w-5" />
         </Button>
       </div>
     </section>

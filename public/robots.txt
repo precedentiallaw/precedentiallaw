@@ -14,4 +14,4 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-Sitemap: https://precedential.pro/sitemap.xml
+Sitemap: https://precedentiallaw.com/sitemap.xml

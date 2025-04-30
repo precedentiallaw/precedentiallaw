@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
-import { MessageCircle, PhoneCall } from 'lucide-react';
+import { MessageCircle, PhoneCall, Shield } from 'lucide-react';
 
 const FloatingCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,11 +21,11 @@ const FloatingCTA: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className={`fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-precedential-gold/30 transform transition-all duration-500 shadow-lg z-50 ${isCompact ? 'py-2' : 'py-4'}`}>
+    <div className={`fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-precedential-gold/30 transform transition-all duration-500 shadow-lg z-50 ${isCompact ? 'py-2' : 'py-4'}`}>
       <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
         {!isCompact && (
           <div className="flex-1">
-            <p className="text-lg font-medium text-precedential-black">Need legal help in Dubai? <span className="hidden sm:inline text-precedential-gold">Let's talk.</span></p>
+            <p className="text-lg font-medium text-precedential-black">Need legal protection in Dubai? <span className="hidden sm:inline text-precedential-gold">Get Precedential Protection.</span></p>
           </div>
         )}
         <div className="flex flex-row gap-3 w-full sm:w-auto">
@@ -42,8 +42,8 @@ const FloatingCTA: React.FC = () => {
             variant="gold"
             className="flex-1 sm:flex-none text-sm sm:text-base"
           >
-            <MessageCircle className="w-4 h-4" />
-            Get Consultation
+            <Shield className="w-4 h-4" />
+            Request Precedential Protection
           </Button>
         </div>
       </div>

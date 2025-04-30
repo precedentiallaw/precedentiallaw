@@ -37,10 +37,11 @@ const NavBar: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2 animate-fade-in">
-          <Logo size="medium" className="transition-all duration-300" />
-          <span className="text-white font-playfair font-bold text-xl md:text-2xl">
-            Precedential Law
-          </span>
+          <Logo 
+            variant={isScrolled ? "gold-on-black" : "gold-on-black"} 
+            size="medium" 
+            className="transition-all duration-300" 
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -95,6 +96,8 @@ const NavBar: React.FC = () => {
         )}
       >
         <nav className="h-full flex flex-col items-center justify-center gap-6">
+          <Logo variant="gold-on-black" size="medium" className="mb-8" />
+          
           {navLinks.map((link, index) => (
             <a 
               key={link.name}

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare, Shield } from 'lucide-react';
+import Logo from './Logo';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -63,7 +64,10 @@ const ContactSection: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Contact Information */}
               <div className="bg-precedential-black p-8 md:p-10">
-                <h3 className="text-2xl font-playfair font-bold mb-6 text-white">Get in Touch</h3>
+                <div className="flex items-center gap-3 mb-6">
+                  <Logo variant="gold-on-black" size="small" />
+                  <h3 className="text-2xl font-playfair font-bold text-white">Get in Touch</h3>
+                </div>
                 
                 <div className="space-y-6">
                   <div className="flex items-start">
@@ -71,7 +75,7 @@ const ContactSection: React.FC = () => {
                     <div>
                       <h4 className="font-bold text-white mb-1">Visit Us</h4>
                       <p className="text-white/70">
-                        Business Bay, Sheikh Zayed Road<br />
+                        City Tower 2 - Sheikh Zayed Road<br />
                         Dubai, United Arab Emirates
                       </p>
                     </div>
@@ -82,8 +86,7 @@ const ContactSection: React.FC = () => {
                     <div>
                       <h4 className="font-bold text-white mb-1">Call Us</h4>
                       <p className="text-white/70">
-                        +971 4 456 7890<br />
-                        +971 50 123 4567
+                        +971 50 901 4120
                       </p>
                     </div>
                   </div>
@@ -93,8 +96,7 @@ const ContactSection: React.FC = () => {
                     <div>
                       <h4 className="font-bold text-white mb-1">Email Us</h4>
                       <p className="text-white/70">
-                        info@precedentiallaw.com<br />
-                        legal@precedentiallaw.com
+                        info@precedentiallaw.com
                       </p>
                     </div>
                   </div>
@@ -131,7 +133,7 @@ const ContactSection: React.FC = () => {
                 {/* WhatsApp Button */}
                 <div className="mt-8">
                   <a 
-                    href="https://wa.me/YOUR_WHATSAPP_NUMBER" 
+                    href="https://wa.me/971509014120" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-medium transition-all duration-300 bg-green-600 hover:bg-green-700 text-white"
@@ -140,13 +142,14 @@ const ContactSection: React.FC = () => {
                     Speak with a Legal Expert Now
                   </a>
                 </div>
-                
-                {/* Removed redundant FAQ section */}
               </div>
               
               {/* Contact Form */}
               <div className="bg-white p-8 md:p-10">
-                <h3 className="text-2xl font-playfair font-bold mb-6">Request Precedential Protection Now</h3>
+                <h3 className="text-2xl font-playfair font-bold mb-6 flex items-center">
+                  <Shield className="w-6 h-6 text-precedential-gold mr-3" />
+                  Request Precedential Protection
+                </h3>
                 
                 {formSubmitted ? (
                   <div className="bg-green-50 text-green-800 p-4 rounded-xl">
@@ -252,9 +255,11 @@ const ContactSection: React.FC = () => {
                         type="submit" 
                         className="w-full py-3 rounded-xl font-medium transition-all duration-300 
                                 bg-precedential-black text-white border-2 border-precedential-gold 
-                                hover:bg-precedential-gold hover:text-precedential-black"
+                                hover:bg-precedential-gold hover:text-precedential-black
+                                flex items-center justify-center"
                       >
-                        Submit Request
+                        <Shield className="mr-2 w-5 h-5" />
+                        Request Precedential Protection
                       </button>
                     </div>
                   </form>

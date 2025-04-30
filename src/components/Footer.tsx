@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Logo and About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Logo size="small" />
+              <Logo variant="gold-on-black" size="small" />
               <span className="font-playfair font-bold text-xl">Precedential Law</span>
             </div>
             <p className="text-white/70 text-sm">
@@ -95,12 +95,12 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-sm">
               <p className="flex items-start">
                 <span className="text-precedential-gold mr-2">📍</span>
-                <span className="text-white/70">Business Bay, Dubai, United Arab Emirates</span>
+                <span className="text-white/70">City Tower 2 - Sheikh Zayed Rd - Trade Centre - Trade Centre 1 - Dubai</span>
               </p>
               <p className="flex items-start">
                 <span className="text-precedential-gold mr-2">📱</span>
-                <a href="tel:+97144567890" className="text-white/70 hover:text-precedential-gold transition-colors">
-                  +971 4 456 7890
+                <a href="tel:+971509014120" className="text-white/70 hover:text-precedential-gold transition-colors">
+                  +971 50 901 4120
                 </a>
               </p>
               <p className="flex items-start">

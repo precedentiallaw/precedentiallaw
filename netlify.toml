@@ -1,0 +1,67 @@
+
+# Global build settings
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Asset optimization
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Redirect old domain to new domain
+[[redirects]]
+  from = "https://precedential.pro/*"
+  to = "https://precedentiallaw.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://precedential.pro/*"
+  to = "https://precedentiallaw.com/:splat"
+  status = 301
+  force = true
+
+# Handle www to non-www redirects
+[[redirects]]
+  from = "https://www.precedential.pro/*"
+  to = "https://precedentiallaw.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.precedential.pro/*"
+  to = "https://precedentiallaw.com/:splat"
+  status = 301
+  force = true
+
+# Handle www to non-www for new domain
+[[redirects]]
+  from = "https://www.precedentiallaw.com/*"
+  to = "https://precedentiallaw.com/:splat"
+  status = 301
+  force = true
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Enable brotli compression
+[context.production]
+  [context.production.environment]
+    COMPRESS_ASSETS = "true"
