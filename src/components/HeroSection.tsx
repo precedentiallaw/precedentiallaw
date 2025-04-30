@@ -43,8 +43,8 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Large Logo Watermark */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 parallax" data-speed="0.15">
-        <Logo variant="icon-only" size="large" className="w-1/2 max-w-2xl" />
+      <div className="absolute inset-0 flex items-center justify-center opacity-5 parallax" data-speed="0.15">
+        <Logo variant="new-gold-wings" size="large" className="w-3/4 max-w-3xl" />
       </div>
 
       {/* Content */}
@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
           {/* Logo Badge */}
           <div className="mb-12 sm:mb-16 opacity-0 animate-fade-in flex justify-center">
             <div className="flex flex-col items-center gap-3">
-              <Logo variant="gold-on-black" size="large" className="w-32 h-32" />
+              <Logo variant="new-gold-wings" size="large" className="w-32 h-32 animate-gleaming" />
             </div>
           </div>
 

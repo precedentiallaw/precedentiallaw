@@ -228,6 +228,30 @@
   100% { transform: translateX(-50%); }
 }
 
+/* New gleaming gold animation for the logo */
+@keyframes gleaming {
+  0% { 
+    filter: brightness(1) contrast(1);
+    transform: scale(1);
+  }
+  25% { 
+    filter: brightness(1.2) contrast(1.1) saturate(1.2);
+    transform: scale(1.02);
+  }
+  50% { 
+    filter: brightness(1.5) contrast(1.15) saturate(1.5) drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+    transform: scale(1.05);
+  }
+  75% { 
+    filter: brightness(1.2) contrast(1.1) saturate(1.2);
+    transform: scale(1.02);
+  }
+  100% { 
+    filter: brightness(1) contrast(1);
+    transform: scale(1);
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
 }
@@ -242,6 +266,10 @@
 
 .animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+.animate-gleaming {
+  animation: gleaming 4s ease-in-out infinite;
 }
 
 /* New animations */
