@@ -32,6 +32,7 @@ const HeroSection: React.FC = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
+      id="hero"
     >
       {/* Dark overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-precedential-black via-precedential-black/85 to-precedential-black/70"></div>
@@ -58,7 +59,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           <h1 className="opacity-0 animate-fade-in text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-8 sm:mb-10">
-            Setting a <span className="text-gold-gradient">Precedential</span> Standard in Legal Services
+            Top-Rated <span className="text-gold-gradient">Legal Services</span> in Dubai
           </h1>
           
           <p className="opacity-0 animate-fade-in stagger-1 text-white/90 text-base sm:text-lg md:text-xl mb-10 sm:mb-12 max-w-2xl mx-auto">
@@ -67,7 +68,7 @@ const HeroSection: React.FC = () => {
 
           <div className="hidden md:block opacity-0 animate-fade-in stagger-1">
             <p className="text-white/80 text-base sm:text-lg mb-10 sm:mb-12 max-w-3xl mx-auto">
-              Welcome to Precedential Law, a premier Dubai-based legal consultancy committed to delivering clear, effective, and client-focused legal solutions. We understand the unique and dynamic legal environment of Dubai and the wider UAE. Our dedication lies in protecting your interests, acting as your trusted shield against legal complexities.
+              Welcome to Precedential Law, a premier Dubai-based legal consultancy committed to delivering clear, effective, and client-focused legal solutions. Our team of experienced lawyers provides expert representation in business law, family law, real estate, immigration, and civil litigation across the UAE.
             </p>
           </div>
           
@@ -77,7 +78,7 @@ const HeroSection: React.FC = () => {
               className="btn-primary group"
             >
               <Shield className="w-5 h-5 mr-2 inline-block transition-transform group-hover:scale-110" />
-              Request Precedential Protection
+              Request Legal Consultation
             </a>
             
             <a 
@@ -86,15 +87,15 @@ const HeroSection: React.FC = () => {
                        text-white border-2 border-white/30 hover:border-precedential-gold 
                        hover:text-precedential-gold"
             >
-              Explore Our Services
+              Explore Our Legal Services
             </a>
           </div>
 
           {/* Trust Indicators with improved styling */}
           <div className="mt-20 opacity-0 animate-fade-in stagger-3">
-            <p className="text-white/60 italic text-sm mb-6">Trusted by clients across UAE</p>
+            <p className="text-white/60 italic text-sm mb-6">Trusted by clients across UAE for legal representation</p>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Premium', 'Reliable', 'Experienced', 'Trusted'].map((trait) => (
+              {['Expert Attorneys', 'Client Protection', 'Experienced Counsel', 'Trusted Advisors'].map((trait) => (
                 <div 
                   key={trait}
                   className="text-white/80 text-sm font-medium px-5 py-2.5 
@@ -112,7 +113,7 @@ const HeroSection: React.FC = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#services" className="text-white/70 flex flex-col items-center text-sm transition-colors duration-300 hover:text-precedential-gold">
-          <span>Scroll Down</span>
+          <span>Explore Legal Services</span>
           <svg className="w-6 h-6 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>

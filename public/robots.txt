@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 
+# Allow specific user agents
 User-agent: Googlebot
 Allow: /
 
@@ -14,4 +15,10 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Disallow duplicate content
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*query=
+
+# XML Sitemap
 Sitemap: https://precedentiallaw.com/sitemap.xml
