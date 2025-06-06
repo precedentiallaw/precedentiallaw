@@ -18,6 +18,23 @@ import BusinessLaw from "./pages/services/BusinessLaw";
 import FamilyLaw from "./pages/services/FamilyLaw";
 import RealEstateLaw from "./pages/services/RealEstateLaw";
 import ImmigrationLaw from "./pages/services/ImmigrationLaw";
+import CorporateLawDubai from "./pages/services/CorporateLawDubai";
+import DivorceLawyersDubai from "./pages/services/DivorceLawyersDubai";
+import GoldenVisaLawyers from "./pages/services/GoldenVisaLawyers";
+import CivilLitigation from "./pages/services/CivilLitigation";
+import CommercialLitigationDubai from "./pages/services/CommercialLitigationDubai";
+import CriminalDefense from "./pages/services/CriminalDefense";
+import DebtSettlement from "./pages/services/DebtSettlement";
+import ContractDisputes from "./pages/services/ContractDisputes";
+import EmploymentLawUAE from "./pages/services/EmploymentLawUAE";
+import DIFCWills from "./pages/services/DIFCWills";
+import UAECompanyFormation from "./pages/UAECompanyFormation";
+import DubaiBusinessSetupLawyers from "./pages/DubaiBusinessSetupLawyers";
+import ExpatLegalServicesDubai from "./pages/ExpatLegalServicesDubai";
+import UAECorporateTaxLawyers from "./pages/UAECorporateTaxLawyers";
+import LegalTools from "./pages/LegalTools";
+import FAQ from "./pages/FAQ";
+import LegalGuides from "./pages/LegalGuides";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,10 +49,30 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
+            
+            {/* Service Pages */}
             <Route path="/services/business-law" element={<BusinessLaw />} />
+            <Route path="/services/corporate-law-dubai" element={<CorporateLawDubai />} />
             <Route path="/services/family-law" element={<FamilyLaw />} />
-            <Route path="/services/real-estate-law" element={<RealEstateLaw />} />
+            <Route path="/services/divorce-lawyers-dubai" element={<DivorceLawyersDubai />} />
             <Route path="/services/immigration-law" element={<ImmigrationLaw />} />
+            <Route path="/services/golden-visa-lawyers" element={<GoldenVisaLawyers />} />
+            <Route path="/services/real-estate-law" element={<RealEstateLaw />} />
+            <Route path="/services/civil-litigation" element={<CivilLitigation />} />
+            <Route path="/services/commercial-litigation-dubai" element={<CommercialLitigationDubai />} />
+            <Route path="/services/criminal-defense" element={<CriminalDefense />} />
+            <Route path="/services/debt-settlement" element={<DebtSettlement />} />
+            <Route path="/services/contract-disputes" element={<ContractDisputes />} />
+            <Route path="/services/employment-law-uae" element={<EmploymentLawUAE />} />
+            <Route path="/services/difc-wills" element={<DIFCWills />} />
+            
+            {/* High-Value Content Pages */}
+            <Route path="/uae-company-formation" element={<UAECompanyFormation />} />
+            <Route path="/dubai-business-setup-lawyers" element={<DubaiBusinessSetupLawyers />} />
+            <Route path="/expat-legal-services-dubai" element={<ExpatLegalServicesDubai />} />
+            <Route path="/uae-corporate-tax-lawyers" element={<UAECorporateTaxLawyers />} />
+            
+            {/* Information Pages */}
             <Route path="/about" element={<About />} />
             <Route path="/why-us" element={<WhyUs />} />
             <Route path="/testimonials" element={<Testimonials />} />
@@ -43,7 +80,11 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/resources" element={<Resources />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/legal-tools" element={<LegalTools />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/legal-guides" element={<LegalGuides />} />
+            
+            {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

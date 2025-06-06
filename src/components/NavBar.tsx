@@ -1,11 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 import Logo from './Logo';
 import { cn } from '@/lib/utils';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +28,44 @@ const NavBar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Our Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Practice Areas', href: '#practice-areas' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+  const serviceCategories = [
+    {
+      title: "Business & Corporate",
+      services: [
+        { name: "Business Law", href: "/services/business-law" },
+        { name: "Corporate Law Dubai", href: "/services/corporate-law-dubai" },
+        { name: "Commercial Litigation", href: "/services/commercial-litigation-dubai" },
+        { name: "Contract Disputes", href: "/services/contract-disputes" },
+        { name: "Employment Law UAE", href: "/services/employment-law-uae" },
+      ]
+    },
+    {
+      title: "Family & Personal",
+      services: [
+        { name: "Family Law", href: "/services/family-law" },
+        { name: "Divorce Lawyers Dubai", href: "/services/divorce-lawyers-dubai" },
+        { name: "DIFC Wills", href: "/services/difc-wills" },
+        { name: "Civil Litigation", href: "/services/civil-litigation" },
+      ]
+    },
+    {
+      title: "Immigration & Visas",
+      services: [
+        { name: "Immigration Law", href: "/services/immigration-law" },
+        { name: "Golden Visa Lawyers", href: "/services/golden-visa-lawyers" },
+        { name: "UAE Company Formation", href: "/uae-company-formation" },
+        { name: "Expat Legal Services", href: "/expat-legal-services-dubai" },
+      ]
+    }
+  ];
+
+  const mainNavLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Why Us', href: '/why-us' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -36,40 +78,69 @@ const NavBar: React.FC = () => {
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 animate-fade-in">
+        <Link to="/" className="flex items-center gap-2 animate-fade-in">
           <Logo 
             variant={isScrolled ? "gold-on-black" : "gold-on-black"} 
             size="medium" 
             className="transition-all duration-300" 
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link, index) => (
-            <a 
-              key={link.name}
-              href={link.href}
-              className="text-white/90 hover:text-precedential-gold transition-colors relative group text-sm font-medium animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-precedential-gold transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-          <a 
-            href="#contact" 
-            className="ml-2 px-4 py-2 rounded-lg bg-precedential-gold text-precedential-black font-medium hover:bg-precedential-goldLight transition-colors animate-fade-in"
-            style={{ animationDelay: "0.5s" }}
-          >
-            Contact
-          </a>
-        </nav>
+        <NavigationMenu className="hidden lg:flex">
+          <NavigationMenuList className="gap-1">
+            {mainNavLinks.map((link) => (
+              <NavigationMenuItem key={link.name}>
+                <Link to={link.href}>
+                  <NavigationMenuLink className={cn(
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors text-white/90 hover:text-precedential-gold",
+                    location.pathname === link.href && "text-precedential-gold"
+                  )}>
+                    {link.name}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+            
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-white/90 hover:text-precedential-gold">
+                Services
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="grid w-[800px] gap-3 p-6 md:grid-cols-3">
+                  {serviceCategories.map((category) => (
+                    <div key={category.title} className="space-y-3">
+                      <h4 className="text-sm font-medium text-precedential-gold">{category.title}</h4>
+                      <ul className="space-y-2">
+                        {category.services.map((service) => (
+                          <li key={service.name}>
+                            <Link to={service.href}>
+                              <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm">
+                                {service.name}
+                              </NavigationMenuLink>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        <Link 
+          to="/contact" 
+          className="hidden md:block ml-2 px-4 py-2 rounded-lg bg-precedential-gold text-precedential-black font-medium hover:bg-precedential-goldLight transition-colors animate-fade-in"
+        >
+          Get Legal Help
+        </Link>
 
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-white p-2 z-50 animate-fade-in"
+          className="lg:hidden text-white p-2 z-50 animate-fade-in"
           aria-label="Toggle mobile menu"
         >
           <div className="w-6 flex flex-col gap-1.5">
@@ -89,7 +160,7 @@ const NavBar: React.FC = () => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          'md:hidden fixed inset-0 bg-black/95 backdrop-blur-lg transition-all duration-300',
+          'lg:hidden fixed inset-0 bg-black/95 backdrop-blur-lg transition-all duration-300',
           mobileMenuOpen 
             ? 'opacity-100 pointer-events-auto' 
             : 'opacity-0 pointer-events-none'
@@ -98,25 +169,33 @@ const NavBar: React.FC = () => {
         <nav className="h-full flex flex-col items-center justify-center gap-6">
           <Logo variant="gold-on-black" size="medium" className="mb-8" />
           
-          {navLinks.map((link, index) => (
-            <a 
+          {mainNavLinks.map((link, index) => (
+            <Link 
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className="text-white/90 hover:text-precedential-gold text-2xl font-playfair transition-colors animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact"
+          
+          <Link
+            to="/services"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-white/90 hover:text-precedential-gold text-2xl font-playfair transition-colors animate-fade-in"
+          >
+            Services
+          </Link>
+          
+          <Link 
+            to="/contact"
             onClick={() => setMobileMenuOpen(false)}
             className="mt-4 px-8 py-3 text-center rounded-lg bg-precedential-gold text-precedential-black font-medium hover:bg-precedential-goldLight transition-colors animate-fade-in"
-            style={{ animationDelay: "0.5s" }}
           >
-            Contact
-          </a>
+            Get Legal Help
+          </Link>
         </nav>
       </div>
     </header>
