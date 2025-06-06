@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
@@ -83,7 +82,7 @@ const Index: React.FC = () => {
         <meta name="twitter:description" content="Expert legal services in Dubai including business law, family law, real estate, immigration, and civil litigation." />
         
         {/* Preload critical resources */}
-        <link rel="preload" fetchpriority="high" as="image" href="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" type="image/png" />
+        <link rel="preload" fetchPriority="high" as="image" href="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" type="image/png" />
       </Helmet>
       
       <AnalyticsTracking />
