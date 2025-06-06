@@ -94,5 +94,3 @@ export const CriticalCSS = () => (
     }
   `}</style>
 );
-
-export default PerformanceOptimization;
