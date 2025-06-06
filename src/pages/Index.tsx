@@ -18,6 +18,9 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
 import FAQ from '@/components/FAQ';
 import ScrollReveal from '@/components/ScrollReveal';
+import { OptimizedTeamProfiles, OptimizedTestimonials } from '@/components/PerformanceOptimization';
+import LiveChat from '@/components/LiveChat';
+import AppointmentBooking from '@/components/AppointmentBooking';
 
 // Sample FAQ data for schema - would be dynamically populated in a real app
 const faqData = [
@@ -96,7 +99,19 @@ const Index: React.FC = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-up">
+          <OptimizedTeamProfiles />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
           <PracticeAreasSection />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <OptimizedTestimonials />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <AppointmentBooking />
         </ScrollReveal>
         
         <ScrollReveal animation="fade-up">
@@ -114,6 +129,7 @@ const Index: React.FC = () => {
       
       <Footer />
       <FloatingCTA />
+      <LiveChat />
       <WhatsAppButton phoneNumber="971509014120" />
       
       <LegalServiceSchema />
