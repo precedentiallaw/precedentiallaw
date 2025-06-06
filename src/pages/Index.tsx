@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
@@ -22,20 +23,27 @@ import AnalyticsTracking from '@/components/AnalyticsTracking';
 import { OptimizedTeamProfiles, OptimizedTestimonials } from '@/components/PerformanceOptimization';
 import LiveChat from '@/components/LiveChat';
 import AppointmentBooking from '@/components/AppointmentBooking';
+import EnhancedTestimonials from '@/components/EnhancedTestimonials';
+import CaseStudyShowcase from '@/components/CaseStudyShowcase';
+import LegalInsights from '@/components/LegalInsights';
 
 // Sample FAQ data for schema - would be dynamically populated in a real app
 const faqData = [
   {
-    question: "What legal services does Precedential Law offer in Dubai?",
-    answer: "Precedential Law offers comprehensive legal services in Dubai including business law, family law, real estate law, immigration law, civil litigation, contract disputes, and more."
+    question: "What distinguishes Precedential Law from other legal firms in Dubai?",
+    answer: "Precedential Law sets the standard for legal excellence in the UAE through our sophisticated approach to complex legal matters, deep expertise in UAE law, and unwavering commitment to achieving exceptional results for our distinguished clientele."
   },
   {
-    question: "How can I schedule a consultation with a lawyer at Precedential Law?",
-    answer: "You can schedule a consultation by calling us at +971509014120, using our contact form on the website, or messaging us on WhatsApp."
+    question: "How can I schedule a confidential consultation with your legal team?",
+    answer: "You can schedule a confidential consultation by calling us at +971509014120, using our secure contact form, or messaging us on WhatsApp. We offer initial consultations to understand your legal needs and discuss how our expertise can serve your interests."
   },
   {
-    question: "Do you offer legal services for both individuals and businesses?",
-    answer: "Yes, Precedential Law provides legal services for both individuals and businesses across Dubai and the UAE."
+    question: "Do you handle high-value commercial litigation and complex business matters?",
+    answer: "Yes, Precedential Law specializes in sophisticated commercial litigation, complex business transactions, and high-stakes legal matters. Our expertise spans DIFC Courts, ADGM Courts, and UAE Federal Court systems, handling matters worth millions of dirhams."
+  },
+  {
+    question: "What makes your approach to UAE legal matters distinctive?",
+    answer: "Our approach combines deep understanding of UAE Federal Law, DIFC regulations, and international best practices. We don't just follow established procedures—we set new standards, establishing precedents that define excellence in legal representation across the Emirates."
   }
 ];
 
@@ -64,22 +72,22 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Premier Dubai Legal Services & Consultancy | Precedential Law</title>
-        <meta name="description" content="Precedential Law offers expert legal services in Dubai including business law, family law, real estate, immigration, and civil litigation. Contact our experienced attorneys for professional legal advice and representation." />
-        <meta name="keywords" content="Dubai legal services, UAE law firm, legal consultation Dubai, family law Dubai, business law firm Dubai, immigration lawyer UAE, real estate lawyer Dubai, legal representation UAE, civil litigation attorney Dubai, contract disputes UAE" />
+        <title>UAE's Premier Legal Authority | Precedential Law Dubai</title>
+        <meta name="description" content="Distinguished legal counsel serving corporations and high-net-worth individuals across Dubai and the UAE. Expert representation in complex commercial litigation, sophisticated business structuring, and intricate family law matters. Setting the precedential standard in legal excellence." />
+        <meta name="keywords" content="premier Dubai legal services, UAE law firm, sophisticated legal counsel, commercial litigation Dubai, high-net-worth legal representation, complex business law UAE, distinguished legal consultancy, precedential legal standards, Dubai legal authority, UAE corporate law" />
         <link rel="canonical" href="https://precedentiallaw.com/" />
         
         {/* Open Graph tags */}
-        <meta property="og:title" content="Premier Dubai Legal Services & Consultancy | Precedential Law" />
-        <meta property="og:description" content="Expert legal services in Dubai including business law, family law, real estate, immigration, and civil litigation. Professional legal advice and representation." />
+        <meta property="og:title" content="UAE's Premier Legal Authority | Precedential Law Dubai" />
+        <meta property="og:description" content="Distinguished legal counsel for corporations and high-net-worth individuals. Expert representation in complex commercial litigation and sophisticated legal matters across Dubai and the UAE." />
         <meta property="og:url" content="https://precedentiallaw.com/" />
         <meta property="og:site_name" content="Precedential Law" />
         <meta property="og:type" content="website" />
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Premier Dubai Legal Services & Consultancy | Precedential Law" />
-        <meta name="twitter:description" content="Expert legal services in Dubai including business law, family law, real estate, immigration, and civil litigation." />
+        <meta name="twitter:title" content="UAE's Premier Legal Authority | Precedential Law Dubai" />
+        <meta name="twitter:description" content="Distinguished legal counsel for corporations and high-net-worth individuals across Dubai and the UAE." />
         
         {/* Preload critical resources */}
         <link rel="preload" fetchPriority="high" as="image" href="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" type="image/png" />
@@ -116,7 +124,7 @@ const Index: React.FC = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-up">
-          <OptimizedTeamProfiles />
+          <CaseStudyShowcase />
         </ScrollReveal>
         
         <ScrollReveal animation="fade-up">
@@ -128,7 +136,11 @@ const Index: React.FC = () => {
         </ScrollReveal>
         
         <ScrollReveal animation="fade-up">
-          <OptimizedTestimonials />
+          <EnhancedTestimonials />
+        </ScrollReveal>
+        
+        <ScrollReveal animation="fade-up">
+          <LegalInsights />
         </ScrollReveal>
         
         <ScrollReveal animation="fade-up">

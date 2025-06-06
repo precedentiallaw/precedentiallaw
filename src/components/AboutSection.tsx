@@ -1,91 +1,132 @@
 
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
+import { Scale, Shield, Award, Building, Users, Trophy } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
-  const aboutRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const childElements = aboutRef.current?.querySelectorAll('.reveal');
-    childElements?.forEach((el) => observer.observe(el));
-
-    return () => {
-      childElements?.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  const achievements = [
+    {
+      icon: Scale,
+      title: "Legal Excellence",
+      description: "Recognized for outstanding legal advocacy and client representation across UAE courts"
+    },
+    {
+      icon: Shield,
+      title: "Client Protection",
+      description: "Unwavering commitment to safeguarding client interests with strategic legal solutions"
+    },
+    {
+      icon: Building,
+      title: "Corporate Authority",
+      description: "Trusted advisor to Fortune 500 companies and multinational corporations"
+    },
+    {
+      icon: Trophy,
+      title: "Proven Results",
+      description: "Landmark victories in complex commercial disputes and high-stakes litigation"
+    }
+  ];
 
   return (
-    <section id="about" className="py-20 bg-precedential-black text-white relative overflow-hidden">
-      {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-        <div className="absolute top-0 right-0 w-full h-full bg-precedential-gold blur-3xl rounded-l-full"></div>
+    <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-precedential-gold blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-precedential-gold blur-2xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div ref={aboutRef} className="order-2 md:order-1">
-            <h2 className="reveal opacity-0 text-3xl md:text-4xl font-playfair font-bold mb-6">
-              About <span className="text-gold-gradient">Precedential</span> Law
-            </h2>
-            
-            <p className="reveal opacity-0 mb-6 text-white/80">
-              Founded on principles of excellence and integrity, Precedential Law has emerged as one of Dubai's premier legal consultancies. Our team of experienced attorneys brings together decades of expertise across multiple practice areas, offering clients unparalleled legal representation.
-            </p>
-            
-            <p className="reveal opacity-0 mb-6 text-white/80">
-              We understand that legal challenges require not just expertise, but empathy and clear communication. That's why we pride ourselves on our client-centered approach, ensuring you're informed and comfortable throughout the legal process.
-            </p>
-            
-            <div className="reveal opacity-0 grid grid-cols-2 gap-4 my-8">
-              <div className="border border-precedential-gold/30 rounded-xl p-4 text-center">
-                <div className="text-3xl font-playfair text-precedential-gold mb-2">15+</div>
-                <div className="text-sm text-white/70">Years of Experience</div>
-              </div>
-              <div className="border border-precedential-gold/30 rounded-xl p-4 text-center">
-                <div className="text-3xl font-playfair text-precedential-gold mb-2">500+</div>
-                <div className="text-sm text-white/70">Satisfied Clients</div>
-              </div>
-              <div className="border border-precedential-gold/30 rounded-xl p-4 text-center">
-                <div className="text-3xl font-playfair text-precedential-gold mb-2">98%</div>
-                <div className="text-sm text-white/70">Success Rate</div>
-              </div>
-              <div className="border border-precedential-gold/30 rounded-xl p-4 text-center">
-                <div className="text-3xl font-playfair text-precedential-gold mb-2">25+</div>
-                <div className="text-sm text-white/70">Legal Experts</div>
+        <div className="max-w-6xl mx-auto">
+          {/* Prestigious Header */}
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-6">
+              <div className="p-4 rounded-full bg-precedential-gold/10 border border-precedential-gold/20">
+                <Scale className="w-8 h-8 text-precedential-gold" />
               </div>
             </div>
-            
-            <a 
-              href="#contact" 
-              className="reveal opacity-0 inline-block btn-primary"
-            >
-              Schedule a Consultation
-            </a>
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+              Distinguished Legal <span className="text-gold-gradient">Heritage</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Established as Dubai's premier legal consultancy, we represent the pinnacle of legal excellence in the UAE, 
+              serving discerning clients who demand nothing less than exceptional results.
+            </p>
           </div>
-          
-          <div className="order-1 md:order-2 perspective-1000">
-            <div className="relative h-[400px] md:h-[500px] flex items-center justify-center">
-              <div className="absolute w-full h-full rounded-2xl overflow-hidden transform rotate-3 shadow-xl">
-                <div className="w-full h-full bg-gradient-to-br from-precedential-gold to-precedential-goldLight opacity-30"></div>
+
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-playfair font-bold mb-4 text-precedential-black">
+                  Our Distinguished Mission
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  At Precedential Law, our mission transcends conventional legal practice. We are dedicated to establishing 
+                  new benchmarks in legal excellence, providing sophisticated counsel that protects and advances our clients' 
+                  most critical interests within the dynamic landscape of UAE jurisprudence.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Our approach combines deep understanding of UAE Federal Law, DIFC regulations, and ADGM frameworks with 
+                  international best practices, ensuring our clients receive counsel that is both locally authoritative and 
+                  globally sophisticated.
+                </p>
               </div>
-              <div className="glass-card absolute w-full h-full rounded-2xl overflow-hidden transform -rotate-3 shadow-xl border border-precedential-gold/20">
-                <img 
-                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Legal professionals at Precedential Law" 
-                  className="w-full h-full object-cover"
-                />
+
+              <div>
+                <h3 className="text-2xl font-playfair font-bold mb-4 text-precedential-black">
+                  The Precedential Standard
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  The name 'Precedential' embodies our unwavering commitment to setting new standards in legal practice. 
+                  We don't merely follow established procedures—we create them, establishing precedents that define excellence 
+                  in legal representation across the Emirates.
+                </p>
               </div>
+            </div>
+
+            {/* Right Column - Visual Elements */}
+            <div className="relative">
+              <div className="glass-card p-8 rounded-2xl">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center p-4">
+                    <div className="text-3xl font-bold text-precedential-gold mb-2">500+</div>
+                    <div className="text-sm text-gray-600">Complex Cases Resolved</div>
+                  </div>
+                  <div className="text-center p-4">
+                    <div className="text-3xl font-bold text-precedential-gold mb-2">15+</div>
+                    <div className="text-sm text-gray-600">Years UAE Expertise</div>
+                  </div>
+                  <div className="text-center p-4">
+                    <div className="text-3xl font-bold text-precedential-gold mb-2">AED 2B+</div>
+                    <div className="text-sm text-gray-600">Assets Protected</div>
+                  </div>
+                  <div className="text-center p-4">
+                    <div className="text-3xl font-bold text-precedential-gold mb-2">95%</div>
+                    <div className="text-sm text-gray-600">Success Rate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Core Values & Achievements */}
+          <div>
+            <h3 className="text-3xl font-playfair font-bold text-center mb-12">
+              Pillars of <span className="text-gold-gradient">Excellence</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {achievements.map((achievement, index) => (
+                <div 
+                  key={achievement.title}
+                  className="glass-card p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="w-16 h-16 rounded-full bg-precedential-gold/10 flex items-center justify-center mx-auto mb-4">
+                    <achievement.icon className="w-8 h-8 text-precedential-gold" />
+                  </div>
+                  <h4 className="text-lg font-bold mb-3">{achievement.title}</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">{achievement.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
