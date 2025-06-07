@@ -31,8 +31,8 @@
   <url>
     <loc>https://precedentiallaw.com/testimonials</loc>
     <lastmod>2025-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://precedentiallaw.com/contact</loc>
@@ -64,7 +64,7 @@
     <loc>https://precedentiallaw.com/resources</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://precedentiallaw.com/faq</loc>
@@ -189,5 +189,19 @@
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  
+  <!-- Legal Policies -->
+  <url>
+    <loc>https://precedentiallaw.com/privacy-policy</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://precedentiallaw.com/terms-of-service</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

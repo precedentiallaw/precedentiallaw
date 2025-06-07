@@ -1,54 +1,71 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import Index from "./pages/Index";
-import Services from "./pages/Services";
-import About from "./pages/About";
-import WhyUs from "./pages/WhyUs";
-import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import CaseStudies from "./pages/CaseStudies";
-import Resources from "./pages/Resources";
-import BusinessLaw from "./pages/services/BusinessLaw";
-import FamilyLaw from "./pages/services/FamilyLaw";
-import RealEstateLaw from "./pages/services/RealEstateLaw";
-import ImmigrationLaw from "./pages/services/ImmigrationLaw";
-import CorporateLawDubai from "./pages/services/CorporateLawDubai";
-import DivorceLawyersDubai from "./pages/services/DivorceLawyersDubai";
-import GoldenVisaLawyers from "./pages/services/GoldenVisaLawyers";
-import CivilLitigation from "./pages/services/CivilLitigation";
-import CommercialLitigationDubai from "./pages/services/CommercialLitigationDubai";
-import CriminalDefense from "./pages/services/CriminalDefense";
-import DebtSettlement from "./pages/services/DebtSettlement";
-import ContractDisputes from "./pages/services/ContractDisputes";
-import EmploymentLawUAE from "./pages/services/EmploymentLawUAE";
-import DIFCWills from "./pages/services/DIFCWills";
-import UAECompanyFormation from "./pages/UAECompanyFormation";
-import DubaiBusinessSetupLawyers from "./pages/DubaiBusinessSetupLawyers";
-import ExpatLegalServicesDubai from "./pages/ExpatLegalServicesDubai";
-import UAECorporateTaxLawyers from "./pages/UAECorporateTaxLawyers";
-import LegalTools from "./pages/LegalTools";
-import FAQ from "./pages/FAQ";
-import LegalGuides from "./pages/LegalGuides";
-import NotFound from "./pages/NotFound";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { Toaster } from '@/components/ui/sonner';
+import Index from '@/pages/Index';
+import About from '@/pages/About';
+import Services from '@/pages/Services';
+import Contact from '@/pages/Contact';
+import WhyUs from '@/pages/WhyUs';
+import Testimonials from '@/pages/Testimonials';
+import Blog from '@/pages/Blog';
+import FAQ from '@/pages/FAQ';
+import CaseStudies from '@/pages/CaseStudies';
+import LegalGuides from '@/pages/LegalGuides';
+import Resources from '@/pages/Resources';
+import LegalTools from '@/pages/LegalTools';
+import NotFound from '@/pages/NotFound';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsOfService from '@/pages/TermsOfService';
 
-const queryClient = new QueryClient();
+// Service Pages
+import BusinessLaw from '@/pages/services/BusinessLaw';
+import CorporateLawDubai from '@/pages/services/CorporateLawDubai';
+import FamilyLaw from '@/pages/services/FamilyLaw';
+import DivorceLawyersDubai from '@/pages/services/DivorceLawyersDubai';
+import ImmigrationLaw from '@/pages/services/ImmigrationLaw';
+import GoldenVisaLawyers from '@/pages/services/GoldenVisaLawyers';
+import RealEstateLaw from '@/pages/services/RealEstateLaw';
+import CivilLitigation from '@/pages/services/CivilLitigation';
+import CommercialLitigationDubai from '@/pages/services/CommercialLitigationDubai';
+import CriminalDefense from '@/pages/services/CriminalDefense';
+import DebtSettlement from '@/pages/services/DebtSettlement';
+import ContractDisputes from '@/pages/services/ContractDisputes';
+import EmploymentLawUAE from '@/pages/services/EmploymentLawUAE';
+import DIFCWills from '@/pages/services/DIFCWills';
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+// SEO Landing Pages
+import UAECompanyFormation from '@/pages/UAECompanyFormation';
+import DubaiBusinessSetupLawyers from '@/pages/DubaiBusinessSetupLawyers';
+import ExpatLegalServicesDubai from '@/pages/ExpatLegalServicesDubai';
+import UAECorporateTaxLawyers from '@/pages/UAECorporateTaxLawyers';
+
+import './App.css';
+
+function App() {
+  return (
     <HelmetProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+      <Router>
+        <div className="App">
           <Routes>
+            {/* Main Pages */}
             <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/why-us" element={<WhyUs />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/legal-guides" element={<LegalGuides />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/legal-tools" element={<LegalTools />} />
+            
+            {/* Legal Pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             
             {/* Service Pages */}
             <Route path="/services/business-law" element={<BusinessLaw />} />
@@ -66,31 +83,20 @@ const App = () => (
             <Route path="/services/employment-law-uae" element={<EmploymentLawUAE />} />
             <Route path="/services/difc-wills" element={<DIFCWills />} />
             
-            {/* High-Value Content Pages */}
+            {/* SEO Landing Pages */}
             <Route path="/uae-company-formation" element={<UAECompanyFormation />} />
             <Route path="/dubai-business-setup-lawyers" element={<DubaiBusinessSetupLawyers />} />
             <Route path="/expat-legal-services-dubai" element={<ExpatLegalServicesDubai />} />
             <Route path="/uae-corporate-tax-lawyers" element={<UAECorporateTaxLawyers />} />
             
-            {/* Information Pages */}
-            <Route path="/about" element={<About />} />
-            <Route path="/why-us" element={<WhyUs />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/legal-tools" element={<LegalTools />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/legal-guides" element={<LegalGuides />} />
-            
-            {/* Catch-all route */}
+            {/* 404 Page */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+          <Toaster />
+        </div>
+      </Router>
     </HelmetProvider>
-  </QueryClientProvider>
-);
+  );
+}
 
 export default App;
