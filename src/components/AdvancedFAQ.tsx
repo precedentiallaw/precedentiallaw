@@ -1,17 +1,16 @@
 
 import React, { useState } from 'react';
-import { Search, TrendingUp, MessageCircle, Phone, ExternalLink } from 'lucide-react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ChevronDown, Search, MessageSquare, Phone, Mail, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 interface FAQItem {
   id: string;
   question: string;
   answer: string;
   category: string;
-  trending: boolean;
-  relatedQuestions: string[];
-  tags: string[];
+  popular: boolean;
+  related: string[];
 }
 
 const AdvancedFAQ: React.FC = () => {
@@ -20,106 +19,137 @@ const AdvancedFAQ: React.FC = () => {
 
   const faqData: FAQItem[] = [
     {
-      id: '1',
-      question: 'How do I get divorced in Dubai as an expat?',
-      answer: 'Expatriate divorce in Dubai follows Federal Decree-Law No. 41 of 2022, which allows non-Muslims to obtain divorce under their home country law or through UAE civil courts. The process typically involves: 1) Filing a petition with the relevant court (Personal Status Court for Muslims, Civil Court for non-Muslims), 2) Mandatory mediation attempts, 3) Asset and custody discussions, 4) Final decree issuance. Timeline varies from 4-12 months depending on case complexity. For DIFC-registered marriages, DIFC Courts may have jurisdiction. We recommend immediate legal consultation to determine the most advantageous jurisdiction and strategy for your specific circumstances.',
-      category: 'Family Law',
-      trending: true,
-      relatedQuestions: ['What are child custody laws in UAE?', 'How is alimony calculated in Dubai?', 'Can I get married again after divorce in UAE?'],
-      tags: ['divorce', 'expat', 'family law', 'Dubai courts']
+      id: "1",
+      question: "What are the differences between Dubai Mainland and Free Zone company setup?",
+      answer: "Dubai Mainland companies can trade directly with the UAE market, enter government contracts, and have no restrictions on business activities within the UAE. However, they require a local UAE national partner (51% ownership) for most activities. Free Zone companies offer 100% foreign ownership, tax exemptions, and easier setup procedures, but are restricted in direct UAE market access and must operate primarily from their free zone location. Free zones are ideal for export businesses, regional headquarters, and specific industries like technology or media.",
+      category: "Business Setup",
+      popular: true,
+      related: ["licensing", "ownership", "taxation"]
     },
     {
-      id: '2',
-      question: 'What are the legal requirements for UAE Golden Visa 2024?',
-      answer: 'The UAE Golden Visa (long-term residence visa) for 2024 requires meeting specific criteria in one of several categories: 1) Investors: AED 2 million investment in real estate, AED 2 million deposit in UAE bank, or establishing a company with AED 500,000 capital, 2) Professionals: PhD holders, doctors, engineers, scientists with valid licenses, 3) Entrepreneurs: Innovative startup owners with government approval, 4) Students: Outstanding academic achievers. The visa provides 10-year renewable residence, allows family sponsorship, permits multiple entry/exit, and enables 100% business ownership in certain sectors. Documentation includes passport copies, medical certificates, Emirates ID, proof of investment/qualification, and security clearance. Processing time is typically 30-60 days through ICP or GDRFA.',
-      category: 'Immigration Law',
-      trending: true,
-      relatedQuestions: ['How much does Golden Visa cost?', 'Can Golden Visa holders sponsor parents?', 'What happens if Golden Visa investment is sold?'],
-      tags: ['golden visa', 'immigration', 'UAE residency', 'investment visa']
+      id: "2",
+      question: "How long does the Golden Visa application process take and what are the requirements?",
+      answer: "The Golden Visa application typically takes 2-4 weeks for approval after submitting complete documentation. Requirements vary by category: Real estate investors need property worth AED 2 million+, entrepreneurs require innovative projects with AED 500K investment, specialists need approval from relevant authorities, and students require outstanding academic achievement. All applicants must have valid health insurance, clear criminal record, and meet financial stability criteria. The process involves medical testing, Emirates ID issuance, and residence permit stamping.",
+      category: "Immigration",
+      popular: true,
+      related: ["investment", "residency", "requirements"]
     },
     {
-      id: '3',
-      question: 'What is the difference between UAE mainland company and free zone company?',
-      answer: 'Key differences between UAE mainland and free zone companies: MAINLAND: 100% foreign ownership available for most activities (under Federal Decree-Law No. 32 of 2021), can trade freely in UAE market, can take government contracts, follows UAE Commercial Companies Law, subject to 9% Corporate Tax on profits above AED 375,000, requires local service agent for some activities. FREE ZONE: 100% foreign ownership guaranteed, restricted trading (usually zone-to-zone or international), cannot directly access UAE mainland market without distributor, follows specific free zone regulations, may qualify for 0% Corporate Tax if meeting strict conditions, no local agent required. Choose mainland for UAE market access and government contracts; choose free zone for international trading, specific industry clusters, and potential tax advantages.',
-      category: 'Business Law',
-      trending: true,
-      relatedQuestions: ['How to convert free zone company to mainland?', 'What are UAE Corporate Tax rates?', 'Which is better for trading business?'],
-      tags: ['company formation', 'mainland', 'free zone', 'business setup']
+      id: "3",
+      question: "What are the Corporate Tax implications for UAE businesses in 2024?",
+      answer: "UAE Corporate Tax applies to businesses with annual profits exceeding AED 375,000, with a standard rate of 9%. Small businesses under this threshold are exempt. Free zone entities remain exempt if they don't conduct business with UAE mainland and meet substance requirements. The tax applies to accounting periods starting from June 1, 2023. Businesses must register, maintain proper accounting records, file annual returns, and make advance payments. Transfer pricing rules apply to transactions between related entities. Professional advice is essential for compliance and optimization strategies.",
+      category: "Tax Law",
+      popular: true,
+      related: ["compliance", "filing", "exemptions"]
     },
     {
-      id: '4',
-      question: 'Can I be arrested for bounced cheques in UAE 2024?',
-      answer: 'Under the amended Commercial Transactions Law (Federal Decree-Law No. 50 of 2022), bounced cheques due to insufficient funds are largely decriminalized. However, criminal liability remains for: 1) Issuing cheques from closed accounts (knowing the account is closed), 2) Cheques issued with fraudulent intent, 3) Bad faith or dishonest practices. For insufficient funds, the remedy is now primarily civil - the payee can use the bounced cheque as an "executive title" for direct enforcement through execution courts. Criminal cases may still apply if fraud, forgery, or deliberate deception is proven. The law aims to reduce imprisonment for commercial disputes while maintaining protection against intentional fraud. Immediate legal consultation is recommended if facing cheque-related legal action.',
-      category: 'Criminal Law',
-      trending: true,
-      relatedQuestions: ['What happens to existing bounced cheque cases?', 'How to defend against cheque fraud allegations?', 'Can banks report bounced cheques?'],
-      tags: ['bounced cheques', 'criminal law', 'commercial law', 'fraud']
+      id: "4",
+      question: "How does divorce law work for expatriates in the UAE?",
+      answer: "Expatriate couples can choose to apply their home country's law or UAE law for divorce proceedings. UAE courts have jurisdiction over divorces filed in the UAE. For non-Muslims, DIFC Courts offer an alternative using international family law principles. Key issues include asset division, child custody, and alimony. UAE law generally favors joint custody arrangements and equitable asset distribution. The process typically takes 3-6 months for uncontested cases. Mediation is encouraged before litigation. International enforcement of decisions may require additional legal steps in other jurisdictions.",
+      category: "Family Law",
+      popular: true,
+      related: ["jurisdiction", "custody", "assets"]
     },
     {
-      id: '5',
-      question: 'How much does it cost to set up a business in Dubai 2024?',
-      answer: 'Dubai business setup costs vary significantly based on license type, location, and business activities: MAINLAND TRADING LICENSE: AED 15,000-25,000 (license fee) + AED 3,000-5,000 (initial approval) + AED 2,000-10,000 (office/ejari) + AED 3,000-5,000 per visa. FREE ZONE (DMCC/DIFC): AED 15,000-50,000 (license fee) + AED 2,000-15,000 (visa fees) + AED 5,000-20,000 (office space). PROFESSIONAL LICENSE: AED 12,000-20,000 + qualification attestation costs. Additional costs include: Emirates ID (AED 1,070), medical fitness (AED 320), security deposit (varies), PRO services (AED 5,000-15,000). Total typical range: AED 25,000-75,000 for basic setup. Ongoing costs include annual license renewal (70% of initial fee), visa renewals, office rent, and compliance requirements. Free zone costs often higher initially but may offer tax advantages.',
-      category: 'Business Law',
-      trending: false,
-      relatedQuestions: ['What documents needed for business setup?', 'How long does business registration take?', 'Can I change business activity later?'],
-      tags: ['business setup cost', 'Dubai license', 'company formation', 'business expenses']
+      id: "5",
+      question: "What is the difference between DIFC Wills and UAE Mainland Wills?",
+      answer: "DIFC Wills operate under DIFC law (based on English common law) and are only for non-Muslims, covering assets in Dubai and other UAE emirates with proper registration. They offer more flexibility in asset distribution and executor appointments. UAE Mainland Wills follow Sharia law principles for Muslims and UAE Civil Code for non-Muslims. DIFC Wills are generally faster to probate (2-3 months vs 6-12 months), more predictable in outcomes, and better for complex international estates. However, UAE Mainland Wills may be more cost-effective for simple estates and are automatically recognized across all emirates.",
+      category: "Estate Planning",
+      popular: true,
+      related: ["inheritance", "probate", "sharia"]
     },
     {
-      id: '6',
-      question: 'What are tenant rights in Dubai rental disputes?',
-      answer: 'Dubai tenants have comprehensive rights under Law No. 26 of 2007 and RERA regulations: RENT PROTECTION: Landlord cannot increase rent by more than 20% if current rent is 40%+ below RERA index; 15% if 30-40% below; 10% if 20-30% below; 5% if 10-20% below; no increase if within 10% of index. EVICTION PROTECTION: Landlord must provide 12-month notice for personal use, 24-month notice for property sale to third party, 90-day notice for redevelopment. MAINTENANCE RIGHTS: Landlord responsible for major repairs, AC maintenance, structural issues. Tenant handles minor repairs and damages caused by misuse. DEPOSIT RIGHTS: Security deposit (typically 5-10% of annual rent) refundable within 14 days if no damages. DISPUTE RESOLUTION: File complaints with Rental Dispute Centre (RDC) online. Legal fees typically 3.5% of annual rent value. Decisions can be appealed within 15 days.',
-      category: 'Real Estate Law',
-      trending: false,
-      relatedQuestions: ['How to file RDC complaint online?', 'What happens if landlord sells property?', 'Can tenant break lease early?'],
-      tags: ['tenant rights', 'rental disputes', 'RDC', 'Dubai rent law']
+      id: "6",
+      question: "What are the key employment law changes in UAE for 2024?",
+      answer: "Major updates include expanded remote work regulations allowing up to 50% remote work with employer agreement, enhanced maternal leave benefits (14 weeks), paternal leave introduction (5 days), and stricter overtime regulations. New whistleblower protection laws safeguard employees reporting violations. Termination procedures now require more detailed documentation and justification. Salary payment timelines are more strictly enforced with penalties for delays. End-of-service benefits calculations have been clarified for remote workers. Companies must update employment contracts to reflect these changes and ensure HR policy compliance.",
+      category: "Employment Law",
+      popular: false,
+      related: ["contracts", "benefits", "termination"]
+    },
+    {
+      id: "7",
+      question: "How do I enforce a foreign judgment in the UAE courts?",
+      answer: "Foreign judgment enforcement requires filing an enforcement petition in competent UAE courts. The foreign court must have had proper jurisdiction, the judgment must be final and enforceable in the originating jurisdiction, and the defendant must have been properly notified. The judgment cannot violate UAE public policy or Sharia principles. Bilateral treaty countries have streamlined procedures. Required documents include certified copies of the judgment, proof of finality, evidence of proper service, and Arabic translations. The process typically takes 6-12 months. DIFC and ADGM courts have separate enforcement mechanisms for qualifying judgments.",
+      category: "Commercial Litigation",
+      popular: false,
+      related: ["enforcement", "jurisdiction", "treaties"]
+    },
+    {
+      id: "8",
+      question: "What are the requirements for opening a bank account for a UAE company?",
+      answer: "Required documents include trade license, MOA, board resolution, passport copies of signatories, visa copies, Emirates ID, NOC from sponsors, and salary certificates. Minimum deposit varies by bank (AED 3,000-100,000). Processing takes 1-3 weeks. Some banks require physical presence of all signatories, while others accept video calls. Free zone companies may have additional requirements. Banks increasingly require proof of business activity and source of funds. Professional services companies often need client contracts. Having an established relationship with the bank expedites the process. Consider using business banking specialists for complex structures.",
+      category: "Banking",
+      popular: false,
+      related: ["documentation", "deposits", "compliance"]
+    },
+    {
+      id: "9",
+      question: "What are the legal requirements for real estate investment in Dubai?",
+      answer: "Foreign investors can purchase freehold properties in designated areas including Downtown Dubai, Dubai Marina, and Jumeirah Beach Residence. Leasehold properties (99-year terms) are available in other areas. Due diligence includes verifying developer credentials, checking RERA registration, reviewing payment plans, and ensuring plot/building permits. Purchase process involves reservation, SPA signing, DLD registration, and title deed issuance. Buyers must register with DLD, pay 4% transfer fees, and obtain NOC from developers. Off-plan purchases have additional protections under Law No. 8 of 2007. Professional legal review is recommended for all transactions.",
+      category: "Real Estate",
+      popular: false,
+      related: ["freehold", "RERA", "registration"]
+    },
+    {
+      id: "10",
+      question: "How does commercial arbitration work in the UAE?",
+      answer: "UAE recognizes arbitration under UAE Arbitration Law (Federal Law No. 6 of 2018) and is a signatory to the New York Convention. Arbitration agreements must be in writing and clearly define scope. DIAC (Dubai International Arbitration Centre) is the leading institution, offering rules in Arabic and English. Proceedings can be conducted in any language, with flexible procedures. Typical timeline is 6-18 months depending on complexity. Awards are binding and enforceable like court judgments. Appeals are limited to specific procedural grounds. International arbitrators are permitted, and seat of arbitration can be UAE or elsewhere. Interim measures are available through UAE courts.",
+      category: "Arbitration",
+      popular: false,
+      related: ["DIAC", "enforcement", "procedures"]
+    },
+    {
+      id: "11",
+      question: "What are the legal implications of cryptocurrency and digital assets in UAE?",
+      answer: "UAE has comprehensive virtual asset regulations through Dubai Virtual Asset Regulation (DVAR) and ADGM's Virtual Asset Framework. Activities require licensing from respective authorities (VARA for Dubai, FSRA for ADGM). Authorized activities include trading, exchange, custody, and advisory services. All operators must meet capital requirements, implement AML/CFT controls, and ensure consumer protection. Marketing restrictions apply to retail clients. Tax treatment follows general UAE tax principles. Criminal penalties exist for unlicensed activities. International compliance considerations apply for cross-border operations. Regular regulatory updates require ongoing monitoring and compliance adjustments.",
+      category: "Fintech Law",
+      popular: false,
+      related: ["licensing", "compliance", "VARA"]
+    },
+    {
+      id: "12",
+      question: "How do I resolve a rental dispute in Dubai?",
+      answer: "Rental disputes are resolved through the Rental Dispute Centre (RDC), part of Dubai Courts. First, attempt direct negotiation with the landlord/tenant. If unsuccessful, file a case with RDC providing tenancy contract, Ejari certificate, and supporting documents. Mediation is mandatory before litigation. Common disputes include rent increases (limited to 5-20% based on RERA index), security deposit returns, maintenance responsibilities, and early termination. Decisions can be appealed to Appeal Committee within 15 days. Enforcement orders are issued for compliance. Legal representation is recommended for complex cases. Alternative dispute resolution through Dubai Courts mediation center is also available.",
+      category: "Real Estate Disputes",
+      popular: false,
+      related: ["RDC", "mediation", "RERA"]
     }
   ];
 
-  const categories = ['All', 'Family Law', 'Immigration Law', 'Business Law', 'Criminal Law', 'Real Estate Law', 'Employment Law'];
+  const categories = ["All", "Business Setup", "Immigration", "Tax Law", "Family Law", "Estate Planning", "Employment Law", "Commercial Litigation", "Banking", "Real Estate", "Arbitration", "Fintech Law", "Real Estate Disputes"];
 
   const filteredFAQs = faqData.filter(faq => {
-    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         faq.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         faq.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesCategory = selectedCategory === 'All' || faq.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    const matchesSearch = searchTerm === '' || 
+      faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
   });
 
-  const trendingFAQs = faqData.filter(faq => faq.trending);
+  const popularFAQs = faqData.filter(faq => faq.popular);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
+    <section className="py-16">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-            <span className="text-gold-gradient">Comprehensive</span> Legal FAQ
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find immediate answers to your legal questions. Our comprehensive FAQ covers the most common 
-            legal queries for businesses and individuals in the UAE.
-          </p>
-        </div>
-
-        {/* Search and Filter */}
+        {/* Search and Filters */}
         <div className="max-w-4xl mx-auto mb-12">
           <div className="relative mb-6">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Search legal questions... (e.g., 'divorce process', 'golden visa', 'business setup')"
-              className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-precedential-gold focus:border-transparent text-lg"
+              placeholder="Search legal questions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-precedential-gold"
             />
           </div>
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
+          
+          <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
+                size="sm"
                 onClick={() => setSelectedCategory(category)}
                 className={selectedCategory === category ? 
                   "bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight" : 
@@ -132,29 +162,21 @@ const AdvancedFAQ: React.FC = () => {
           </div>
         </div>
 
-        {/* Trending Questions */}
-        {!searchTerm && selectedCategory === 'All' && (
-          <div className="mb-12">
-            <div className="flex items-center gap-2 mb-6">
-              <TrendingUp className="w-6 h-6 text-red-500" />
-              <h3 className="text-2xl font-bold">Trending Legal Questions</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {trendingFAQs.map((faq) => (
-                <div 
-                  key={faq.id}
-                  className="glass-card p-6 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer"
-                  onClick={() => setSearchTerm(faq.question)}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <span className="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-medium">
-                      {faq.category}
-                    </span>
-                    <TrendingUp className="w-4 h-4 text-red-500" />
+        {/* Popular Questions */}
+        {selectedCategory === 'All' && searchTerm === '' && (
+          <div className="max-w-4xl mx-auto mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-center">Most Asked Questions</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {popularFAQs.slice(0, 4).map((faq) => (
+                <div key={faq.id} className="glass-card p-4 rounded-lg hover:shadow-md transition-shadow cursor-pointer">
+                  <div className="flex items-start">
+                    <MessageSquare className="w-5 h-5 text-precedential-gold mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2 line-clamp-2">{faq.question}</h4>
+                      <p className="text-xs text-gray-600 line-clamp-2">{faq.answer}</p>
+                      <span className="text-xs text-precedential-gold font-medium">{faq.category}</span>
+                    </div>
                   </div>
-                  <h4 className="font-medium text-precedential-black hover:text-precedential-gold transition-colors">
-                    {faq.question}
-                  </h4>
                 </div>
               ))}
             </div>
@@ -165,110 +187,80 @@ const AdvancedFAQ: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {filteredFAQs.map((faq) => (
-              <AccordionItem 
-                key={faq.id} 
-                value={faq.id}
-                className="glass-card rounded-xl border-0 overflow-hidden"
-              >
-                <AccordionTrigger className="px-6 py-4 hover:bg-gray-50 text-left">
-                  <div className="flex items-start gap-4 w-full">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
+              <AccordionItem key={faq.id} value={faq.id} className="glass-card rounded-lg px-6">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  <div className="flex items-start w-full">
+                    <div className="flex-1 pr-4">
+                      <div className="flex items-center gap-3 mb-2">
                         <span className="bg-precedential-gold/10 text-precedential-gold px-2 py-1 rounded text-xs font-medium">
                           {faq.category}
                         </span>
-                        {faq.trending && (
-                          <span className="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
-                            <TrendingUp className="w-3 h-3" />
-                            Trending
+                        {faq.popular && (
+                          <span className="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-medium">
+                            Popular
                           </span>
                         )}
                       </div>
-                      <h3 className="font-medium text-precedential-black">
-                        {faq.question}
-                      </h3>
+                      <h3 className="font-semibold text-lg">{faq.question}</h3>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 py-4 bg-gray-50/50">
-                  <div className="prose prose-gray max-w-none">
-                    <p className="text-gray-700 leading-relaxed mb-6">
-                      {faq.answer}
-                    </p>
-                    
-                    {/* Related Questions */}
-                    {faq.relatedQuestions.length > 0 && (
-                      <div className="border-t pt-4">
-                        <h4 className="font-medium text-gray-900 mb-3">Related Questions:</h4>
-                        <ul className="space-y-2">
-                          {faq.relatedQuestions.map((question, idx) => (
-                            <li key={idx}>
-                              <button 
-                                className="text-precedential-gold hover:text-precedential-goldLight text-sm cursor-pointer"
-                                onClick={() => setSearchTerm(question)}
-                              >
-                                • {question}
-                              </button>
-                            </li>
+                <AccordionContent className="pt-4 pb-6">
+                  <div className="prose prose-sm max-w-none">
+                    <p className="text-gray-700 leading-relaxed mb-4">{faq.answer}</p>
+                    {faq.related.length > 0 && (
+                      <div className="mt-4">
+                        <h4 className="text-sm font-semibold mb-2">Related Topics:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {faq.related.map((topic, idx) => (
+                            <span key={idx} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                              {topic}
+                            </span>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     )}
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {faq.tags.map((tag, idx) => (
-                        <span 
-                          key={idx}
-                          className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs cursor-pointer hover:bg-precedential-gold/10 hover:text-precedential-gold"
-                          onClick={() => setSearchTerm(tag)}
-                        >
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-
-          {filteredFAQs.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-600 mb-6">No questions found matching your search criteria.</p>
-              <Button 
-                variant="outline" 
-                onClick={() => { setSearchTerm(''); setSelectedCategory('All'); }}
-                className="border-precedential-gold text-precedential-gold hover:bg-precedential-gold hover:text-precedential-black"
-              >
-                Clear Filters
-              </Button>
-            </div>
-          )}
         </div>
 
-        {/* Contact for More Help */}
-        <div className="glass-card p-8 rounded-2xl text-center mt-12 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-playfair font-bold mb-4">
-            Need Specific Legal Advice?
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Can't find the answer you're looking for? Our legal experts are ready to provide 
-            personalized guidance for your specific situation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {filteredFAQs.length === 0 && (
+          <div className="text-center py-12">
+            <MessageSquare className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">No questions found</h3>
+            <p className="text-gray-600 mb-6">Try adjusting your search terms or category filter.</p>
             <Button className="bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Schedule Consultation
-            </Button>
-            <Button variant="outline" className="border-precedential-gold text-precedential-gold hover:bg-precedential-gold hover:text-precedential-black">
-              <Phone className="w-4 h-4 mr-2" />
-              Call +971 50 901 4120
+              Ask a Question
             </Button>
           </div>
-          <p className="text-xs text-gray-500 mt-4">
-            Initial consultation available • Response within 2 hours • Confidential discussion
-          </p>
+        )}
+
+        {/* Contact for More Questions */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <div className="glass-card p-8 rounded-2xl text-center">
+            <h3 className="text-2xl font-bold mb-4">Didn't Find Your Answer?</h3>
+            <p className="text-gray-600 mb-6">
+              Our legal experts are available to provide personalized answers to your specific questions. 
+              Contact us for a consultation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight">
+                <Phone className="w-4 h-4 mr-2" />
+                Call Now: +971 50 901 4120
+              </Button>
+              <Button variant="outline" className="border-precedential-gold text-precedential-gold hover:bg-precedential-gold hover:text-precedential-black">
+                <Mail className="w-4 h-4 mr-2" />
+                Email Consultation
+              </Button>
+            </div>
+            <div className="flex items-center justify-center gap-2 mt-4 text-sm text-gray-600">
+              <Clock className="w-4 h-4" />
+              <span>Average response time: 2 hours during business hours</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
