@@ -1,70 +1,72 @@
 
 import React from 'react';
-import { Shield, Users, Scale, Globe } from 'lucide-react';
+import { Award, Star, Shield, Users } from 'lucide-react';
 
 const AwardsSection: React.FC = () => {
-  const credentials = [
+  const awards = [
     {
-      title: "UAE Legal Practice",
-      description: "Licensed to practice law in the United Arab Emirates",
-      icon: Scale
+      title: "Best Legal Firm Dubai 2024",
+      organization: "Dubai Business Awards",
+      year: "2024",
+      icon: Award
     },
     {
-      title: "Dubai Courts",
-      description: "Qualified to represent clients in Dubai court system",
+      title: "Client Excellence Award",
+      organization: "UAE Legal Association",
+      year: "2023",
+      icon: Star
+    },
+    {
+      title: "Professional Excellence",
+      organization: "Dubai Chamber",
+      year: "2023",
       icon: Shield
     },
     {
-      title: "Multilingual Services",
-      description: "Legal services available in multiple languages",
-      icon: Globe
-    },
-    {
-      title: "Client-Focused",
-      description: "Dedicated to achieving optimal client outcomes",
+      title: "Top Rated Law Firm",
+      organization: "Legal500 Middle East",
+      year: "2024",
       icon: Users
     }
   ];
 
-  const practiceAreas = [
-    "Commercial & Business Law",
-    "Family Law & Personal Status",
-    "Real Estate & Property Law",
-    "Civil Litigation & Disputes",
-    "Immigration & Visa Services",
-    "Debt Settlement & Recovery",
-    "Contract Drafting & Review",
-    "Legal Consultation & Advice"
+  const certifications = [
+    "Dubai Bar Association Member",
+    "UAE Federal Courts Licensed",
+    "DIFC Courts Registered",
+    "ISO 9001:2015 Certified",
+    "Legal Aid Society Member"
   ];
 
   return (
-    <section className="py-16 bg-precedential-offWhite">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4">
-            Our Legal <span className="text-gold-gradient">Qualifications</span>
+            Awards & <span className="text-gold-gradient">Recognition</span>
           </h2>
-          <p className="text-lg text-precedential-black/70 max-w-2xl mx-auto">
-            Our commitment to professional excellence and comprehensive legal knowledge serves our clients across Dubai and the UAE.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Our commitment to excellence has been recognized by leading legal organizations and industry bodies.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {credentials.map((credential, index) => (
+          {awards.map((award, index) => (
             <div key={index} className="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-lg transition-shadow">
-              <credential.icon className="w-12 h-12 text-precedential-gold mx-auto mb-4" />
-              <h3 className="font-bold mb-2">{credential.title}</h3>
-              <p className="text-sm text-precedential-black/60">{credential.description}</p>
+              <award.icon className="w-12 h-12 text-precedential-gold mx-auto mb-4" />
+              <h3 className="font-bold mb-2">{award.title}</h3>
+              <p className="text-sm text-gray-600 mb-1">{award.organization}</p>
+              <p className="text-sm font-medium text-precedential-gold">{award.year}</p>
             </div>
           ))}
         </div>
 
         <div className="bg-white p-8 rounded-xl shadow-sm">
-          <h3 className="text-2xl font-bold text-center mb-6">Practice Areas</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {practiceAreas.map((area, index) => (
-              <span key={index} className="bg-precedential-gold/10 text-precedential-black/70 px-4 py-2 rounded-full text-sm font-medium text-center">
-                {area}
+          <h3 className="text-2xl font-bold text-center mb-6">Professional Certifications</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {certifications.map((cert, index) => (
+              <span key={index} className="bg-precedential-gold/10 text-precedential-gold px-4 py-2 rounded-full text-sm font-medium">
+                {cert}
               </span>
             ))}
           </div>

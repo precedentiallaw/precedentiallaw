@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
 import AchievementsSection from '@/components/AchievementsSection';
@@ -26,9 +27,6 @@ import LegalInsights from '@/components/LegalInsights';
 import LegalInsightsBlog from '@/components/LegalInsightsBlog';
 import InteractiveLegalTools from '@/components/InteractiveLegalTools';
 import AdvancedFAQ from '@/components/AdvancedFAQ';
-import LegalResourceCenter from '@/components/LegalResourceCenter';
-import ServiceWorker from '@/components/ServiceWorker';
-import SEOHead from '@/components/SEOHead';
 
 // Enhanced FAQ data optimized for GenAI search
 const enhancedFaqData = [
@@ -58,107 +56,6 @@ const enhancedFaqData = [
   }
 ];
 
-// Comprehensive structured data for homepage
-const homepageStructuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LegalService",
-      "@id": "https://precedentiallaw.com/#legalservice",
-      "name": "Precedential Law",
-      "url": "https://precedentiallaw.com",
-      "logo": "https://precedentiallaw.com/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
-      "description": "Premier legal consultancy in Dubai providing expert legal services across business law, family law, immigration, real estate, and civil litigation.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "City Tower 2 - Sheikh Zayed Road",
-        "addressLocality": "Dubai",
-        "addressRegion": "Dubai",
-        "postalCode": "",
-        "addressCountry": "AE"
-      },
-      "telephone": "+971509014120",
-      "email": "info@precedentiallaw.com",
-      "areaServed": [
-        {
-          "@type": "Place",
-          "name": "Dubai"
-        },
-        {
-          "@type": "Place", 
-          "name": "United Arab Emirates"
-        }
-      ],
-      "serviceType": [
-        "Business Law",
-        "Corporate Law",
-        "Family Law",
-        "Divorce Law",
-        "Immigration Law",
-        "Real Estate Law",
-        "Civil Litigation",
-        "Criminal Defense",
-        "Employment Law",
-        "Contract Law"
-      ],
-      "openingHours": [
-        "Mo-Th 09:00-17:00",
-        "Fr 09:00-12:30"
-      ],
-      "priceRange": "$$$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://precedentiallaw.com/#localbusiness",
-      "name": "Precedential Law",
-      "alternateName": "Precedential Law Dubai",
-      "url": "https://precedentiallaw.com",
-      "logo": "https://precedentiallaw.com/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
-      "description": "Dubai's premier legal consultancy offering comprehensive legal services to businesses and individuals across the UAE.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "City Tower 2 - Sheikh Zayed Road",
-        "addressLocality": "Dubai",
-        "addressRegion": "Dubai",
-        "addressCountry": "AE"
-      },
-      "telephone": "+971509014120",
-      "email": "info@precedentiallaw.com",
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "25.2048",
-        "longitude": "55.2708"
-      },
-      "openingHours": [
-        "Mo-Th 09:00-17:00",
-        "Fr 09:00-12:30"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/company/precedential-law",
-        "https://twitter.com/precedential_law"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://precedentiallaw.com/#website",
-      "url": "https://precedentiallaw.com",
-      "name": "Precedential Law - Dubai Legal Services",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://precedentiallaw.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  ]
-};
-
 const Index: React.FC = () => {
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
@@ -183,16 +80,58 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEOHead
-        title="Dubai's Premier Legal Authority | Precedential Law - UAE Lawyers | Business, Family, Immigration Law"
-        description="UAE's leading legal consultancy serving corporations & high-net-worth individuals. Expert Dubai lawyers specializing in business law, golden visa, expat divorce, real estate, and complex commercial litigation. 15+ years UAE expertise, 95% success rate."
-        keywords="Dubai lawyers, UAE legal services, business law Dubai, golden visa lawyer, expat divorce Dubai, immigration lawyer UAE, real estate law Dubai, commercial litigation, DIFC wills, UAE company formation, Dubai legal consultancy, family law UAE, corporate lawyer Dubai, legal advice UAE"
-        canonicalUrl="https://precedentiallaw.com/"
-        pageType="website"
-        structuredData={homepageStructuredData}
-      />
+      <Helmet>
+        <title>Dubai's Premier Legal Authority | Precedential Law - UAE Lawyers | Business, Family, Immigration Law</title>
+        <meta name="description" content="UAE's leading legal consultancy serving corporations & high-net-worth individuals. Expert Dubai lawyers specializing in business law, golden visa, expat divorce, real estate, and complex commercial litigation. 15+ years UAE expertise, 95% success rate." />
+        <meta name="keywords" content="Dubai lawyers, UAE legal services, business law Dubai, golden visa lawyer, expat divorce Dubai, immigration lawyer UAE, real estate law Dubai, commercial litigation, DIFC wills, UAE company formation, Dubai legal consultancy, family law UAE, corporate lawyer Dubai, legal advice UAE" />
+        <link rel="canonical" href="https://precedentiallaw.com/" />
+        
+        {/* Enhanced Open Graph tags for social sharing */}
+        <meta property="og:title" content="Dubai's Premier Legal Authority | Precedential Law - Expert UAE Lawyers" />
+        <meta property="og:description" content="Distinguished legal counsel for corporations and high-net-worth individuals. Expert representation in business law, golden visa, divorce, and commercial litigation across Dubai and UAE." />
+        <meta property="og:url" content="https://precedentiallaw.com/" />
+        <meta property="og:site_name" content="Precedential Law" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Enhanced Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@precedential_law" />
+        <meta name="twitter:title" content="Dubai's Premier Legal Authority | Precedential Law" />
+        <meta name="twitter:description" content="Expert UAE lawyers for business law, golden visa, divorce, and commercial litigation. 15+ years expertise, 95% success rate." />
+        
+        {/* Additional SEO meta tags */}
+        <meta name="author" content="Precedential Law" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        
+        {/* Geo-targeting */}
+        <meta name="geo.region" content="AE-DU" />
+        <meta name="geo.placename" content="Dubai" />
+        <meta name="geo.position" content="25.2048;55.2708" />
+        <meta name="ICBM" content="25.2048, 55.2708" />
+        
+        {/* Language and localization */}
+        <meta name="language" content="English" />
+        <meta http-equiv="content-language" content="en-us" />
+        
+        {/* Preload critical resources for performance */}
+        <link rel="preload" fetchPriority="high" as="image" href="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" type="image/png" />
+        <link rel="preload" as="font" href="/fonts/playfair-display.woff2" type="font/woff2" crossOrigin="anonymous" />
+        
+        {/* Additional structured data hints */}
+        <meta name="theme-color" content="#d4af37" />
+        <meta name="apple-mobile-web-app-title" content="Precedential Law" />
+        <meta name="application-name" content="Precedential Law" />
+        
+        {/* Enhanced mobile optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </Helmet>
       
-      <ServiceWorker />
       <AnalyticsTracking />
       <NavBar />
       
@@ -213,10 +152,6 @@ const Index: React.FC = () => {
         
         <ScrollReveal animation="fade-up">
           <InteractiveLegalTools />
-        </ScrollReveal>
-        
-        <ScrollReveal animation="fade-up">
-          <LegalResourceCenter />
         </ScrollReveal>
         
         <ScrollReveal animation="fade-left">
@@ -277,6 +212,8 @@ const Index: React.FC = () => {
       <LiveChat />
       <WhatsAppButton phoneNumber="971509014120" />
       
+      <LegalServiceSchema />
+      <LocalBusinessSchema />
       <FAQSchema faqs={enhancedFaqData} />
     </div>
   );

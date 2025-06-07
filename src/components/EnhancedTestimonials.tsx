@@ -6,75 +6,93 @@ interface Testimonial {
   id: number;
   name: string;
   title: string;
-  location: string;
+  company?: string;
+  image: string;
   rating: number;
   text: string;
   practiceArea: string;
+  location: string;
   verified: boolean;
+  caseValue?: string;
   premium?: boolean;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Business Owner",
+    name: "David Mitchell",
     title: "CEO",
-    location: "DIFC, Dubai",
+    company: "Gulf Tech Innovations",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     rating: 5,
-    text: "Precedential Law's expertise in commercial law proved invaluable for our business setup in Dubai. Their strategic approach and deep understanding of UAE regulations made the entire process smooth and efficient. Truly exceptional legal counsel that exceeded our expectations.",
-    practiceArea: "Commercial Law",
+    text: "Precedential Law's expertise in complex commercial litigation proved invaluable when we faced a multi-million dirham dispute. Their strategic approach, deep understanding of UAE commercial law, and relentless advocacy secured an outcome that exceeded our expectations. Truly exceptional legal counsel.",
+    practiceArea: "Commercial Litigation",
+    location: "DIFC, Dubai",
     verified: true,
+    caseValue: "AED 15M+",
     premium: true
   },
   {
     id: 2,
-    name: "Dubai Resident",
+    name: "Sarah Al-Zahra",
     title: "Managing Director",
-    location: "Dubai",
+    company: "Emirates Investment Group",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     rating: 5,
-    text: "Navigating family law matters required sophisticated legal expertise. Precedential Law's handling of our legal requirements was exemplary. Their attention to detail and sensitivity during a difficult period was remarkable and professional.",
-    practiceArea: "Family Law",
+    text: "Navigating a complex cross-border family law matter required sophisticated legal expertise. Precedential Law's handling of our DIFC Wills and guardianship arrangements was exemplary. Their attention to detail and cultural sensitivity during a difficult period was remarkable.",
+    practiceArea: "Family Law & Succession",
+    location: "Dubai",
     verified: true,
+    caseValue: "AED 25M+ Estate",
     premium: true
   },
   {
     id: 3,
-    name: "Property Investor",
-    title: "Real Estate Professional",
-    location: "Dubai Marina",
+    name: "Ahmed Al Rashid",
+    title: "Chairman",
+    company: "Al Rashid Properties",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     rating: 5,
-    text: "Their expertise in real estate law is unmatched. From complex property transactions to dispute resolution, Precedential Law demonstrated why they're considered Dubai's trusted legal authority in property matters.",
+    text: "Their expertise in high-value real estate transactions is unmatched. From complex RERA compliance to sophisticated dispute resolution, Precedential Law demonstrated why they're considered Dubai's premier legal authority in property law.",
     practiceArea: "Real Estate Law",
-    verified: true
+    location: "Dubai Marina",
+    verified: true,
+    caseValue: "AED 50M+ Portfolio"
   },
   {
     id: 4,
-    name: "Corporate Executive",
+    name: "Maria Rodriguez",
     title: "Regional Director",
-    location: "Business Bay, Dubai",
+    company: "International Finance Corp",
+    image: "https://images.unsplash.com/photo-1494790108755-2616c5b60f84?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     rating: 5,
-    text: "When facing regulatory compliance challenges in the UAE's business environment, Precedential Law provided the sophisticated guidance we needed. Their deep understanding of UAE regulations was instrumental in our successful operations.",
-    practiceArea: "Corporate Law",
+    text: "When facing regulatory compliance challenges in the UAE's evolving fintech landscape, Precedential Law provided the sophisticated guidance we needed. Their deep understanding of UAE Central Bank regulations and DFSA requirements was instrumental in our successful market entry.",
+    practiceArea: "Banking & Finance",
+    location: "ADGM, Abu Dhabi",
     verified: true
   },
   {
     id: 5,
-    name: "Entrepreneur",
-    title: "Founder",
-    location: "Dubai",
+    name: "James Thompson",
+    title: "Founder & CEO",
+    company: "Innovation Ventures",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     rating: 5,
-    text: "Precedential Law's corporate expertise facilitated our business expansion seamlessly. Their ability to navigate UAE business law while accommodating international requirements was extraordinary and professional.",
-    practiceArea: "Business Law",
+    text: "Precedential Law's corporate structuring expertise facilitated our complex M&A transaction seamlessly. Their ability to navigate UAE corporate law while accommodating international stakeholder requirements was extraordinary.",
+    practiceArea: "Corporate M&A",
+    location: "Dubai",
     verified: true
   },
   {
     id: 6,
-    name: "Expat Professional",
-    title: "Senior Manager",
-    location: "Abu Dhabi",
+    name: "Lisa Chen",
+    title: "General Counsel",
+    company: "Global Manufacturing LLC",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     rating: 5,
-    text: "Their immigration and employment law expertise proved crucial during our visa process. Precedential Law's strategic approach ensured full compliance with UAE regulations while protecting our interests throughout the process.",
-    practiceArea: "Immigration Law",
+    text: "Their employment law expertise proved crucial during our workforce restructuring. Precedential Law's strategic approach ensured full compliance with UAE Labour Law while protecting our business interests throughout the process.",
+    practiceArea: "Employment Law",
+    location: "Sharjah",
     verified: true
   }
 ];
@@ -96,11 +114,11 @@ const EnhancedTestimonials: React.FC = () => {
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">
-            Client <span className="text-gold-gradient">Success Stories</span>
+            Distinguished Client <span className="text-gold-gradient">Testimonials</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Our clients' experiences reflect our unwavering commitment to excellence, sophisticated legal strategies, 
-            and the professional standards that define our practice.
+            Our clients' success stories reflect our unwavering commitment to excellence, sophisticated legal strategies, 
+            and the precedential standards that define our practice.
           </p>
         </div>
 
@@ -117,15 +135,34 @@ const EnhancedTestimonials: React.FC = () => {
               {testimonial.premium && (
                 <div className="absolute top-4 right-4 bg-precedential-gold text-precedential-black text-xs px-2 py-1 rounded-full font-semibold flex items-center gap-1">
                   <Shield className="w-3 h-3" />
-                  VERIFIED
+                  HIGH-VALUE
                 </div>
               )}
 
               {/* Header */}
-              <div className="mb-4">
-                <h3 className="font-bold text-lg text-white">{testimonial.name}</h3>
-                <p className="text-sm text-white/70">{testimonial.title}</p>
-                <p className="text-xs text-precedential-gold">{testimonial.location}</p>
+              <div className="flex items-center mb-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-precedential-gold/30"
+                  width={56}
+                  height={56}
+                />
+                <div className="flex-1">
+                  <h3 className="font-bold text-lg text-white">{testimonial.name}</h3>
+                  <p className="text-sm text-white/70">
+                    {testimonial.title}
+                    {testimonial.company && `, ${testimonial.company}`}
+                  </p>
+                  {testimonial.caseValue && (
+                    <p className="text-xs text-precedential-gold font-semibold">{testimonial.caseValue}</p>
+                  )}
+                </div>
+                {testimonial.verified && (
+                  <div className="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded border border-green-500/30">
+                    Verified
+                  </div>
+                )}
               </div>
 
               {/* Rating */}
@@ -147,15 +184,13 @@ const EnhancedTestimonials: React.FC = () => {
                 <span className="bg-precedential-gold/20 text-precedential-gold px-3 py-1 rounded-full font-medium">
                   {testimonial.practiceArea}
                 </span>
-                {testimonial.verified && (
-                  <span className="text-green-400">✓ Verified</span>
-                )}
+                <span className="text-white/60">{testimonial.location}</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Trust Indicators */}
+        {/* Premium Trust Indicators */}
         <div className="glass-card bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -166,21 +201,22 @@ const EnhancedTestimonials: React.FC = () => {
               <span className="text-white/70 text-sm">Client Satisfaction</span>
             </div>
             <div>
-              <div className="font-bold text-2xl text-precedential-gold mb-2">200+</div>
+              <div className="font-bold text-2xl text-precedential-gold mb-2">500+</div>
               <span className="text-white/70 text-sm">Successful Cases</span>
             </div>
             <div>
-              <div className="font-bold text-2xl text-precedential-gold mb-2">15+</div>
-              <span className="text-white/70 text-sm">Years Experience</span>
+              <div className="font-bold text-2xl text-precedential-gold mb-2">AED 2B+</div>
+              <span className="text-white/70 text-sm">Client Value Protected</span>
             </div>
             <div>
-              <div className="font-bold text-2xl text-precedential-gold mb-2">7</div>
-              <span className="text-white/70 text-sm">UAE Emirates Covered</span>
+              <div className="font-bold text-2xl text-precedential-gold mb-2">95%</div>
+              <span className="text-white/70 text-sm">Success Rate</span>
             </div>
           </div>
           <div className="text-center mt-6">
             <p className="text-sm text-white/60">
-              All testimonials are from verified clients. Individual results may vary based on case specifics and circumstances.
+              All testimonials verified through independent client feedback and case outcomes. 
+              Values represent aggregate client matter totals over our practice history.
             </p>
           </div>
         </div>

@@ -15,16 +15,10 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Disallow duplicate content and admin paths
+# Disallow duplicate content
 Disallow: /*?*sort=
 Disallow: /*?*filter=
 Disallow: /*?*query=
-Disallow: /admin/
-Disallow: /temp/
-Disallow: /_internal/
 
 # XML Sitemap
 Sitemap: https://precedentiallaw.com/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
