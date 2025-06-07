@@ -1,38 +1,27 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Shield, Award, Scale, CheckCircle } from 'lucide-react';
 import Logo from './Logo';
-
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const handleParallax = () => {
       if (!heroRef.current) return;
       const scrollPosition = window.scrollY;
       const parallaxElements = heroRef.current.querySelectorAll('.parallax');
-      
-      parallaxElements.forEach((element) => {
+      parallaxElements.forEach(element => {
         const speed = parseFloat((element as HTMLElement).dataset.speed || '0.2');
         (element as HTMLElement).style.transform = `translateY(${scrollPosition * speed}px)`;
       });
     };
-    
     window.addEventListener('scroll', handleParallax);
     return () => window.removeEventListener('scroll', handleParallax);
   }, []);
-
-  return (
-    <section 
-      ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-precedential-black"
-      id="hero"
-    >
+  return <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-precedential-black" id="hero">
       {/* Premium Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v-40c11.046 0 20 8.954 20 20z'/%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v-40c11.046 0 20 8.954 20 20z'/%3E%3C/g%3E%3C/svg%3E")`
+      }} />
       </div>
 
       {/* Elegant Geometric Elements */}
@@ -55,7 +44,7 @@ const HeroSection: React.FC = () => {
             <div className="flex items-center gap-4 text-precedential-gold/80 text-sm font-medium">
               <div className="flex items-center gap-2">
                 <Award className="w-4 h-4" />
-                <span>UAE Bar Certified</span>
+                <span>Clients First, Always.</span>
               </div>
               <div className="w-1 h-4 bg-precedential-gold/40"></div>
               <div className="flex items-center gap-2">
@@ -83,20 +72,14 @@ const HeroSection: React.FC = () => {
           </p>
           
           <div className="opacity-0 animate-fade-in stagger-2 flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <a 
-              href="#contact" 
-              className="group bg-precedential-gold hover:bg-precedential-goldLight text-precedential-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-precedential-gold/30 transform hover:-translate-y-1"
-            >
+            <a href="#contact" className="group bg-precedential-gold hover:bg-precedential-goldLight text-precedential-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-precedential-gold/30 transform hover:-translate-y-1">
               <Shield className="w-5 h-5 mr-2 inline-block transition-transform group-hover:scale-110" />
               Schedule Confidential Consultation
             </a>
             
-            <a 
-              href="#practice-areas" 
-              className="px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 
+            <a href="#practice-areas" className="px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 
                        text-white border-2 border-white/30 hover:border-precedential-gold 
-                       hover:text-precedential-gold hover:bg-white/5"
-            >
+                       hover:text-precedential-gold hover:bg-white/5">
               Explore Legal Expertise
             </a>
           </div>
@@ -132,8 +115,6 @@ const HeroSection: React.FC = () => {
           <Scale className="w-6 h-6 mt-2" />
         </a>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
