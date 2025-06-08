@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -30,6 +31,8 @@ import DIFCWills from "./pages/services/DIFCWills";
 import UAECompanyFormation from "./pages/UAECompanyFormation";
 import DubaiBusinessSetupLawyers from "./pages/DubaiBusinessSetupLawyers";
 import ExpatLegalServicesDubai from "./pages/ExpatLegalServicesDubai";
+import ExpatLegalServicesDubaiEnhanced from "./pages/ExpatLegalServicesDubaiEnhanced";
+import ExpatLegalGuides from "./pages/ExpatLegalGuides";
 import UAECorporateTaxLawyers from "./pages/UAECorporateTaxLawyers";
 import LegalTools from "./pages/LegalTools";
 import FAQ from "./pages/FAQ";
@@ -73,6 +76,8 @@ const App = () => (
             <Route path="/uae-company-formation" element={<UAECompanyFormation />} />
             <Route path="/dubai-business-setup-lawyers" element={<DubaiBusinessSetupLawyers />} />
             <Route path="/expat-legal-services-dubai" element={<ExpatLegalServicesDubai />} />
+            <Route path="/expat-legal-services-enhanced" element={<ExpatLegalServicesDubaiEnhanced />} />
+            <Route path="/expat-legal-guides" element={<ExpatLegalGuides />} />
             <Route path="/uae-corporate-tax-lawyers" element={<UAECorporateTaxLawyers />} />
             
             {/* Enhanced Tools & Features */}

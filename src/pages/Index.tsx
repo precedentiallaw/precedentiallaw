@@ -14,6 +14,8 @@ import LegalServiceSchema from '@/components/ui/schema-markup';
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 import PerformanceMonitor from '@/components/PerformanceMonitor';
 import FAQ from '@/components/FAQ';
+import FinalCTA from '@/components/FinalCTA';
+import ExpatLegalEmergencySection from '@/components/ExpatLegalEmergencySection';
 
 const Index: React.FC = () => {
   return (
@@ -21,7 +23,7 @@ const Index: React.FC = () => {
       <Helmet>
         <title>Precedential Law - Premier Dubai Legal Consultancy | Expert Legal Services UAE</title>
         <meta name="description" content="Leading Dubai law firm providing expert legal services across business law, family law, real estate, immigration, and commercial litigation. Schedule your consultation today." />
-        <meta name="keywords" content="Dubai law firm, legal services UAE, business lawyer Dubai, family law Dubai, divorce lawyer Dubai, immigration lawyer UAE, real estate lawyer Dubai, commercial litigation" />
+        <meta name="keywords" content="Dubai law firm, legal services UAE, business lawyer Dubai, family law Dubai, divorce lawyer Dubai, immigration lawyer UAE, real estate lawyer Dubai, commercial litigation, expat legal services Dubai, UAE legal emergency" />
         <link rel="canonical" href="https://precedentiallaw.com/" />
         
         {/* Open Graph / Facebook */}
@@ -88,11 +90,13 @@ const Index: React.FC = () => {
       
       <NavBar />
       <HeroSection />
+      <ExpatLegalEmergencySection />
       <ServicesSection />
       <AboutSection />
       <FAQ />
       <EnhancedTestimonials />
       <ContactSection />
+      <FinalCTA />
       <Footer />
       
       <FloatingCTA />
