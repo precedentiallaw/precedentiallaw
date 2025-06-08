@@ -13,6 +13,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import LegalServiceSchema from '@/components/ui/schema-markup';
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 import PerformanceMonitor from '@/components/PerformanceMonitor';
+import FAQ from '@/components/FAQ';
 
 const Index: React.FC = () => {
   return (
@@ -89,6 +90,7 @@ const Index: React.FC = () => {
       <HeroSection />
       <ServicesSection />
       <AboutSection />
+      <FAQ />
       <EnhancedTestimonials />
       <ContactSection />
       <Footer />
