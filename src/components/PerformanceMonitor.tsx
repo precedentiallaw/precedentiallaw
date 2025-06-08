@@ -1,15 +1,22 @@
 
 import React, { useEffect } from 'react';
 
+// Declare gtag type for Google Analytics
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const PerformanceMonitor: React.FC = () => {
   useEffect(() => {
     // Monitor Core Web Vitals
     const reportWebVitals = (metric: any) => {
       console.log(`${metric.name}: ${metric.value}`);
       
-      // Send to analytics if needed
-      if (typeof gtag !== 'undefined') {
-        gtag('event', metric.name, {
+      // Send to analytics if available
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', metric.name, {
           value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
           event_category: 'Web Vitals',
           event_label: metric.id,

@@ -49,7 +49,7 @@ const Index: React.FC = () => {
         {/* Preload critical resources */}
         <link
           rel="preload"
-          fetchpriority="high"
+          fetchPriority="high"
           as="image"
           href="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png"
           type="image/png"
