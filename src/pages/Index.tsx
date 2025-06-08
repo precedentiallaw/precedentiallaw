@@ -16,6 +16,11 @@ import PerformanceMonitor from '@/components/PerformanceMonitor';
 import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
 import ExpatLegalEmergencySection from '@/components/ExpatLegalEmergencySection';
+import MobileEmergencyOverlay from '@/components/MobileEmergencyOverlay';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
+import DownloadableGuides from '@/components/DownloadableGuides';
+import NewsletterSubscription from '@/components/NewsletterSubscription';
+import AnalyticsTracking from '@/components/AnalyticsTracking';
 
 const Index: React.FC = () => {
   return (
@@ -87,14 +92,17 @@ const Index: React.FC = () => {
       
       <LegalServiceSchema />
       <PerformanceMonitor />
+      <AnalyticsTracking />
       
       <NavBar />
       <HeroSection />
       <ExpatLegalEmergencySection />
       <ServicesSection />
+      <DownloadableGuides />
       <AboutSection />
       <FAQ />
       <EnhancedTestimonials />
+      <NewsletterSubscription />
       <ContactSection />
       <FinalCTA />
       <Footer />
@@ -102,6 +110,8 @@ const Index: React.FC = () => {
       <FloatingCTA />
       <WhatsAppButton phoneNumber="971509014120" />
       <PWAInstallPrompt />
+      <MobileEmergencyOverlay />
+      <ExitIntentPopup />
     </div>
   );
 };
