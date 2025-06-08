@@ -41,6 +41,20 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Enhanced Tools & Features -->
+  <url>
+    <loc>https://precedentiallaw.com/legal-tools-enhanced</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://precedentiallaw.com/client-portal</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- High-Value Content Pages -->
   <url>
     <loc>https://precedentiallaw.com/blog</loc>
@@ -79,7 +93,13 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Service Pages - High Priority Keywords -->
+  <!-- Service Pages - Enhanced -->
+  <url>
+    <loc>https://precedentiallaw.com/services/business-law-enhanced</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://precedentiallaw.com/services/business-law</loc>
     <lastmod>2025-01-06</lastmod>

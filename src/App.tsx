@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -36,6 +35,9 @@ import LegalTools from "./pages/LegalTools";
 import FAQ from "./pages/FAQ";
 import LegalGuides from "./pages/LegalGuides";
 import NotFound from "./pages/NotFound";
+import EnhancedBusinessLaw from "./pages/services/EnhancedBusinessLaw";
+import LegalToolsEnhanced from "./pages/LegalToolsEnhanced";
+import ClientPortalPage from "./pages/ClientPortalPage";
 
 const queryClient = new QueryClient();
 
@@ -50,8 +52,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
             
-            {/* Service Pages */}
+            {/* Enhanced Service Pages */}
             <Route path="/services/business-law" element={<BusinessLaw />} />
+            <Route path="/services/business-law-enhanced" element={<EnhancedBusinessLaw />} />
             <Route path="/services/corporate-law-dubai" element={<CorporateLawDubai />} />
             <Route path="/services/family-law" element={<FamilyLaw />} />
             <Route path="/services/divorce-lawyers-dubai" element={<DivorceLawyersDubai />} />
@@ -71,6 +74,10 @@ const App = () => (
             <Route path="/dubai-business-setup-lawyers" element={<DubaiBusinessSetupLawyers />} />
             <Route path="/expat-legal-services-dubai" element={<ExpatLegalServicesDubai />} />
             <Route path="/uae-corporate-tax-lawyers" element={<UAECorporateTaxLawyers />} />
+            
+            {/* Enhanced Tools & Features */}
+            <Route path="/legal-tools-enhanced" element={<LegalToolsEnhanced />} />
+            <Route path="/client-portal" element={<ClientPortalPage />} />
             
             {/* Information Pages */}
             <Route path="/about" element={<About />} />
