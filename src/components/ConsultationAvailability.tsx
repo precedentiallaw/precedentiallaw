@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { Clock, Users, CheckCircle, AlertCircle } from 'lucide-react';
+import { Clock, Users, CheckCircle, AlertCircle, Phone, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface AvailabilityStatus {
   isAvailable: boolean;
@@ -39,10 +40,15 @@ const ConsultationAvailability: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleBookConsultation = () => {
-    (window as any).trackConversion?.('consultation_booking');
-    // In a real implementation, this would open a booking calendar
-    alert('Opening consultation booking calendar...');
+  const handleCall = () => {
+    window.location.href = 'tel:+971509014120';
+    (window as any).trackConversion?.('consultation_call');
+  };
+
+  const handleWhatsApp = () => {
+    const message = "Hello! I'd like to book a free legal consultation. Please let me know your next available slot.";
+    window.open(`https://wa.me/971509014120?text=${encodeURIComponent(message)}`, '_blank');
+    (window as any).trackConversion?.('consultation_whatsapp');
   };
 
   return (
@@ -83,16 +89,40 @@ const ConsultationAvailability: React.FC = () => {
         </div>
       </div>
 
-      <Button 
-        onClick={handleBookConsultation}
-        className={`w-full ${
-          status.isAvailable 
-            ? 'bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight' 
-            : 'bg-gray-600 text-white hover:bg-gray-700'
-        }`}
-      >
-        {status.isAvailable ? 'Book Free Consultation' : 'Schedule for Tomorrow'}
-      </Button>
+      <div className="space-y-3">
+        <Link to="/contact">
+          <Button 
+            className={`w-full ${
+              status.isAvailable 
+                ? 'bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight' 
+                : 'bg-gray-600 text-white hover:bg-gray-700'
+            }`}
+          >
+            {status.isAvailable ? 'Book Free Consultation' : 'Schedule for Tomorrow'}
+          </Button>
+        </Link>
+
+        <div className="flex gap-2">
+          <Button
+            onClick={handleCall}
+            variant="outline"
+            size="sm"
+            className="flex-1"
+          >
+            <Phone className="w-4 h-4 mr-1" />
+            Call
+          </Button>
+          <Button
+            onClick={handleWhatsApp}
+            variant="outline"
+            size="sm"
+            className="flex-1 text-green-600 border-green-600 hover:bg-green-600 hover:text-white"
+          >
+            <MessageSquare className="w-4 h-4 mr-1" />
+            WhatsApp
+          </Button>
+        </div>
+      </div>
 
       {!status.isAvailable && (
         <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">

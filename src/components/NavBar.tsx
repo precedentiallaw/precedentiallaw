@@ -54,7 +54,7 @@ const NavBar: React.FC = () => {
         { name: "Immigration Law", href: "/services/immigration-law" },
         { name: "Golden Visa Lawyers", href: "/services/golden-visa-lawyers" },
         { name: "UAE Company Formation", href: "/uae-company-formation" },
-        { name: "Expat Legal Services", href: "/expat-legal-services-dubai" },
+        { name: "Expat Legal Services", href: "/expat-legal-services-enhanced" },
       ]
     }
   ];
@@ -73,14 +73,14 @@ const NavBar: React.FC = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled 
-          ? 'bg-black/90 backdrop-blur-lg py-2 shadow-lg' 
-          : 'bg-transparent py-4'
+          ? 'bg-precedential-black/95 backdrop-blur-lg py-2 shadow-lg border-b border-precedential-gold/20' 
+          : 'bg-precedential-black/90 backdrop-blur-sm py-4'
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 animate-fade-in">
           <Logo 
-            variant={isScrolled ? "gold-on-black" : "gold-on-black"} 
+            variant="gold-on-black" 
             size="medium" 
             className="transition-all duration-300" 
           />
@@ -93,8 +93,8 @@ const NavBar: React.FC = () => {
               <NavigationMenuItem key={link.name}>
                 <Link to={link.href}>
                   <NavigationMenuLink className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors text-white/90 hover:text-precedential-gold",
-                    location.pathname === link.href && "text-precedential-gold"
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors text-white hover:text-precedential-gold hover:bg-white/10",
+                    location.pathname === link.href && "text-precedential-gold bg-white/10"
                   )}>
                     {link.name}
                   </NavigationMenuLink>
@@ -103,19 +103,19 @@ const NavBar: React.FC = () => {
             ))}
             
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white/90 hover:text-precedential-gold">
+              <NavigationMenuTrigger className="text-white hover:text-precedential-gold hover:bg-white/10">
                 Services
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-3 p-6 md:grid-cols-3">
+                <div className="grid w-[800px] gap-3 p-6 md:grid-cols-3 bg-white border border-gray-200 shadow-lg">
                   {serviceCategories.map((category) => (
                     <div key={category.title} className="space-y-3">
-                      <h4 className="text-sm font-medium text-precedential-gold">{category.title}</h4>
+                      <h4 className="text-sm font-medium text-precedential-gold border-b border-precedential-gold/20 pb-2">{category.title}</h4>
                       <ul className="space-y-2">
                         {category.services.map((service) => (
                           <li key={service.name}>
                             <Link to={service.href}>
-                              <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm">
+                              <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-precedential-gold/10 hover:text-precedential-black focus:bg-precedential-gold/10 focus:text-precedential-black text-sm text-gray-700 hover:text-precedential-black">
                                 {service.name}
                               </NavigationMenuLink>
                             </Link>
@@ -160,13 +160,13 @@ const NavBar: React.FC = () => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          'lg:hidden fixed inset-0 bg-black/95 backdrop-blur-lg transition-all duration-300',
+          'lg:hidden fixed inset-0 bg-precedential-black/98 backdrop-blur-lg transition-all duration-300 z-40',
           mobileMenuOpen 
             ? 'opacity-100 pointer-events-auto' 
             : 'opacity-0 pointer-events-none'
         )}
       >
-        <nav className="h-full flex flex-col items-center justify-center gap-6">
+        <nav className="h-full flex flex-col items-center justify-center gap-6 pt-20">
           <Logo variant="gold-on-black" size="medium" className="mb-8" />
           
           {mainNavLinks.map((link, index) => (
@@ -174,7 +174,7 @@ const NavBar: React.FC = () => {
               key={link.name}
               to={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-white/90 hover:text-precedential-gold text-2xl font-playfair transition-colors animate-fade-in"
+              className="text-white hover:text-precedential-gold text-2xl font-playfair transition-colors animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {link.name}
@@ -184,7 +184,7 @@ const NavBar: React.FC = () => {
           <Link
             to="/services"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-white/90 hover:text-precedential-gold text-2xl font-playfair transition-colors animate-fade-in"
+            className="text-white hover:text-precedential-gold text-2xl font-playfair transition-colors animate-fade-in"
           >
             Services
           </Link>
