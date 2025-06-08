@@ -1,12 +1,14 @@
-
 {
   "name": "Precedential Law - Premier Dubai Legal Services",
   "short_name": "Precedential Law",
-  "description": "Expert legal services in Dubai and UAE. Business law, family law, real estate, immigration, and comprehensive legal consultation.",
+  "description": "Leading legal services in Dubai and UAE — business law, corporate structuring, family law, real estate, immigration, and high-profile litigation.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#D4AF37",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
@@ -19,22 +21,38 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
+      "sizes": "96x96",
+      "type": "image/png"
     }
   ],
-  "categories": ["business", "legal", "professional"],
+  "categories": [
+    "business",
+    "legal",
+    "professional",
+    "corporate",
+    "services"
+  ],
   "screenshots": [
     {
       "src": "/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "label": "Precedential Law Homepage"
+      "label": "Precedential Law - Homepage"
     }
   ],
   "shortcuts": [
     {
       "name": "Schedule Consultation",
       "short_name": "Book Now",
-      "description": "Schedule a legal consultation",
+      "description": "Schedule a legal consultation.",
       "url": "/contact",
       "icons": [
         {
@@ -46,8 +64,20 @@
     {
       "name": "Legal Services",
       "short_name": "Services",
-      "description": "Browse our legal services",
+      "description": "Browse our legal services.",
       "url": "/services",
+      "icons": [
+        {
+          "src": "/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Legal Blog & Insights",
+      "short_name": "Blog",
+      "description": "Read our latest legal articles and case insights.",
+      "url": "/blog",
       "icons": [
         {
           "src": "/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
