@@ -76,7 +76,7 @@
   }
 
   .btn-gold {
-    @apply bg-gold-600 hover:bg-gold-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-elegant hover:shadow-premium hover:-translate-y-0.5;
+    @apply bg-gold-600 hover:bg-gold-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-0.5;
   }
 
   /* Grid System */
@@ -108,7 +108,7 @@
 
   /* Mobile CTA */
   .mobile-cta {
-    @apply fixed bottom-0 left-0 right-0 z-40 bg-navy-800 text-white p-4 shadow-luxury md:hidden;
+    @apply fixed bottom-0 left-0 right-0 z-40 bg-navy-800 text-white p-4 shadow-2xl md:hidden;
   }
 
   /* Premium Form Elements */
@@ -171,7 +171,7 @@
 
   /* Micro-interactions */
   .interactive-element {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-premium;
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
   }
 
   .hover-grow {
