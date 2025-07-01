@@ -34,21 +34,21 @@ const ModernNavBar: React.FC = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center">
             <Logo variant="black-on-white" size="medium" />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-12">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-base font-medium transition-colors duration-200 ${
+                className={`text-sm font-medium transition-colors duration-200 ${
                   location.pathname === link.href
-                    ? 'text-emerald-600'
-                    : 'text-gray-700 hover:text-emerald-600'
+                    ? 'text-gold-600'
+                    : 'text-navy-700 hover:text-gold-600'
                 }`}
               >
                 {link.name}
@@ -60,14 +60,14 @@ const ModernNavBar: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:+971509014120"
-              className="flex items-center space-x-2 text-gray-600 hover:text-emerald-600 transition-colors"
+              className="flex items-center space-x-2 text-navy-600 hover:text-gold-600 transition-colors text-sm"
             >
               <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">+971 50 901 4120</span>
+              <span className="font-medium">+971 50 901 4120</span>
             </a>
             <Link
               to="/contact"
-              className="btn-primary"
+              className="btn-primary text-sm px-6 py-3"
             >
               Book a Legal Consultation
             </Link>
@@ -76,7 +76,7 @@ const ModernNavBar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-700"
+            className="lg:hidden p-2 text-navy-700"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -89,22 +89,22 @@ const ModernNavBar: React.FC = () => {
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="container-custom pt-24">
-          <nav className="space-y-8">
+        <div className="container-custom pt-20">
+          <nav className="space-y-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-2xl font-medium text-gray-900 hover:text-emerald-600 transition-colors"
+                className="block text-xl font-medium text-navy-900 hover:text-gold-600 transition-colors"
               >
                 {link.name}
               </Link>
             ))}
-            <div className="pt-8 space-y-4">
+            <div className="pt-6 space-y-4">
               <a
                 href="tel:+971509014120"
-                className="flex items-center space-x-3 text-gray-600"
+                className="flex items-center space-x-3 text-navy-600"
               >
                 <Phone className="w-5 h-5" />
                 <span className="text-lg">+971 50 901 4120</span>
@@ -112,7 +112,7 @@ const ModernNavBar: React.FC = () => {
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary inline-block"
+                className="btn-primary inline-block w-full text-center"
               >
                 Book a Legal Consultation
               </Link>

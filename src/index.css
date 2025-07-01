@@ -7,35 +7,59 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 12%;
+    --background: 0 0% 100%;
+    --foreground: 210 24% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 210 24% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --popover-foreground: 210 24% 16%;
 
-    --primary: 0 0% 12%;
+    --primary: 210 40% 24%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 12%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 40% 24%;
 
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 20% 45%;
 
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 210 40% 24%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 142 76% 36%;
+    --border: 210 30% 90%;
+    --input: 210 30% 90%;
+    --ring: 45 93% 47%;
 
     --radius: 0.5rem;
+
+    /* Navy color scheme */
+    --navy-50: 248 250 252;
+    --navy-100: 241 245 249;
+    --navy-200: 226 232 240;
+    --navy-300: 203 213 225;
+    --navy-400: 148 163 184;
+    --navy-500: 100 116 139;
+    --navy-600: 71 85 105;
+    --navy-700: 51 65 85;
+    --navy-800: 30 41 59;
+    --navy-900: 15 23 42;
+
+    /* Gold color scheme */
+    --gold-50: 254 252 232;
+    --gold-100: 254 249 195;
+    --gold-200: 254 240 138;
+    --gold-300: 253 224 71;
+    --gold-400: 250 204 21;
+    --gold-500: 245 158 11;
+    --gold-600: 217 119 6;
+    --gold-700: 180 83 9;
+    --gold-800: 146 64 14;
+    --gold-900: 120 53 15;
   }
 
   * {
@@ -48,36 +72,50 @@
     line-height: 1.7;
   }
   
-  h1 { @apply text-5xl font-bold leading-tight tracking-tight; }
-  h2 { @apply text-4xl font-semibold leading-tight; }
-  h3 { @apply text-2xl font-semibold leading-snug; }
-  h4 { @apply text-xl font-medium leading-snug; }
-  p { @apply text-lg leading-relaxed; }
+  h1 { 
+    @apply text-4xl md:text-5xl font-bold leading-tight tracking-tight text-navy-900; 
+  }
+  h2 { 
+    @apply text-3xl md:text-4xl font-semibold leading-tight text-navy-900; 
+  }
+  h3 { 
+    @apply text-xl md:text-2xl font-semibold leading-snug text-navy-900; 
+  }
+  h4 { 
+    @apply text-lg md:text-xl font-medium leading-snug text-navy-900; 
+  }
+  p { 
+    @apply text-base md:text-lg leading-relaxed text-gray-700; 
+  }
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
+    @apply max-w-6xl mx-auto px-6 md:px-8 lg:px-12;
   }
   
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-12 md:py-16 lg:py-24;
   }
 
   .card-clean {
-    @apply bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300;
+    @apply bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300;
   }
 
   .btn-primary {
-    @apply bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md;
+    @apply bg-navy-700 hover:bg-navy-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md text-sm md:text-base;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 px-8 py-4 rounded-lg font-medium transition-all duration-300;
+    @apply bg-white hover:bg-gray-50 text-navy-700 border border-navy-200 px-6 md:px-8 py-3 md:py-4 rounded-lg font-medium transition-all duration-300 text-sm md:text-base;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 hover:bg-gold-600 text-navy-900 px-6 md:px-8 py-3 md:py-4 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md text-sm md:text-base;
   }
 
   .grid-responsive {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
   }
 
   .text-muted {
@@ -87,4 +125,53 @@
   .bg-section {
     @apply bg-gray-50;
   }
+
+  /* Navy color utilities */
+  .text-navy-900 { color: hsl(var(--navy-900)); }
+  .text-navy-800 { color: hsl(var(--navy-800)); }
+  .text-navy-700 { color: hsl(var(--navy-700)); }
+  .text-navy-600 { color: hsl(var(--navy-600)); }
+  .bg-navy-900 { background-color: hsl(var(--navy-900)); }
+  .bg-navy-800 { background-color: hsl(var(--navy-800)); }
+  .bg-navy-700 { background-color: hsl(var(--navy-700)); }
+  .bg-navy-100 { background-color: hsl(var(--navy-100)); }
+  .border-navy-200 { border-color: hsl(var(--navy-200)); }
+
+  /* Gold color utilities */
+  .text-gold-600 { color: hsl(var(--gold-600)); }
+  .text-gold-500 { color: hsl(var(--gold-500)); }
+  .bg-gold-600 { background-color: hsl(var(--gold-600)); }
+  .bg-gold-500 { background-color: hsl(var(--gold-500)); }
+  .bg-gold-200 { background-color: hsl(var(--gold-200)); }
+  .bg-gold-100 { background-color: hsl(var(--gold-100)); }
+
+  /* Mobile sticky CTA */
+  .mobile-cta {
+    @apply fixed bottom-0 left-0 right-0 z-40 bg-navy-700 text-white p-4 shadow-lg md:hidden;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+  h4 { @apply text-lg; }
+  p { @apply text-base; }
 }

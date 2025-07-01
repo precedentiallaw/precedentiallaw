@@ -39,25 +39,25 @@ const ModernWhyChooseUs: React.FC = () => {
   return (
     <section className="section-padding bg-section">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4 md:mb-6">
             Why Choose Precedential Law
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
             We combine deep legal expertise with a client-focused approach to deliver effective solutions for your unique legal needs in Dubai and across the UAE.
           </p>
         </div>
 
         <div className="grid-responsive">
           {features.map((feature) => (
-            <div key={feature.title} className="card-clean p-8 text-center group hover:-translate-y-1">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-200 transition-colors">
-                <feature.icon className="w-8 h-8 text-emerald-600" />
+            <div key={feature.title} className="card-clean p-6 md:p-8 text-center group hover:-translate-y-1">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:bg-gold-200 transition-colors">
+                <feature.icon className="w-6 h-6 md:w-8 md:h-8 text-gold-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg md:text-xl font-semibold text-navy-900 mb-3 md:mb-4">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                 {feature.description}
               </p>
             </div>

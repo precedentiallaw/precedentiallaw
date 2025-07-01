@@ -6,24 +6,24 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
 import FAQ from '@/components/FAQ';
-import { Shield, CheckCircle, Users, Award, Clock, Target } from 'lucide-react';
+import { Shield, CheckCircle, Users, Award, Clock, Target, Scale } from 'lucide-react';
 
 const About: React.FC = () => {
   const values = [
     {
       title: "Integrity",
       description: "We operate with unwavering ethical standards. Transparency, honesty, and accountability are the cornerstones of our practice, ensuring trust and reliability in all our dealings.",
-      icon: <CheckCircle className="w-6 h-6 text-emerald-600" />
+      icon: <CheckCircle className="w-6 h-6 text-navy-600" />
     },
     {
       title: "Client Protection",
       description: "We see ourselves as your shield, standing resolutely between you and the complexities of the legal system. Our primary focus is safeguarding your rights, assets, and future.",
-      icon: <Shield className="w-6 h-6 text-emerald-600" />
+      icon: <Shield className="w-6 h-6 text-navy-600" />
     },
     {
       title: "Excellence",
       description: "We are committed to achieving the highest quality in our legal advice, representation, and client service through continuous learning and meticulous preparation.",
-      icon: <Award className="w-6 h-6 text-emerald-600" />
+      icon: <Award className="w-6 h-6 text-navy-600" />
     }
   ];
 
@@ -50,8 +50,8 @@ const About: React.FC = () => {
         <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl font-bold text-gray-900 mb-8">
-                About <span className="text-emerald-600">Precedential Law</span>
+              <h1 className="text-5xl font-bold text-navy-900 mb-8">
+                About <span className="text-gold-600">Precedential Law</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 A premier legal consultancy dedicated to setting the standard in the UAE's legal landscape
@@ -65,8 +65,8 @@ const About: React.FC = () => {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <Target className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+                <Target className="w-12 h-12 text-gold-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-navy-900 mb-6">Our Mission</h2>
               </div>
               <div className="card-clean p-12 text-center">
                 <p className="text-xl text-gray-700 leading-relaxed">
@@ -81,7 +81,7 @@ const About: React.FC = () => {
         <section className="section-padding bg-section">
           <div className="container-custom">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+              <h2 className="text-4xl font-bold text-navy-900 mb-6">Our Core Values</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 These principles guide everything we do and define our commitment to our clients.
               </p>
@@ -89,10 +89,10 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {values.map((value) => (
                 <div key={value.title} className="card-clean p-8 text-center group hover:-translate-y-1">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-200 transition-colors">
+                  <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold-200 transition-colors">
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
+                  <h3 className="text-xl font-semibold text-navy-900 mb-4">{value.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{value.description}</p>
                 </div>
               ))}
@@ -106,7 +106,7 @@ const About: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-4xl font-bold text-emerald-600 mb-2">{stat.number}</div>
+                  <div className="text-4xl font-bold text-gold-600 mb-2">{stat.number}</div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -119,8 +119,8 @@ const About: React.FC = () => {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <Users className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Philosophy</h2>
+                <Users className="w-12 h-12 text-gold-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-navy-900 mb-6">Our Philosophy</h2>
               </div>
               <div className="card-clean p-12">
                 <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -141,9 +141,9 @@ const About: React.FC = () => {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <Scale className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  Understanding Our <span className="text-emerald-600">Name</span>
+                <Scale className="w-12 h-12 text-gold-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-navy-900 mb-6">
+                  Understanding Our <span className="text-gold-600">Name</span>
                 </h2>
               </div>
               <div className="card-clean p-12">
@@ -165,8 +165,8 @@ const About: React.FC = () => {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <Shield className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Commitment to Client Protection</h2>
+                <Shield className="w-12 h-12 text-gold-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-navy-900 mb-6">Our Commitment to Client Protection</h2>
               </div>
               <div className="card-clean p-12">
                 <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -187,7 +187,7 @@ const About: React.FC = () => {
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <h2 className="text-4xl font-bold text-navy-900 mb-6">Frequently Asked Questions</h2>
               </div>
               <FAQ />
             </div>

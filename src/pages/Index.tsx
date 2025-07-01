@@ -10,6 +10,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import MobileCTA from '@/components/MobileCTA';
 import { LegalServiceSchema, FAQSchema, LocalBusinessSchema, OrganizationSchema } from '@/components/ui/enhanced-schema-markup';
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 import PerformanceMonitor from '@/components/PerformanceMonitor';
@@ -98,7 +99,7 @@ const Index: React.FC = () => {
 
         {/* PWA and Mobile Optimization */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#059669" />
+        <meta name="theme-color" content="#1e293b" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Precedential Law" />
@@ -154,6 +155,7 @@ const Index: React.FC = () => {
       {/* Interactive Elements */}
       <FloatingCTA />
       <WhatsAppButton phoneNumber="971509014120" />
+      <MobileCTA />
       <PWAInstallPrompt />
       <MobileEmergencyOverlay />
       <ExitIntentPopup />
