@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import ModernHeroSection from '@/components/ModernHeroSection';
-import ModernNavBar from '@/components/ModernNavBar';
-import ModernServicesSection from '@/components/ModernServicesSection';
+import Header from '@/components/layout/Header';
+import PremiumHero from '@/components/sections/PremiumHero';
+import ServicesShowcase from '@/components/sections/ServicesShowcase';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import ModernWhyChooseUs from '@/components/ModernWhyChooseUs';
 import ContactSection from '@/components/ContactSection';
@@ -74,18 +74,18 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-premium-gradient">
       <Helmet>
-        <title>Legal Consultancy UAE | Trusted Legal Experts in Dubai | Precedential Law</title>
-        <meta name="description" content="Looking for trusted legal consultants in the UAE? Precedential Law offers expert legal services in family, business, immigration, and litigation for expats and locals." />
-        <meta name="keywords" content="legal consultancy UAE, UAE law firm, family lawyer UAE, business legal services Dubai, immigration legal advice UAE, legal consultation Dubai, UAE legal experts, expat legal services" />
+        <title>Premier Legal Consultancy UAE | Expert Legal Services Dubai | Precedential Law</title>
+        <meta name="description" content="Precedential Law offers premier legal consultancy services in the UAE. Expert legal guidance for families, businesses, and individuals across Dubai and the Emirates." />
+        <meta name="keywords" content="legal consultancy UAE, premier law firm Dubai, family lawyer UAE, business legal services, immigration legal advice, UAE legal experts, expat legal services" />
         <link rel="canonical" href="https://precedentiallaw.com/" />
         
         {/* Enhanced Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://precedentiallaw.com/" />
-        <meta property="og:title" content="Legal Consultancy UAE | Trusted Legal Experts in Dubai | Precedential Law" />
-        <meta property="og:description" content="Looking for trusted legal consultants in the UAE? Expert legal services in family, business, immigration, and litigation for expats and locals." />
+        <meta property="og:title" content="Premier Legal Consultancy UAE | Expert Legal Services Dubai" />
+        <meta property="og:description" content="Expert legal consultancy services in the UAE for families, businesses, and individuals. Premier legal guidance across Dubai and the Emirates." />
         <meta property="og:image" content="https://precedentiallaw.com/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" />
         <meta property="og:site_name" content="Precedential Law" />
         <meta property="og:locale" content="en_US" />
@@ -93,8 +93,8 @@ const Index: React.FC = () => {
         {/* Enhanced Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://precedentiallaw.com/" />
-        <meta property="twitter:title" content="Legal Consultancy UAE | Trusted Legal Experts in Dubai" />
-        <meta property="twitter:description" content="Expert legal services in the UAE for family, business, immigration, and litigation matters." />
+        <meta property="twitter:title" content="Premier Legal Consultancy UAE | Expert Legal Services Dubai" />
+        <meta property="twitter:description" content="Expert legal consultancy services in the UAE for families, businesses, and individuals." />
         <meta property="twitter:image" content="https://precedentiallaw.com/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" />
 
         {/* PWA and Mobile Optimization */}
@@ -134,13 +134,13 @@ const Index: React.FC = () => {
       
       {/* Main Content with semantic HTML */}
       <header>
-        <ModernNavBar />
+        <Header />
       </header>
       
       <main id="main-content" role="main">
-        <ModernHeroSection />
+        <PremiumHero />
         <ExpatLegalEmergencySection />
-        <ModernServicesSection />
+        <ServicesShowcase />
         <HowItWorksSection />
         <DownloadableGuides />
         <ModernWhyChooseUs />
