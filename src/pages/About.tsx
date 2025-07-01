@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
@@ -5,6 +6,7 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
 import ScrollReveal from '@/components/ScrollReveal';
+import FAQ from '@/components/FAQ';
 import { Shield, CheckCircle } from 'lucide-react';
 
 const ValueCard: React.FC<{ title: string; description: string; icon: React.ReactNode }> = ({
@@ -29,17 +31,17 @@ const About: React.FC = () => {
   const values = [
     {
       title: "Integrity",
-      description: "We uphold the highest ethical standards in all interactions, maintaining honesty, transparency, and unwavering professional conduct throughout our practice.",
+      description: "We operate with unwavering ethical standards. Transparency, honesty, and accountability are the cornerstones of our practice, ensuring trust and reliability in all our dealings.",
       icon: <CheckCircle className="w-5 h-5 text-precedential-gold" />
     },
     {
-      title: "Client Protection",
-      description: "We are steadfastly committed to safeguarding our clients' interests, approaching each case with diligence, thorough preparation, and strategic thinking.",
+      title: "Client Protection (Your Legal Shield)",
+      description: "We see ourselves as your shield, standing resolutely between you and the complexities of the legal system. Our primary focus is safeguarding your rights, assets, and future, offering robust protection against legal challenges.",
       icon: <Shield className="w-5 h-5 text-precedential-gold" />
     },
     {
       title: "Excellence",
-      description: "We pursue excellence in every aspect of our legal practice, from meticulous research and thoughtful analysis to clear communication and effective representation.",
+      description: "We are committed to achieving the highest quality in our legal advice, representation, and client service. This involves continuous learning, meticulous preparation, and a relentless pursuit of the best possible outcomes for those we serve.",
       icon: <CheckCircle className="w-5 h-5 text-precedential-gold" />
     }
   ];
@@ -47,8 +49,10 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>About Precedential Law | Dubai's Trusted Legal Consultancy</title>
-        <meta name="description" content="Learn about Precedential Law, our mission, values, and commitment to providing clear, effective legal solutions in Dubai and across the UAE." />
+        <title>About Precedential Legal Consultancy – Trusted UAE Law Experts</title>
+        <meta name="description" content="Meet the legal minds behind Precedential Law. Decades of UAE legal experience providing clear, effective legal solutions in Dubai and across the UAE." />
+        <meta name="keywords" content="UAE legal consultancy, legal experts UAE, UAE law firm about, legal services UAE, UAE legal professionals" />
+        <link rel="canonical" href="https://precedentiallaw.com/about" />
       </Helmet>
       
       <NavBar />
@@ -65,7 +69,7 @@ const About: React.FC = () => {
               About <span className="text-gold-gradient">Precedential Law</span>
             </h1>
             <p className="text-white/80 max-w-3xl mx-auto text-lg">
-              A premier legal consultancy dedicated to setting the standard in Dubai's legal landscape
+              A premier legal consultancy dedicated to setting the standard in the UAE's legal landscape
             </p>
           </div>
         </div>
@@ -110,29 +114,10 @@ const About: React.FC = () => {
               <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">Our Philosophy</h2>
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <p className="text-lg text-precedential-black/80 mb-4">
-                  We believe in a proactive, client-centric approach to legal consulting. Legal challenges often arise from insufficient foresight and planning; therefore, we emphasize preventative strategies that anticipate and mitigate potential issues before they develop into costly disputes. When conflicts do arise, we commit to seeking efficient resolution paths that align with our clients' best interests and objectives.
+                  We believe in a proactive, client-centric approach. This means dedicating time to understand your objectives deeply, anticipating potential challenges, and communicating complex legal matters in plain language. We aim to demystify the law, empowering you with the knowledge needed to make informed decisions confidently.
                 </p>
                 <p className="text-lg text-precedential-black/80">
-                  Our practice is built on clear communication, strategic thinking, and a deep understanding of the UAE's unique legal landscape. We recognize that the law serves people, not the other way around, and we work tirelessly to make legal processes accessible and understandable for those we represent.
-                </p>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* Founder's Vision */}
-        <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-black text-white">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">
-                The Founder's <span className="text-gold-gradient">Vision</span>
-              </h2>
-              <div className="glass-card border border-precedential-gold/20 p-8">
-                <p className="text-lg text-white/90 mb-4">
-                  Precedential Law was founded with a distinct vision: to create a legal consultancy that combines deep expertise in UAE law with an unwavering commitment to client protection. Having observed the challenges many individuals and businesses face when navigating Dubai's legal landscape, our founder recognized the need for a firm that would prioritize clear communication, strategic guidance, and client-centered solutions.
-                </p>
-                <p className="text-lg text-white/90">
-                  This vision continues to guide our practice today, informing every client interaction and legal strategy we develop. We remain dedicated to setting a precedential standard in legal services—one that emphasizes both exceptional results and an exceptional client experience.
+                  We don't just react to problems; we work with you to prevent them and chart the most efficient and effective path to resolution. This focus on clarity addresses the common need for straightforward guidance in navigating intricate legal systems.
                 </p>
               </div>
             </div>
@@ -141,15 +126,17 @@ const About: React.FC = () => {
         
         {/* Understanding Our Name */}
         <ScrollReveal>
-          <section className="py-16 px-4">
+          <section className="py-16 px-4 bg-precedential-black text-white">
             <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">Understanding Our Name</h2>
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <p className="text-lg text-precedential-black/80 mb-4">
-                  The name 'Precedential' embodies our core aspiration: to establish and maintain the highest standards in legal practice across Dubai. In law, a precedent represents an established pattern or standard that guides future actions and decisions. Similarly, our firm strives to set the benchmark for excellence in legal services, creating a precedential standard that elevates expectations throughout the legal community.
+              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">
+                Understanding Our <span className="text-gold-gradient">Name</span>
+              </h2>
+              <div className="glass-card border border-precedential-gold/20 p-8">
+                <p className="text-lg text-white/90 mb-4">
+                  The name 'Precedential' embodies our core aspiration: to set a new benchmark - a precedent - for legal service quality and client success in the UAE. It signifies our unwavering commitment to achieving landmark results for our clients, approaching each case with the diligence and strategic thinking required to establish positive outcomes.
                 </p>
-                <p className="text-lg text-precedential-black/80">
-                  This name reflects our dual commitment: honoring established legal principles while pioneering innovative approaches that address the evolving needs of our clients in Dubai's dynamic environment. It serves as a constant reminder of our responsibility to deliver legal counsel and representation that stands as an example of what clients should expect from their legal advisors.
+                <p className="text-lg text-white/90">
+                  It reflects our dedication to upholding the highest standards of legal practice and professional conduct, aiming to be leaders in our field.
                 </p>
               </div>
             </div>
@@ -158,17 +145,27 @@ const About: React.FC = () => {
         
         {/* Client Protection */}
         <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-offWhite">
+          <section className="py-16 px-4">
             <div className="container mx-auto max-w-4xl">
               <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">Our Commitment to Client Protection</h2>
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <p className="text-lg text-precedential-black/80 mb-4">
-                  Your peace of mind is paramount to us at Precedential Law. We recognize that seeking legal assistance often comes during challenging and uncertain times. Our commitment to client protection encompasses not only safeguarding your legal interests but also ensuring you feel supported, informed, and confident throughout the process.
+                  Your peace of mind is paramount. We act as your dedicated shield, navigating intricate legal frameworks, such as the UAE Civil Code or specific Decree-Laws governing employment or commercial transactions. We manage complex procedures, whether it involves filings with the Rental Dispute Centre, adhering to civil court protocols, or ensuring compliance with business regulations to avoid penalties.
                 </p>
                 <p className="text-lg text-precedential-black/80">
-                  This commitment manifests in our thorough case preparation, strategic approach to legal challenges, transparent communication, and unwavering advocacy. We serve as your shield in Dubai's legal landscape, employing our expertise and resources to protect what matters most to you—whether that's your business interests, family welfare, personal rights, or financial security.
+                  We stand firm to protect your rights and interests from potential pitfalls, such as ambiguous contract terms or the complexities of cross-border legal issues. Trust us to be your steadfast protectors in the legal arena.
                 </p>
               </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* FAQ Section */}
+        <ScrollReveal>
+          <section className="py-16 px-4 bg-precedential-offWhite">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-10 text-center">Frequently Asked Questions</h2>
+              <FAQ />
             </div>
           </section>
         </ScrollReveal>

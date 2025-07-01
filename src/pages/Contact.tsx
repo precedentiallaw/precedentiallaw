@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
@@ -48,8 +49,10 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Contact Precedential Law | Dubai Legal Consultancy</title>
-        <meta name="description" content="Contact Precedential Law for expert legal services in Dubai. Schedule a consultation with our team for business, family, real estate, immigration, or criminal law matters." />
+        <title>Contact Precedential Law – UAE Legal Help</title>
+        <meta name="description" content="Contact Precedential Law for expert legal services in the UAE. Schedule a consultation with our team for business, family, real estate, immigration, or criminal law matters." />
+        <meta name="keywords" content="contact UAE lawyer, legal consultation UAE, UAE legal help, legal services contact UAE" />
+        <link rel="canonical" href="https://precedentiallaw.com/contact" />
       </Helmet>
       
       <NavBar />
@@ -63,10 +66,10 @@ const Contact: React.FC = () => {
           </div>
           <div className="container mx-auto text-center relative z-10">
             <h1 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6">
-              Get in <span className="text-gold-gradient">Touch</span>
+              Talk to a Legal <span className="text-gold-gradient">Expert Today</span>
             </h1>
             <p className="text-white/80 max-w-3xl mx-auto text-lg">
-              Ready to discuss your legal needs? Our team is here to help. Contact us today to schedule a confidential consultation.
+              Ready to discuss your legal needs? Our team is here to help. Contact us today to schedule a confidential consultation with experienced UAE legal professionals.
             </p>
           </div>
         </div>
@@ -100,7 +103,7 @@ const Contact: React.FC = () => {
                       <div>
                         <h3 className="text-lg font-bold mb-2">Email</h3>
                         <p className="text-precedential-black/70">
-                          <a href="mailto:info@uaeprecedentiallaw.com" className="hover:text-precedential-gold">info@uaeprecedentiallaw.com</a>
+                          <a href="mailto:info@precedentiallaw.com" className="hover:text-precedential-gold">info@precedentiallaw.com</a>
                         </p>
                       </div>
                     </div>
@@ -290,6 +293,24 @@ const Contact: React.FC = () => {
                     <p className="text-precedential-black/70">
                       We value your inquiry and aim to respond promptly. We look forward to hearing from you and exploring how Precedential Law can assist you in achieving your legal objectives in the UAE.
                     </p>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a 
+                      href="https://wa.me/971509014120" 
+                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold text-center transition-colors flex items-center justify-center gap-2"
+                    >
+                      <MessageSquare className="w-5 h-5" />
+                      WhatsApp Now
+                    </a>
+                    <a 
+                      href="tel:+971509014120" 
+                      className="bg-precedential-gold hover:bg-precedential-goldLight text-precedential-black px-6 py-3 rounded-xl font-semibold text-center transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Phone className="w-5 h-5" />
+                      Request Consultation
+                    </a>
                   </div>
                 </div>
               </div>

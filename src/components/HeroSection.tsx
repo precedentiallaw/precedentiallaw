@@ -81,18 +81,17 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Outcome-Focused Headlines */}
+          {/* Updated Headlines per Strategy */}
           <h1 className="opacity-0 animate-fade-in text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold mb-6 leading-tight">
-            Protect Your <span className="text-gold-gradient">Million-Dollar</span> UAE Investment
+            Trusted Legal Guidance in the <span className="text-gold-gradient">UAE</span>
           </h1>
           
           <h2 className="opacity-0 animate-fade-in stagger-1 text-white/90 text-xl sm:text-2xl md:text-3xl mb-6 max-w-4xl mx-auto font-light">
-            Before One Legal Mistake Destroys Everything You've Built
+            Rooted in Local Law
           </h2>
 
           <p className="opacity-0 animate-fade-in stagger-1 text-white/80 text-base sm:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
-            <strong className="text-precedential-gold">95% of business failures in Dubai</strong> stem from preventable legal oversights. 
-            Don't become another statistic. Get bulletproof legal protection from Dubai's most trusted corporate defenders.
+            Experience clarity, confidence, and compliance with Precedential Law — your dedicated legal consultancy for individuals and businesses in the UAE. <strong className="text-precedential-gold">95% of business failures in the UAE</strong> stem from preventable legal oversights. Don't become another statistic.
           </p>
 
           {/* Value Stack Box */}

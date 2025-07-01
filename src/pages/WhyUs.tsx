@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
@@ -40,16 +41,16 @@ const WhyUs: React.FC = () => {
       title: "Deep UAE Legal Acumen",
       description: (
         <p>
-          Our team possesses extensive knowledge of UAE legal frameworks, procedures, and precedents. This deep understanding allows us to navigate the complexities of Dubai's legal system efficiently, identifying the optimal approaches for each unique case. We stay continually updated on legal developments, ensuring our strategies reflect the current legal landscape.
+          Our team possesses extensive knowledge of UAE legal frameworks, procedures, and precedents across all emirates. This comprehensive understanding allows us to navigate the complexities of the UAE's legal system efficiently, identifying the optimal approaches for each unique case. We stay continually updated on legal developments, ensuring our strategies reflect the current legal landscape throughout the UAE.
         </p>
       ),
       icon: <Shield className="w-6 h-6 text-precedential-gold" />
     },
     {
-      title: "Dedicated Dubai Focus & Experts",
+      title: "Dedicated UAE Focus & Experts",
       description: (
         <p>
-          Focusing specifically on Dubai's legal environment has allowed us to develop specialized expertise in the areas most relevant to our clients. Our team includes legal professionals with deep experience in Dubai's courts, regulatory bodies, and administrative systems. This focused experience translates into practical, effective legal strategies tailored to Dubai's unique legal culture.
+          Focusing specifically on the UAE's legal environment has allowed us to develop specialized expertise in the areas most relevant to our clients. Our team includes legal professionals with deep experience in UAE courts, regulatory bodies, and administrative systems. This focused experience translates into practical, effective legal strategies tailored to the UAE's unique legal culture.
         </p>
       ),
       icon: <Users className="w-6 h-6 text-precedential-gold" />
@@ -90,8 +91,10 @@ const WhyUs: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Why Choose Precedential Law | Dubai Legal Excellence</title>
-        <meta name="description" content="Discover what sets Precedential Law apart as a leading legal consultancy in Dubai, delivering expert representation with a client-focused approach." />
+        <title>Why Choose Precedential Law | UAE Legal Excellence</title>
+        <meta name="description" content="Discover what sets Precedential Law apart as a leading legal consultancy in the UAE, delivering expert representation with a client-focused approach." />
+        <meta name="keywords" content="why choose UAE lawyer, best legal consultancy UAE, UAE legal excellence, trusted lawyers UAE" />
+        <link rel="canonical" href="https://precedentiallaw.com/why-us" />
       </Helmet>
       
       <NavBar />
@@ -108,7 +111,7 @@ const WhyUs: React.FC = () => {
               What Sets Us <span className="text-gold-gradient">Apart</span>
             </h1>
             <p className="text-white/80 max-w-3xl mx-auto text-lg">
-              Precedential Law stands as a trusted legal partner in Dubai through our steadfast commitment to excellence, client protection, and results-driven strategies.
+              Precedential Law stands as a trusted legal partner in the UAE through our steadfast commitment to excellence, client protection, and results-driven strategies.
             </p>
           </div>
         </div>

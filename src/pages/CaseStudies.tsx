@@ -146,9 +146,9 @@ const CaseStudies: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Expat Legal Success Stories | Case Studies | Precedential Law Dubai</title>
-        <meta name="description" content="Real success stories from expat families and international businesses. See how Precedential Law protects expat rights and achieves exceptional results in Dubai." />
-        <meta name="keywords" content="expat legal success Dubai, international family law cases, expat business law UAE, Golden Visa success stories, DIFC Wills case studies" />
+        <title>Expat Legal Success Stories | Case Studies | Precedential Law UAE</title>
+        <meta name="description" content="Real success stories from expat families and international businesses. See how Precedential Law protects expat rights and achieves exceptional results in the UAE." />
+        <meta name="keywords" content="expat legal success UAE, international family law cases, expat business law UAE, Golden Visa success stories, DIFC Wills case studies" />
         <link rel="canonical" href="https://precedentiallaw.com/case-studies" />
       </Helmet>
       
@@ -167,7 +167,7 @@ const CaseStudies: React.FC = () => {
               Real <span className="text-gold-gradient">Expat Victories</span>
             </h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Discover how international families and businesses have achieved remarkable legal outcomes in Dubai. 
+              Discover how international families and businesses have achieved remarkable legal outcomes in the UAE. 
               From family protection to business success, these stories demonstrate our commitment to expat excellence.
             </p>
           </div>
