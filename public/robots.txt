@@ -1,3 +1,5 @@
+# Precedential Law - robots.txt
+# Directives for Search Engines and AI Crawlers
 
 User-agent: *
 Allow: /
@@ -5,7 +7,10 @@ Disallow: /admin/
 Disallow: /private/
 Allow: /wp-admin/admin-ajax.php
 
-# Specific directives for AI crawlers and LLMs
+# Crawl-Delay for Polite Crawling
+Crawl-delay: 1
+
+# Specific Directives for LLMs and AI Crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -21,7 +26,9 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+# Sitemaps
 Sitemap: https://precedentiallaw.com/sitemap.xml
-Sitemap: https://precedentiallaw.com/llms.txt
 
-Crawl-delay: 1
+# GenAI Indexing Resource
+# Note: This is not a traditional sitemap; it's guidance for GenAI indexing
+Sitemap: https://precedentiallaw.com/llms.txt
