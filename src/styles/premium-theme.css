@@ -213,7 +213,7 @@
 }
 
 .textarea-premium {
-  @apply input-premium min-h-[120px] resize-vertical;
+  @apply input-premium min-h-[120px] resize-y;
 }
 
 /* Premium Typography */
