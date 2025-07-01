@@ -1,0 +1,54 @@
+
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Precedential Law - Premier UAE Legal Consultancy | Expert Legal Services",
+  "description": "Expert legal consultancy services in the UAE offering a range of legal solutions.",
+  "url": "https://precedentiallaw.com/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Precedential Law",
+    "url": "https://precedentiallaw.com/",
+    "sameAs": [
+      "https://www.facebook.com/precedentiallaw",
+      "https://www.linkedin.com/company/precedentiallaw"
+    ]
+  },
+  "mainEntity": {
+    "@type": "Service",
+    "name": "Legal Consultancy Services",
+    "serviceType": "Expert Legal Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Precedential Law"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://precedentiallaw.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Legal Services",
+        "item": "https://precedentiallaw.com/services"
+      }
+    ]
+  },
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "target": "https://precedentiallaw.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    {
+      "@type": "ContactAction",
+      "target": "https://precedentiallaw.com/contact"
+    }
+  ]
+}

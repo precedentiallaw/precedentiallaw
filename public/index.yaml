@@ -1,0 +1,64 @@
+
+website:
+  metadata:
+    name: "Precedential Law - Premier UAE Legal Consultancy | Expert Legal Services"
+    core_info: 
+      url: "https://precedentiallaw.com/"
+  header:
+    primary_elements:
+      title: "Precedential Law"
+      tagline: "Premier UAE Legal Consultancy | Expert Legal Services"
+    navigation:
+      items:
+        - name: "Home"
+          link: "https://precedentiallaw.com/"
+        - name: "About Us"
+          link: "https://precedentiallaw.com/about"
+        - name: "Services"
+          link: "https://precedentiallaw.com/services"
+        - name: "Contact"
+          link: "https://precedentiallaw.com/contact"
+    actions:
+      - name: "Request Consultation"
+        link: "https://precedentiallaw.com/contact"
+  content:
+    - section:
+        title: "Our Expertise"
+        description: "We offer comprehensive legal services tailored to meet your needs."
+        elements:
+          - type: "text"
+            content: "Our experienced team provides advice on various areas of law, including corporate, family, immigration, and real estate."
+          - type: "list"
+            items:
+              - "Corporate Law"
+              - "Family Law"
+              - "Immigration Law"
+              - "Real Estate Law"
+        actions:
+          - name: "Learn More"
+            link: "https://precedentiallaw.com/services"
+    - section:
+        title: "Why Choose Us"
+        description: "Trusted by clients and recognized for our excellence."
+        elements:
+          - type: "text"
+            content: "Our firm is dedicated to providing personalized services and building lasting relationships with our clients."
+          - type: "quote"
+            content: "Client satisfaction is our top priority."
+        actions:
+          - name: "Read Testimonials"
+            link: "https://precedentiallaw.com/testimonials"
+  footer:
+    links:
+      - name: "Privacy Policy"
+        link: "https://precedentiallaw.com/privacy"
+      - name: "Terms of Service"
+        link: "https://precedentiallaw.com/terms"
+    info:
+      address: "UAE, Dubai"
+      phone: "+971509014120"
+    social:
+      - platform: "Facebook"
+        link: "https://facebook.com/precedential-law"
+      - platform: "LinkedIn"
+        link: "https://linkedin.com/company/precedential-law"

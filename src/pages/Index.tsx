@@ -44,19 +44,47 @@ const Index: React.FC = () => {
     }
   ];
 
+  // Enhanced structured data for homepage
+  const legalServiceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Precedential Law",
+    "url": "https://precedentiallaw.com",
+    "logo": "https://precedentiallaw.com/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png",
+    "description": "UAE-based legal consultancy providing expert support in family law, business law, immigration, and litigation for expats and locals.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "City Tower 2 - Sheikh Zayed Road",
+      "addressLocality": "Dubai",
+      "addressRegion": "Dubai",
+      "addressCountry": "AE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+971509014120",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English", "Arabic"]
+    },
+    "areaServed": "AE",
+    "sameAs": [
+      "https://www.linkedin.com/company/precedentiallaw",
+      "https://www.facebook.com/precedentiallaw"
+    ]
+  };
+
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Precedential Law - Premier UAE Legal Consultancy | Expert Legal Services UAE</title>
-        <meta name="description" content="Premier UAE legal consultancy providing expert legal services in business law, family law, real estate, immigration, and civil litigation. Specialized support for expatriates and UAE nationals across Dubai, Abu Dhabi, and all UAE emirates." />
-        <meta name="keywords" content="UAE law firm, legal services UAE, business lawyer UAE, family law UAE, divorce lawyer UAE, immigration lawyer UAE, real estate lawyer UAE, commercial litigation UAE, expat legal services UAE, UAE legal consultation, DIFC wills, UAE employment law" />
+        <title>Legal Consultancy UAE | Trusted Legal Experts in Dubai | Precedential Law</title>
+        <meta name="description" content="Looking for trusted legal consultants in the UAE? Precedential Law offers expert legal services in family, business, immigration, and litigation for expats and locals." />
+        <meta name="keywords" content="legal consultancy UAE, UAE law firm, family lawyer UAE, business legal services Dubai, immigration legal advice UAE, legal consultation Dubai, UAE legal experts, expat legal services" />
         <link rel="canonical" href="https://precedentiallaw.com/" />
         
         {/* Enhanced Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://precedentiallaw.com/" />
-        <meta property="og:title" content="Precedential Law - Premier UAE Legal Consultancy" />
-        <meta property="og:description" content="Expert legal services in the UAE. Comprehensive business law, family law, immigration, and litigation support for expatriates and UAE nationals." />
+        <meta property="og:title" content="Legal Consultancy UAE | Trusted Legal Experts in Dubai | Precedential Law" />
+        <meta property="og:description" content="Looking for trusted legal consultants in the UAE? Expert legal services in family, business, immigration, and litigation for expats and locals." />
         <meta property="og:image" content="https://precedentiallaw.com/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" />
         <meta property="og:site_name" content="Precedential Law" />
         <meta property="og:locale" content="en_US" />
@@ -64,8 +92,8 @@ const Index: React.FC = () => {
         {/* Enhanced Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://precedentiallaw.com/" />
-        <meta property="twitter:title" content="Precedential Law - Premier UAE Legal Consultancy" />
-        <meta property="twitter:description" content="Expert legal services in the UAE. Comprehensive business law, family law, immigration, and litigation support." />
+        <meta property="twitter:title" content="Legal Consultancy UAE | Trusted Legal Experts in Dubai" />
+        <meta property="twitter:description" content="Expert legal services in the UAE for family, business, immigration, and litigation matters." />
         <meta property="twitter:image" content="https://precedentiallaw.com/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" />
 
         {/* PWA and Mobile Optimization */}
@@ -84,6 +112,11 @@ const Index: React.FC = () => {
           href="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png"
           type="image/png"
         />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(legalServiceStructuredData)}
+        </script>
       </Helmet>
       
       {/* Enhanced Schema Markup */}

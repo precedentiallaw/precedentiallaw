@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Shield, Award, Scale, CheckCircle, Clock, Users, TrendingUp } from 'lucide-react';
+import { Shield, Award, Scale, CheckCircle, Clock, Users } from 'lucide-react';
 import Logo from './Logo';
 
 const HeroSection: React.FC = () => {
@@ -29,15 +29,6 @@ const HeroSection: React.FC = () => {
         }} />
       </div>
 
-      {/* Urgent Scarcity Banner */}
-      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-2 z-20">
-        <div className="container mx-auto px-4 text-center flex items-center justify-center gap-2 text-sm">
-          <Clock className="w-4 h-4" />
-          <span className="font-medium">URGENT: Only 3 Priority Consultation Slots Available This Week</span>
-          <Clock className="w-4 h-4" />
-        </div>
-      </div>
-
       {/* Elegant Geometric Elements */}
       <div className="absolute inset-0 opacity-20 parallax" data-speed="0.1">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-precedential-gold blur-[120px]"></div>
@@ -52,137 +43,120 @@ const HeroSection: React.FC = () => {
       {/* Premium Content */}
       <div className="relative container mx-auto px-4 sm:px-6 py-20 sm:py-24 md:py-32 text-center z-10">
         <div className="max-w-5xl mx-auto">
-          {/* Risk Alert */}
-          <div className="mb-8 opacity-0 animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-red-600/90 text-white px-6 py-3 rounded-full font-semibold">
-              <Shield className="w-5 h-5" />
-              <span>WARNING: One Legal Mistake Could Cost Millions</span>
-            </div>
-          </div>
-
           {/* Prestigious Logo & Social Proof */}
           <div className="mb-12 sm:mb-16 opacity-0 animate-fade-in flex flex-col items-center">
             <Logo variant="new-gold-wings" size="large" className="w-32 h-32 mb-6 animate-gleaming" />
             <div className="flex items-center gap-4 text-precedential-gold/80 text-sm font-medium">
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4" />
-                <span>2,000+ Executives Protected</span>
-              </div>
-              <div className="w-1 h-4 bg-precedential-gold/40"></div>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4" />
-                <span>AED 2B+ Assets Secured</span>
+                <span>Trusted by Expats</span>
               </div>
               <div className="w-1 h-4 bg-precedential-gold/40"></div>
               <div className="flex items-center gap-2">
                 <Award className="w-4 h-4" />
-                <span>Zero Client Disasters</span>
+                <span>Licensed UAE Practice</span>
+              </div>
+              <div className="w-1 h-4 bg-precedential-gold/40"></div>
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4" />
+                <span>Bilingual Support</span>
               </div>
             </div>
           </div>
 
-          {/* Updated Headlines per Strategy */}
+          {/* Updated Headlines */}
           <h1 className="opacity-0 animate-fade-in text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold mb-6 leading-tight">
-            Trusted Legal Guidance in the <span className="text-gold-gradient">UAE</span>
+            Trusted Legal Consultancy in the <span className="text-gold-gradient">UAE</span>
           </h1>
           
-          <h2 className="opacity-0 animate-fade-in stagger-1 text-white/90 text-xl sm:text-2xl md:text-3xl mb-6 max-w-4xl mx-auto font-light">
-            Rooted in Local Law
-          </h2>
-
-          <p className="opacity-0 animate-fade-in stagger-1 text-white/80 text-base sm:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
-            Experience clarity, confidence, and compliance with Precedential Law — your dedicated legal consultancy for individuals and businesses in the UAE. <strong className="text-precedential-gold">95% of business failures in the UAE</strong> stem from preventable legal oversights. Don't become another statistic.
-          </p>
-
-          {/* Value Stack Box */}
-          <div className="opacity-0 animate-fade-in stagger-2 bg-white/10 backdrop-blur-sm border border-precedential-gold/30 rounded-2xl p-8 mb-10 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-6">What You Get in Your Emergency Legal Shield Assessment:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                <div>
-                  <span className="text-white font-semibold">Immediate Risk Analysis</span>
-                  <p className="text-white/70 text-sm">Identify hidden legal time bombs (Worth AED 50,000)</p>
+          <div className="opacity-0 animate-fade-in stagger-1 text-white/90 text-lg sm:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="mb-6">
+              At Precedential Law, we provide reliable and personalized legal guidance for individuals, families, and businesses across the UAE. As a leading legal consultancy in Dubai, our mission is to help expatriates and UAE nationals navigate the region's legal landscape with clarity and confidence.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left bg-white/10 backdrop-blur-sm border border-precedential-gold/30 rounded-2xl p-6 mb-6">
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-precedential-gold mt-1 flex-shrink-0" />
+                  <span><strong>Family Law</strong> – Including divorce, custody, inheritance, and personal status matters</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-precedential-gold mt-1 flex-shrink-0" />
+                  <span><strong>Immigration Law</strong> – Visa applications, golden visa eligibility, and legal residency</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-precedential-gold mt-1 flex-shrink-0" />
+                  <span><strong>Business & Commercial Law</strong> – Contract formation, compliance, company setup</span>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                <div>
-                  <span className="text-white font-semibold">Asset Protection Strategy</span>
-                  <p className="text-white/70 text-sm">Bulletproof your wealth from lawsuits (Worth AED 75,000)</p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-precedential-gold mt-1 flex-shrink-0" />
+                  <span><strong>Real Estate Law</strong> – Property disputes, lease agreements, and transactions</span>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                <div>
-                  <span className="text-white font-semibold">Compliance Audit</span>
-                  <p className="text-white/70 text-sm">Avoid crushing government penalties (Worth AED 100,000)</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                <div>
-                  <span className="text-white font-semibold">Emergency Action Plan</span>
-                  <p className="text-white/70 text-sm">Step-by-step crisis prevention guide (Worth AED 25,000)</p>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-precedential-gold mt-1 flex-shrink-0" />
+                  <span><strong>Civil Litigation</strong> – Dispute resolution and representation in UAE courts</span>
                 </div>
               </div>
             </div>
-            <div className="mt-6 text-center">
-              <p className="text-white/90">
-                <span className="line-through text-red-300">Total Value: AED 250,000</span>
-                <span className="text-precedential-gold font-bold text-2xl ml-4">Your Investment: FREE</span>
-              </p>
+
+            <div className="bg-precedential-gold/10 border border-precedential-gold/30 rounded-xl p-6 mb-6">
+              <h3 className="text-precedential-gold font-bold text-xl mb-3">Why Choose Precedential Law:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-precedential-gold" />
+                  <span>Licensed legal consultancy in the UAE</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-precedential-gold" />
+                  <span>Bilingual support (English + Arabic)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-precedential-gold" />
+                  <span>Transparent legal processes</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-precedential-gold" />
+                  <span>Trusted by expats and corporate clients</span>
+                </div>
+              </div>
             </div>
           </div>
           
-          {/* Risk Reversal CTA */}
+          {/* Professional CTA */}
           <div className="opacity-0 animate-fade-in stagger-2 flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <a href="#contact" className="group bg-precedential-gold hover:bg-precedential-goldLight text-precedential-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-precedential-gold/30 transform hover:-translate-y-1 relative">
+            <a href="#contact" className="group bg-precedential-gold hover:bg-precedential-goldLight text-precedential-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-precedential-gold/30 transform hover:-translate-y-1">
               <Shield className="w-5 h-5 mr-2 inline-block transition-transform group-hover:scale-110" />
-              Claim Your FREE Legal Shield Assessment
-              <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full">
-                RISK-FREE
-              </div>
+              Request Your Confidential Consultation
             </a>
             
             <a href="tel:+971509014120" className="px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 
                        text-white border-2 border-white/30 hover:border-precedential-gold 
                        hover:text-precedential-gold hover:bg-white/5 flex items-center justify-center gap-2">
               <Clock className="w-5 h-5" />
-              Emergency Hotline: +971 50 901 4120
+              Call: +971 50 901 4120
             </a>
           </div>
 
-          {/* Guarantee Statement */}
-          <div className="opacity-0 animate-fade-in stagger-3 bg-precedential-gold/10 border border-precedential-gold/30 rounded-xl p-6 mb-12 max-w-3xl mx-auto">
-            <h3 className="text-precedential-gold font-bold text-xl mb-3">
-              🛡️ Our Iron-Clad Protection Promise
-            </h3>
-            <p className="text-white/90 leading-relaxed">
-              If we don't identify at least <strong>3 critical legal vulnerabilities</strong> in your business during our assessment, 
-              we'll provide <strong>6 months of legal monitoring absolutely FREE</strong>. Plus, if you're not completely satisfied 
-              with our consultation, we'll refund your time with a AED 5,000 consultation credit.
-            </p>
-          </div>
-
-          {/* Enhanced Trust Indicators */}
+          {/* Trust Indicators */}
           <div className="opacity-0 animate-fade-in stagger-3">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-precedential-gold mb-2">2,000+</div>
-                <div className="text-white/70 text-sm">Executives Protected</div>
+                <div className="text-3xl font-bold text-precedential-gold mb-2">10+</div>
+                <div className="text-white/70 text-sm">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-precedential-gold mb-2">AED 2B+</div>
-                <div className="text-white/70 text-sm">Assets Secured</div>
+                <div className="text-3xl font-bold text-precedential-gold mb-2">500+</div>
+                <div className="text-white/70 text-sm">Cases Handled</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-precedential-gold mb-2">0</div>
-                <div className="text-white/70 text-sm">Client Legal Disasters</div>
+                <div className="text-3xl font-bold text-precedential-gold mb-2">95%</div>
+                <div className="text-white/70 text-sm">Success Rate</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-precedential-gold mb-2">24hrs</div>
-                <div className="text-white/70 text-sm">Emergency Response</div>
+                <div className="text-white/70 text-sm">Response Time</div>
               </div>
             </div>
           </div>
@@ -192,7 +166,7 @@ const HeroSection: React.FC = () => {
       {/* Elegant Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#services" className="text-precedential-gold/70 flex flex-col items-center text-sm transition-colors duration-300 hover:text-precedential-gold">
-          <span className="font-medium">See How We Protect You</span>
+          <span className="font-medium">Our Legal Services</span>
           <Scale className="w-6 h-6 mt-2" />
         </a>
       </div>
