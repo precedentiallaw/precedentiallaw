@@ -4,245 +4,255 @@ import { Helmet } from 'react-helmet-async';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import FinalCTA from '@/components/FinalCTA';
-import ScrollReveal from '@/components/ScrollReveal';
 import FAQ from '@/components/FAQ';
-import { MessageCircle, Shield, Clock, Users, CheckCircle, ExternalLink } from 'lucide-react';
+import { Phone, MessageCircle, Clock, Shield, Users, Scale } from 'lucide-react';
 
 const LegalConsultationDubai: React.FC = () => {
-  const consultationServices = [
-    {
-      title: "Initial Legal Assessment",
-      description: "Comprehensive review of your legal situation and identification of potential issues or opportunities.",
-      icon: <Shield className="w-6 h-6 text-precedential-gold" />
-    },
-    {
-      title: "Strategic Legal Planning",
-      description: "Development of tailored legal strategies aligned with your personal or business objectives.",
-      icon: <MessageCircle className="w-6 h-6 text-precedential-gold" />
-    },
-    {
-      title: "Risk Management Consultation",
-      description: "Proactive identification and mitigation of legal risks before they become costly problems.",
-      icon: <Clock className="w-6 h-6 text-precedential-gold" />
-    },
-    {
-      title: "Ongoing Legal Support",
-      description: "Continuous legal guidance and support as your needs evolve over time.",
-      icon: <Users className="w-6 h-6 text-precedential-gold" />
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "What should I bring to my first legal consultation?",
-      answer: "Bring any relevant documents related to your legal matter, a list of questions, and a clear understanding of your objectives. We'll guide you through what's needed during our initial discussion."
-    },
-    {
-      question: "How long does a typical consultation last?",
-      answer: "Initial consultations typically last 45-60 minutes, allowing sufficient time to understand your situation and provide meaningful guidance."
-    },
-    {
-      question: "Can consultations be conducted virtually?",
-      answer: "Yes, we offer both in-person and virtual consultations to accommodate your schedule and preferences."
-    },
-    {
-      question: "What areas of law do you provide consultation for?",
-      answer: "We provide consultation across all our practice areas including family law, business law, immigration, real estate, and civil litigation."
-    }
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>Legal Consultation Dubai | Expert UAE Legal Advice | Precedential Law</title>
-        <meta name="description" content="Professional legal consultation in Dubai. Expert UAE legal advice for individuals and businesses. Trusted legal consultants providing clear guidance and strategic planning." />
-        <meta name="keywords" content="legal consultation Dubai, UAE legal advice, legal consultants Dubai, legal guidance UAE, professional legal advice Dubai" />
+        <meta name="description" content="Get expert legal consultation in Dubai from qualified UAE legal consultants. Professional legal advice for individuals and businesses. Contact Precedential Law today." />
+        <meta name="keywords" content="legal consultation Dubai, UAE legal advice, Dubai legal consultants, legal help Dubai, UAE law firm consultation, Dubai legal services" />
         <link rel="canonical" href="https://precedentiallaw.com/legal-consultation-dubai" />
+        
+        <meta property="og:title" content="Legal Consultation Dubai | Expert UAE Legal Advice" />
+        <meta property="og:description" content="Professional legal consultation services in Dubai. Expert UAE legal advice for individuals and businesses from qualified legal consultants." />
+        <meta property="og:url" content="https://precedentiallaw.com/legal-consultation-dubai" />
       </Helmet>
       
       <NavBar />
       
-      <main className="flex-grow">
-        {/* Hero Banner */}
-        <div className="bg-precedential-black py-16 px-4 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-precedential-gold blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-precedential-gold blur-3xl"></div>
+      <main className="flex-grow pt-20">
+        {/* Hero Section */}
+        <section className="py-16 bg-precedential-black text-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+                Expert Legal Consultation in <span className="text-gold-gradient">Dubai</span>
+              </h1>
+              <p className="text-xl opacity-90 mb-8 leading-relaxed">
+                Get professional legal advice from qualified UAE legal consultants. We provide comprehensive legal guidance for individuals, families, and businesses across all areas of UAE law.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-green-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2">
+                  <Phone className="w-5 h-5" />
+                  Call +971509014120
+                </button>
+                <button className="border border-precedential-gold text-precedential-gold px-8 py-4 rounded-xl font-semibold hover:bg-precedential-gold hover:text-precedential-black transition-colors flex items-center justify-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp Consultation
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6">
-              Legal Consultation <span className="text-gold-gradient">Dubai</span>
-            </h1>
-            <p className="text-white/80 max-w-3xl mx-auto text-lg">
-              Expert legal consultation services in Dubai providing clear guidance, strategic planning, and professional advice for individuals and businesses across the UAE.
-            </p>
-          </div>
-        </div>
-        
-        {/* Introduction Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-4xl">
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6">Professional Legal Consultation in Dubai</h2>
-                <div className="prose prose-lg max-w-none text-precedential-black/80 space-y-4">
-                  <p>
-                    At Precedential Law, we understand that navigating the UAE's legal landscape can be complex and overwhelming. Our legal consultation services in Dubai are designed to provide you with clear, actionable advice tailored to your specific situation.
-                  </p>
-                  <p>
-                    Whether you're an expatriate seeking guidance on personal legal matters, a business owner looking to ensure compliance, or an individual facing a specific legal challenge, our experienced legal consultants are here to help you make informed decisions with confidence.
-                  </p>
-                  <p>
-                    Our consultation approach focuses on understanding your unique circumstances, explaining your options in plain language, and developing practical strategies that align with your objectives while ensuring full compliance with UAE law.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* Services Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-offWhite">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-10 text-center">Our Consultation Services</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {consultationServices.map((service, index) => (
-                  <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-precedential-gold/10">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-precedential-gold/10 flex items-center justify-center mr-4">
-                        {service.icon}
-                      </div>
-                      <h3 className="text-xl font-bold">{service.title}</h3>
-                    </div>
-                    <p className="text-precedential-black/70">{service.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* Process Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-10 text-center">Our Consultation Process</h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-precedential-gold text-white flex items-center justify-center font-bold flex-shrink-0 mt-1">1</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Initial Contact & Scheduling</h3>
-                    <p className="text-precedential-black/70">Contact us to schedule your consultation at a time that works for you, whether in-person or virtually.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-precedential-gold text-white flex items-center justify-center font-bold flex-shrink-0 mt-1">2</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Comprehensive Discussion</h3>
-                    <p className="text-precedential-black/70">We'll discuss your situation in detail, review relevant documents, and understand your objectives.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-precedential-gold text-white flex items-center justify-center font-bold flex-shrink-0 mt-1">3</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Expert Analysis & Advice</h3>
-                    <p className="text-precedential-black/70">Receive clear, actionable advice based on our analysis of your situation and UAE legal requirements.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-precedential-gold text-white flex items-center justify-center font-bold flex-shrink-0 mt-1">4</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Strategic Planning & Next Steps</h3>
-                    <p className="text-precedential-black/70">Develop a clear action plan with defined next steps and ongoing support options.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* Why Choose Us */}
-        <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-black text-white">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-10 text-center">
-                Why Choose Our <span className="text-gold-gradient">Legal Consultation</span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">UAE Legal Expertise</h3>
-                      <p className="text-white/80">Deep understanding of UAE federal and local laws across all emirates.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">Clear Communication</h3>
-                      <p className="text-white/80">Complex legal concepts explained in plain language you can understand.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">Confidential & Professional</h3>
-                      <p className="text-white/80">All consultations conducted with strict confidentiality and professionalism.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-precedential-gold mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold mb-2">Practical Solutions</h3>
-                      <p className="text-white/80">Actionable advice focused on achieving your specific objectives.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* External Link Section */}
-        <ScrollReveal>
-          <section className="py-12 px-4 bg-precedential-offWhite">
-            <div className="container mx-auto max-w-4xl text-center">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-precedential-gold/20">
-                <h3 className="text-xl font-bold mb-4">Official UAE Government Resources</h3>
-                <p className="text-precedential-black/70 mb-4">
-                  For additional information about UAE legal processes and government services:
+        </section>
+
+        {/* Why Choose Our Legal Consultation */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
+                  Why Choose Our Legal Consultation Services?
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Our experienced legal consultants provide clear, actionable advice tailored to your specific needs under UAE law.
                 </p>
-                <a 
-                  href="https://www.dha.gov.ae" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-precedential-gold hover:text-precedential-goldLight font-medium"
-                >
-                  Dubai Health Authority Official Website
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center p-6 bg-green-50 rounded-xl">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Scale className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">UAE Legal Expertise</h3>
+                  <p className="text-gray-600">
+                    Deep knowledge of UAE federal and local laws, regulations, and court procedures across all emirates.
+                  </p>
+                </div>
+                
+                <div className="text-center p-6 bg-blue-50 rounded-xl">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Expat-Focused Service</h3>
+                  <p className="text-gray-600">
+                    Specialized support for expatriates navigating UAE legal requirements and cultural considerations.
+                  </p>
+                </div>
+                
+                <div className="text-center p-6 bg-gold-50 rounded-xl">
+                  <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-precedential-gold" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Confidential & Professional</h3>
+                  <p className="text-gray-600">
+                    Strict confidentiality standards and professional ethics in all legal consultations.
+                  </p>
+                </div>
               </div>
             </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* FAQ Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-10 text-center">Frequently Asked Questions</h2>
-              <FAQ customFaqs={faqs} />
+          </div>
+        </section>
+
+        {/* Consultation Areas */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
+                  Legal Consultation Areas
+                </h2>
+                <p className="text-lg text-gray-600">
+                  We provide expert consultation across all major areas of UAE law
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm border">
+                  <h3 className="text-lg font-semibold mb-3 text-green-600">Family Law Consultation</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Divorce, custody, marriage contracts, inheritance, and personal status matters under UAE law.
+                  </p>
+                  <a href="/services/family-law" className="text-green-600 font-semibold text-sm hover:underline">
+                    Learn More →
+                  </a>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border">
+                  <h3 className="text-lg font-semibold mb-3 text-blue-600">Business Law Consultation</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Company formation, commercial contracts, licensing, and regulatory compliance advice.
+                  </p>
+                  <a href="/services/business-law" className="text-blue-600 font-semibold text-sm hover:underline">
+                    Learn More →
+                  </a>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border">
+                  <h3 className="text-lg font-semibold mb-3 text-purple-600">Immigration Law Consultation</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Visa applications, residency permits, golden visa eligibility, and immigration procedures.
+                  </p>
+                  <a href="/services/immigration-law" className="text-purple-600 font-semibold text-sm hover:underline">
+                    Learn More →
+                  </a>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border">
+                  <h3 className="text-lg font-semibold mb-3 text-red-600">Real Estate Law Consultation</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Property transactions, lease agreements, rental disputes, and real estate regulations.
+                  </p>
+                  <a href="/services/real-estate-law" className="text-red-600 font-semibold text-sm hover:underline">
+                    Learn More →
+                  </a>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border">
+                  <h3 className="text-lg font-semibold mb-3 text-indigo-600">Civil Litigation Consultation</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Dispute resolution, civil claims, contract disputes, and court representation advice.
+                  </p>
+                  <a href="/services/civil-litigation" className="text-indigo-600 font-semibold text-sm hover:underline">
+                    Learn More →
+                  </a>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-sm border">
+                  <h3 className="text-lg font-semibold mb-3 text-orange-600">Employment Law Consultation</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Labor disputes, employment contracts, workplace rights, and termination matters.
+                  </p>
+                  <a href="/services/employment-law-uae" className="text-orange-600 font-semibold text-sm hover:underline">
+                    Learn More →
+                  </a>
+                </div>
+              </div>
             </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* Final CTA */}
-        <FinalCTA />
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
+                  How Our Legal Consultation Works
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Simple, straightforward process to get the legal advice you need
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-green-600 font-bold">1</span>
+                  </div>
+                  <h3 className="font-semibold mb-2">Contact Us</h3>
+                  <p className="text-sm text-gray-600">Call, WhatsApp, or email to schedule your consultation</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-blue-600 font-bold">2</span>
+                  </div>
+                  <h3 className="font-semibold mb-2">Initial Assessment</h3>
+                  <p className="text-sm text-gray-600">We review your case and understand your legal needs</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-purple-600 font-bold">3</span>
+                  </div>
+                  <h3 className="font-semibold mb-2">Expert Consultation</h3>
+                  <p className="text-sm text-gray-600">Detailed discussion with our qualified legal consultant</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-precedential-gold font-bold">4</span>
+                  </div>
+                  <h3 className="font-semibold mb-2">Action Plan</h3>
+                  <p className="text-sm text-gray-600">Receive clear legal advice and next steps</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <FAQ />
+
+        {/* CTA Section */}
+        <section className="py-16 bg-precedential-black text-white">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
+                Ready to Get Expert Legal Advice?
+              </h2>
+              <p className="text-lg opacity-90 mb-8">
+                Don't navigate UAE legal matters alone. Contact our experienced legal consultants for professional guidance tailored to your specific situation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-green-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2">
+                  <Phone className="w-5 h-5" />
+                  Call Now: +971509014120
+                </button>
+                <button className="border border-precedential-gold text-precedential-gold px-8 py-4 rounded-xl font-semibold hover:bg-precedential-gold hover:text-precedential-black transition-colors">
+                  Request Consultation
+                </button>
+              </div>
+              <div className="mt-6 text-sm opacity-75">
+                <Clock className="w-4 h-4 inline mr-2" />
+                Available 24/7 for urgent legal matters
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       
       <Footer />
