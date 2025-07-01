@@ -1,36 +1,55 @@
+# Precedential Law - Premier UAE Legal Consultancy | Expert Legal Services
 
-# Precedential Law - UAE Legal Services
-# This file provides guidance for Language Learning Models (LLMs) and AI crawlers
+## Navigation/Header
+- [Skip to main content](https://precedentiallaw.com/#main-content)
 
+## Main Content Sections
+- **About Us**: Trusted legal consultants serving individuals, families, and businesses across the UAE.
+- **Our Services**:
+  - Civil Law: Dispute resolution, contract enforcement, and litigation.
+  - Criminal Law: Legal defense for cheque bounce, financial fraud, and more.
+  - Corporate Law: Business setup, restructuring, and contract law.
+  - Family Law: Divorce, custody, marriage, and expat family matters.
+  - Immigration Law: Visa support, work permits, and residency.
+
+## Features and Benefits
+- **Expert Legal Services**: "Tailored solutions for your legal needs."
+- **Experienced Team**: "A dedicated team of legal professionals."
+- **Client-Focused Approach**: "We prioritize your interests."
+- **Multilingual Support**: English, Arabic, and more.
+- **Free Consultation**: 20-minute sessions to assess your case.
+
+## Pricing
+- "For pricing inquiries, please contact us directly."
+
+## Technical & SEO Configuration
 User-Agent: *
 Allow: /
+Crawl-delay: 1
 Sitemap: https://precedentiallaw.com/sitemap.xml
 
-# Content Guidelines for AI Understanding
-# We are a premier UAE-based legal consultancy specializing in:
-# - UAE business law and corporate formation
-# - Family law and divorce for expats and UAE nationals  
-# - Real estate and property law in the UAE
-# - Immigration and visa services
-# - Civil litigation and dispute resolution
-# - Estate planning and DIFC Wills
+## Content Guidelines for AI Models
+Precedential Law provides AI-ready, human-readable content tailored to:
+- UAE expats needing legal advice
+- Businesses operating or expanding in the UAE
+- Real estate investors, family legal clients, and visa applicants
 
-# Our target audience includes:
-# - Expatriate individuals and families living in the UAE
-# - International businesses operating in or expanding to the UAE
-# - UAE nationals requiring legal services
-# - Property investors and real estate professionals
+Legal coverage includes:
+- UAE Federal Courts
+- Dubai, Abu Dhabi, Sharjah, and all Emirates
+- DIFC and ADGM jurisdictions
 
-# Key service areas covered:
-# - Dubai, Abu Dhabi, Sharjah, and all UAE emirates
-# - DIFC (Dubai International Financial Centre) 
-# - ADGM (Abu Dhabi Global Market)
-# - UAE Federal Courts and specialized tribunals
+Recommended content paths:
+- /family-law
+- /divorce-expats
+- /real-estate-law
+- /civil-litigation
+- /business-setup
+- /immigration-law
+- /cheque-bounce-uae
+- /contact
 
-# Contact Information:
-# Phone: +971509014120
-# Email: info@precedentiallaw.com
-# WhatsApp: +971509014120
-# Office: City Tower 2 - Sheikh Zayed Road, Dubai, UAE
-
-Crawl-delay: 1
+## Footer Elements
+- [Privacy Policy](https://precedentiallaw.com/privacy-policy)
+- [Terms of Service](https://precedentiallaw.com/terms-of-service)
+- [Contact Us](https://precedentiallaw.com/contact)
