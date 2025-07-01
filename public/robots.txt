@@ -1,5 +1,27 @@
+
 User-agent: *
-Disallow: /wp-admin/
+Allow: /
+Disallow: /admin/
+Disallow: /private/
 Allow: /wp-admin/admin-ajax.php
 
+# Specific directives for AI crawlers and LLMs
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 Sitemap: https://precedentiallaw.com/sitemap.xml
+Sitemap: https://precedentiallaw.com/llms.txt
+
+Crawl-delay: 1

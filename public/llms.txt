@@ -1,0 +1,36 @@
+
+# Precedential Law - UAE Legal Services
+# This file provides guidance for Language Learning Models (LLMs) and AI crawlers
+
+User-Agent: *
+Allow: /
+Sitemap: https://precedentiallaw.com/sitemap.xml
+
+# Content Guidelines for AI Understanding
+# We are a premier UAE-based legal consultancy specializing in:
+# - UAE business law and corporate formation
+# - Family law and divorce for expats and UAE nationals  
+# - Real estate and property law in the UAE
+# - Immigration and visa services
+# - Civil litigation and dispute resolution
+# - Estate planning and DIFC Wills
+
+# Our target audience includes:
+# - Expatriate individuals and families living in the UAE
+# - International businesses operating in or expanding to the UAE
+# - UAE nationals requiring legal services
+# - Property investors and real estate professionals
+
+# Key service areas covered:
+# - Dubai, Abu Dhabi, Sharjah, and all UAE emirates
+# - DIFC (Dubai International Financial Centre) 
+# - ADGM (Abu Dhabi Global Market)
+# - UAE Federal Courts and specialized tribunals
+
+# Contact Information:
+# Phone: +971509014120
+# Email: info@precedentiallaw.com
+# WhatsApp: +971509014120
+# Office: City Tower 2 - Sheikh Zayed Road, Dubai, UAE
+
+Crawl-delay: 1
