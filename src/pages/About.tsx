@@ -1,49 +1,37 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import NavBar from '@/components/NavBar';
+import ModernNavBar from '@/components/ModernNavBar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FinalCTA from '@/components/FinalCTA';
-import ScrollReveal from '@/components/ScrollReveal';
 import FAQ from '@/components/FAQ';
-import { Shield, CheckCircle } from 'lucide-react';
-
-const ValueCard: React.FC<{ title: string; description: string; icon: React.ReactNode }> = ({
-  title,
-  description,
-  icon
-}) => {
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-precedential-gold/10">
-      <div className="flex items-center mb-4">
-        <div className="w-10 h-10 rounded-full bg-precedential-gold/10 flex items-center justify-center mr-4">
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold">{title}</h3>
-      </div>
-      <p className="text-precedential-black/70">{description}</p>
-    </div>
-  );
-};
+import { Shield, CheckCircle, Users, Award, Clock, Target } from 'lucide-react';
 
 const About: React.FC = () => {
   const values = [
     {
       title: "Integrity",
       description: "We operate with unwavering ethical standards. Transparency, honesty, and accountability are the cornerstones of our practice, ensuring trust and reliability in all our dealings.",
-      icon: <CheckCircle className="w-5 h-5 text-precedential-gold" />
+      icon: <CheckCircle className="w-6 h-6 text-emerald-600" />
     },
     {
-      title: "Client Protection (Your Legal Shield)",
-      description: "We see ourselves as your shield, standing resolutely between you and the complexities of the legal system. Our primary focus is safeguarding your rights, assets, and future, offering robust protection against legal challenges.",
-      icon: <Shield className="w-5 h-5 text-precedential-gold" />
+      title: "Client Protection",
+      description: "We see ourselves as your shield, standing resolutely between you and the complexities of the legal system. Our primary focus is safeguarding your rights, assets, and future.",
+      icon: <Shield className="w-6 h-6 text-emerald-600" />
     },
     {
       title: "Excellence",
-      description: "We are committed to achieving the highest quality in our legal advice, representation, and client service. This involves continuous learning, meticulous preparation, and a relentless pursuit of the best possible outcomes for those we serve.",
-      icon: <CheckCircle className="w-5 h-5 text-precedential-gold" />
+      description: "We are committed to achieving the highest quality in our legal advice, representation, and client service through continuous learning and meticulous preparation.",
+      icon: <Award className="w-6 h-6 text-emerald-600" />
     }
+  ];
+
+  const stats = [
+    { number: '40+', label: 'Years Combined Experience' },
+    { number: '500+', label: 'Cases Successfully Handled' },
+    { number: '95%', label: 'Client Satisfaction Rate' },
+    { number: '24hrs', label: 'Average Response Time' }
   ];
 
   return (
@@ -55,120 +43,156 @@ const About: React.FC = () => {
         <link rel="canonical" href="https://precedentiallaw.com/about" />
       </Helmet>
       
-      <NavBar />
+      <ModernNavBar />
       
-      <main className="flex-grow">
-        {/* Hero Banner */}
-        <div className="bg-precedential-black py-16 px-4 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-precedential-gold blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-precedential-gold blur-3xl"></div>
+      <main className="flex-grow pt-20">
+        {/* Hero Section */}
+        <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-5xl font-bold text-gray-900 mb-8">
+                About <span className="text-emerald-600">Precedential Law</span>
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                A premier legal consultancy dedicated to setting the standard in the UAE's legal landscape
+              </p>
+            </div>
           </div>
-          <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6">
-              About <span className="text-gold-gradient">Precedential Law</span>
-            </h1>
-            <p className="text-white/80 max-w-3xl mx-auto text-lg">
-              A premier legal consultancy dedicated to setting the standard in the UAE's legal landscape
-            </p>
-          </div>
-        </div>
+        </section>
         
         {/* Mission Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">Our Mission</h2>
-              <div className="glass-card p-8 text-center">
-                <p className="text-lg text-precedential-black/80">
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <Target className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              </div>
+              <div className="card-clean p-12 text-center">
+                <p className="text-xl text-gray-700 leading-relaxed">
                   Our mission at Precedential Law is to provide clear, effective, and accessible legal solutions that empower our clients and protect their interests within the dynamic legal landscape of Dubai and the UAE. We strive to be a beacon of clarity and reliability in a complex field.
                 </p>
               </div>
             </div>
-          </section>
-        </ScrollReveal>
+          </div>
+        </section>
         
         {/* Values Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-offWhite">
-            <div className="container mx-auto max-w-5xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-10 text-center">Our Values</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {values.map((value) => (
-                  <ValueCard 
-                    key={value.title}
-                    title={value.title}
-                    description={value.description}
-                    icon={value.icon}
-                  />
-                ))}
-              </div>
+        <section className="section-padding bg-section">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                These principles guide everything we do and define our commitment to our clients.
+              </p>
             </div>
-          </section>
-        </ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {values.map((value) => (
+                <div key={value.title} className="card-clean p-8 text-center group hover:-translate-y-1">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-200 transition-colors">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-4xl font-bold text-emerald-600 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         
         {/* Philosophy Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">Our Philosophy</h2>
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <p className="text-lg text-precedential-black/80 mb-4">
-                  We believe in a proactive, client-centric approach. This means dedicating time to understand your objectives deeply, anticipating potential challenges, and communicating complex legal matters in plain language. We aim to demystify the law, empowering you with the knowledge needed to make informed decisions confidently.
-                </p>
-                <p className="text-lg text-precedential-black/80">
-                  We don't just react to problems; we work with you to prevent them and chart the most efficient and effective path to resolution. This focus on clarity addresses the common need for straightforward guidance in navigating intricate legal systems.
-                </p>
+        <section className="section-padding bg-section">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <Users className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Philosophy</h2>
+              </div>
+              <div className="card-clean p-12">
+                <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                  <p>
+                    We believe in a proactive, client-centric approach. This means dedicating time to understand your objectives deeply, anticipating potential challenges, and communicating complex legal matters in plain language. We aim to demystify the law, empowering you with the knowledge needed to make informed decisions confidently.
+                  </p>
+                  <p>
+                    We don't just react to problems; we work with you to prevent them and chart the most efficient and effective path to resolution. This focus on clarity addresses the common need for straightforward guidance in navigating intricate legal systems.
+                  </p>
+                </div>
               </div>
             </div>
-          </section>
-        </ScrollReveal>
+          </div>
+        </section>
         
         {/* Understanding Our Name */}
-        <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-black text-white">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">
-                Understanding Our <span className="text-gold-gradient">Name</span>
-              </h2>
-              <div className="glass-card border border-precedential-gold/20 p-8">
-                <p className="text-lg text-white/90 mb-4">
-                  The name 'Precedential' embodies our core aspiration: to set a new benchmark - a precedent - for legal service quality and client success in the UAE. It signifies our unwavering commitment to achieving landmark results for our clients, approaching each case with the diligence and strategic thinking required to establish positive outcomes.
-                </p>
-                <p className="text-lg text-white/90">
-                  It reflects our dedication to upholding the highest standards of legal practice and professional conduct, aiming to be leaders in our field.
-                </p>
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <Scale className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                  Understanding Our <span className="text-emerald-600">Name</span>
+                </h2>
+              </div>
+              <div className="card-clean p-12">
+                <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                  <p>
+                    The name 'Precedential' embodies our core aspiration: to set a new benchmark - a precedent - for legal service quality and client success in the UAE. It signifies our unwavering commitment to achieving landmark results for our clients, approaching each case with the diligence and strategic thinking required to establish positive outcomes.
+                  </p>
+                  <p>
+                    It reflects our dedication to upholding the highest standards of legal practice and professional conduct, aiming to be leaders in our field.
+                  </p>
+                </div>
               </div>
             </div>
-          </section>
-        </ScrollReveal>
+          </div>
+        </section>
         
         {/* Client Protection */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6 text-center">Our Commitment to Client Protection</h2>
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <p className="text-lg text-precedential-black/80 mb-4">
-                  Your peace of mind is paramount. We act as your dedicated shield, navigating intricate legal frameworks, such as the UAE Civil Code or specific Decree-Laws governing employment or commercial transactions. We manage complex procedures, whether it involves filings with the Rental Dispute Centre, adhering to civil court protocols, or ensuring compliance with business regulations to avoid penalties.
-                </p>
-                <p className="text-lg text-precedential-black/80">
-                  We stand firm to protect your rights and interests from potential pitfalls, such as ambiguous contract terms or the complexities of cross-border legal issues. Trust us to be your steadfast protectors in the legal arena.
-                </p>
+        <section className="section-padding bg-section">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <Shield className="w-12 h-12 text-emerald-600 mx-auto mb-6" />
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Commitment to Client Protection</h2>
+              </div>
+              <div className="card-clean p-12">
+                <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                  <p>
+                    Your peace of mind is paramount. We act as your dedicated shield, navigating intricate legal frameworks, such as the UAE Civil Code or specific Decree-Laws governing employment or commercial transactions. We manage complex procedures, whether it involves filings with the Rental Dispute Centre, adhering to civil court protocols, or ensuring compliance with business regulations to avoid penalties.
+                  </p>
+                  <p>
+                    We stand firm to protect your rights and interests from potential pitfalls, such as ambiguous contract terms or the complexities of cross-border legal issues. Trust us to be your steadfast protectors in the legal arena.
+                  </p>
+                </div>
               </div>
             </div>
-          </section>
-        </ScrollReveal>
+          </div>
+        </section>
 
         {/* FAQ Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-offWhite">
-            <div className="container mx-auto max-w-4xl">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-10 text-center">Frequently Asked Questions</h2>
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+              </div>
               <FAQ />
             </div>
-          </section>
-        </ScrollReveal>
+          </div>
+        </section>
         
         {/* Final CTA */}
         <FinalCTA />

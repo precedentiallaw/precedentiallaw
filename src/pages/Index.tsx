@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import HeroSection from '@/components/HeroSection';
-import NavBar from '@/components/NavBar';
-import ServicesSection from '@/components/ServicesSection';
-import AboutSection from '@/components/AboutSection';
-import EnhancedTestimonials from '@/components/EnhancedTestimonials';
+import ModernHeroSection from '@/components/ModernHeroSection';
+import ModernNavBar from '@/components/ModernNavBar';
+import ModernServicesSection from '@/components/ModernServicesSection';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import ModernWhyChooseUs from '@/components/ModernWhyChooseUs';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
@@ -98,7 +98,7 @@ const Index: React.FC = () => {
 
         {/* PWA and Mobile Optimization */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#D4AF37" />
+        <meta name="theme-color" content="#059669" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Precedential Law" />
@@ -133,17 +133,17 @@ const Index: React.FC = () => {
       
       {/* Main Content with semantic HTML */}
       <header>
-        <NavBar />
+        <ModernNavBar />
       </header>
       
       <main id="main-content" role="main">
-        <HeroSection />
+        <ModernHeroSection />
         <ExpatLegalEmergencySection />
-        <ServicesSection />
+        <ModernServicesSection />
+        <HowItWorksSection />
         <DownloadableGuides />
-        <AboutSection />
+        <ModernWhyChooseUs />
         <FAQ />
-        <EnhancedTestimonials />
         <NewsletterSubscription />
         <ContactSection />
         <FinalCTA />

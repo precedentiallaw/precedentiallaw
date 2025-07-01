@@ -1,12 +1,11 @@
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import NavBar from '@/components/NavBar';
+import ModernNavBar from '@/components/ModernNavBar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FAQ from '@/components/FAQ';
-import ScrollReveal from '@/components/ScrollReveal';
-import { Map, MessageSquare, Mail, Phone, Clock, MapPin } from 'lucide-react';
+import { Mail, Phone, Clock, MapPin, MessageSquare, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -55,268 +54,272 @@ const Contact: React.FC = () => {
         <link rel="canonical" href="https://precedentiallaw.com/contact" />
       </Helmet>
       
-      <NavBar />
+      <ModernNavBar />
       
-      <main className="flex-grow">
-        {/* Hero Banner */}
-        <div className="bg-precedential-black py-16 px-4 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-precedential-gold blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-precedential-gold blur-3xl"></div>
+      <main className="flex-grow pt-20">
+        {/* Hero Section */}
+        <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-5xl font-bold text-gray-900 mb-8">
+                Contact Our Legal <span className="text-emerald-600">Experts</span>
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Ready to discuss your legal needs? Our team is here to help. Contact us today to schedule a confidential consultation with experienced UAE legal professionals.
+              </p>
+            </div>
           </div>
-          <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6">
-              Talk to a Legal <span className="text-gold-gradient">Expert Today</span>
-            </h1>
-            <p className="text-white/80 max-w-3xl mx-auto text-lg">
-              Ready to discuss your legal needs? Our team is here to help. Contact us today to schedule a confidential consultation with experienced UAE legal professionals.
-            </p>
-          </div>
-        </div>
+        </section>
         
         {/* Contact Information & Form */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-6xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                {/* Contact Information */}
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-8">Contact Information</h2>
-                  
-                  <div className="space-y-8">
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 rounded-full bg-precedential-gold/10 flex items-center justify-center mr-5">
-                        <Phone className="w-5 h-5 text-precedential-gold" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-2">Phone</h3>
-                        <p className="text-precedential-black/70">
-                          <a href="tel:+971509014120" className="hover:text-precedential-gold">+971 50 901 4120</a>
-                        </p>
-                      </div>
+        <section className="section-padding">
+          <div className="container-custom">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              {/* Contact Information */}
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-12">Get in Touch</h2>
+                
+                <div className="space-y-8 mb-12">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-emerald-600" />
                     </div>
-                    
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 rounded-full bg-precedential-gold/10 flex items-center justify-center mr-5">
-                        <Mail className="w-5 h-5 text-precedential-gold" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-2">Email</h3>
-                        <p className="text-precedential-black/70">
-                          <a href="mailto:info@precedentiallaw.com" className="hover:text-precedential-gold">info@precedentiallaw.com</a>
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 rounded-full bg-precedential-gold/10 flex items-center justify-center mr-5">
-                        <MessageSquare className="w-5 h-5 text-precedential-gold" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-2">WhatsApp</h3>
-                        <p className="text-precedential-black/70">
-                          <a href="https://wa.me/971509014120" className="hover:text-precedential-gold">+971 50 901 4120</a>
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 rounded-full bg-precedential-gold/10 flex items-center justify-center mr-5">
-                        <MapPin className="w-5 h-5 text-precedential-gold" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-2">Office Location</h3>
-                        <p className="text-precedential-black/70">
-                          City Tower 2 - Sheikh Zayed Rd<br />
-                          Trade Centre - Trade Centre 1<br />
-                          Dubai, United Arab Emirates
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 rounded-full bg-precedential-gold/10 flex items-center justify-center mr-5">
-                        <Clock className="w-5 h-5 text-precedential-gold" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-2">Working Hours</h3>
-                        <p className="text-precedential-black/70">
-                          Monday - Thursday: 9:00 AM - 5:00 PM<br />
-                          Friday: 9:00 AM - 12:30 PM
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+                      <p className="text-gray-600">
+                        <a href="tel:+971509014120" className="hover:text-emerald-600 transition-colors">+971 50 901 4120</a>
+                      </p>
                     </div>
                   </div>
                   
-                  {/* Google Map */}
-                  <div className="mt-12">
-                    <h3 className="text-lg font-bold mb-4">Find Us</h3>
-                    <div className="rounded-xl overflow-hidden h-[300px] border border-gray-200">
-                      <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.849968906363!2d55.28207412537764!3d25.204781831864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428f71bbb7b7%3A0xf60cac23f6c2e27b!2sCity%20Tower%202%20-%20Sheikh%20Zayed%20Rd%20-%20Trade%20Centre%20-%20Trade%20Centre%201%20-%20Dubai!5e0!3m2!1sen!2sae!4v1649247014287!5m2!1sen!2sae"
-                        width="100%" 
-                        height="100%" 
-                        style={{ border: 0 }} 
-                        allowFullScreen 
-                        loading="lazy" 
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Precedential Law office location" 
-                      ></iframe>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-emerald-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                      <p className="text-gray-600">
+                        <a href="mailto:info@precedentiallaw.com" className="hover:text-emerald-600 transition-colors">info@precedentiallaw.com</a>
+                      </p>
                     </div>
                   </div>
                   
-                  {/* FAQ Section */}
-                  <div className="mt-12">
-                    <h3 className="text-lg font-bold mb-4">Frequently Asked Questions</h3>
-                    <FAQ />
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="w-6 h-6 text-emerald-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">WhatsApp</h3>
+                      <p className="text-gray-600">
+                        <a href="https://wa.me/971509014120" className="hover:text-emerald-600 transition-colors">+971 50 901 4120</a>
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-emerald-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Location</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        City Tower 2 - Sheikh Zayed Road<br />
+                        Trade Centre - Trade Centre 1<br />
+                        Dubai, United Arab Emirates
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-emerald-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Working Hours</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Monday - Thursday: 9:00 AM - 5:00 PM<br />
+                        Friday: 9:00 AM - 12:30 PM
+                      </p>
+                    </div>
                   </div>
                 </div>
-                
-                {/* Contact Form */}
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-8">Send Us a Message</h2>
-                  
-                  <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    {formSubmitted ? (
-                      <div className="bg-green-50 text-green-700 p-6 rounded-xl">
-                        <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-                        <p>Thank you for contacting Precedential Law. We'll get back to you shortly.</p>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleSubmit} className="space-y-5">
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-medium mb-1">Full Name *</label>
-                          <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-precedential-gold/50 focus:border-precedential-gold transition-colors"
-                            placeholder="Your full name"
-                          />
-                        </div>
-                        
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                          <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-1">Email Address *</label>
-                            <input 
-                              type="email" 
-                              id="email" 
-                              name="email" 
-                              value={formData.email}
-                              onChange={handleChange}
-                              required
-                              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-precedential-gold/50 focus:border-precedential-gold transition-colors"
-                              placeholder="Your email"
-                            />
-                          </div>
-                          
-                          <div>
-                            <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone Number</label>
-                            <input 
-                              type="tel" 
-                              id="phone" 
-                              name="phone" 
-                              value={formData.phone}
-                              onChange={handleChange}
-                              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-precedential-gold/50 focus:border-precedential-gold transition-colors"
-                              placeholder="Your phone number"
-                            />
-                          </div>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="service" className="block text-sm font-medium mb-1">Service Interest *</label>
-                          <select 
-                            id="service" 
-                            name="service" 
-                            value={formData.service}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-precedential-gold/50 focus:border-precedential-gold transition-colors"
-                          >
-                            <option value="">Select a service</option>
-                            <option value="Commercial Law">Commercial & Business Law</option>
-                            <option value="Family Law">Family Law & Wills</option>
-                            <option value="Real Estate Law">Real Estate Law</option>
-                            <option value="Debt Settlement">Debt Settlement & Civil Litigation</option>
-                            <option value="Immigration Law">Immigration Law</option>
-                            <option value="Criminal Defense">Criminal Defense</option>
-                            <option value="Other">Other Legal Services</option>
-                          </select>
-                        </div>
-                        
-                        <div>
-                          <label htmlFor="message" className="block text-sm font-medium mb-1">Message *</label>
-                          <textarea 
-                            id="message" 
-                            name="message" 
-                            rows={5} 
-                            value={formData.message}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-precedential-gold/50 focus:border-precedential-gold transition-colors"
-                            placeholder="Please describe your legal concern or inquiry"
-                          ></textarea>
-                        </div>
-                        
-                        <div className="flex items-start gap-2">
-                          <input
-                            type="checkbox"
-                            id="consent"
-                            name="consent"
-                            checked={formData.consent}
-                            onChange={handleChange}
-                            required
-                            className="mt-1"
-                          />
-                          <label htmlFor="consent" className="text-sm text-gray-600">
-                            I consent to having my data processed in accordance with the <a href="/privacy-policy" className="text-precedential-gold hover:underline">privacy policy</a>
-                          </label>
-                        </div>
-                        
-                        <button 
-                          type="submit" 
-                          className="w-full py-3 rounded-xl font-medium transition-all duration-300 
-                                  bg-precedential-black text-white border-2 border-precedential-gold 
-                                  hover:bg-precedential-gold hover:text-precedential-black"
-                        >
-                          Submit Request
-                        </button>
-                      </form>
-                    )}
-                  </div>
-                  
-                  <div className="mt-8 text-center">
-                    <p className="text-precedential-black/70">
-                      We value your inquiry and aim to respond promptly. We look forward to hearing from you and exploring how Precedential Law can assist you in achieving your legal objectives in the UAE.
-                    </p>
-                  </div>
 
-                  {/* CTA Buttons */}
-                  <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                    <a 
-                      href="https://wa.me/971509014120" 
-                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold text-center transition-colors flex items-center justify-center gap-2"
-                    >
-                      <MessageSquare className="w-5 h-5" />
-                      WhatsApp Now
-                    </a>
-                    <a 
-                      href="tel:+971509014120" 
-                      className="bg-precedential-gold hover:bg-precedential-goldLight text-precedential-black px-6 py-3 rounded-xl font-semibold text-center transition-colors flex items-center justify-center gap-2"
-                    >
-                      <Phone className="w-5 h-5" />
-                      Request Consultation
-                    </a>
-                  </div>
+                {/* Quick Actions */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://wa.me/971509014120" 
+                    className="btn-primary flex items-center justify-center space-x-2"
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    <span>WhatsApp Now</span>
+                  </a>
+                  <a 
+                    href="tel:+971509014120" 
+                    className="btn-secondary flex items-center justify-center space-x-2"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span>Call Now</span>
+                  </a>
+                </div>
+              </div>
+              
+              {/* Contact Form */}
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-12">Send Us a Message</h2>
+                
+                <div className="card-clean p-8">
+                  {formSubmitted ? (
+                    <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-8 rounded-lg text-center">
+                      <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Send className="w-8 h-8 text-emerald-600" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2">Message Sent Successfully!</h3>
+                      <p>Thank you for contacting Precedential Law. We'll get back to you within 24 hours.</p>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">Full Name *</label>
+                        <input 
+                          type="text" 
+                          id="name" 
+                          name="name" 
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">Email Address *</label>
+                          <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                            placeholder="your.email@example.com"
+                          />
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">Phone Number</label>
+                          <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                            placeholder="+971 XX XXX XXXX"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="service" className="block text-sm font-medium text-gray-900 mb-2">Legal Service Required *</label>
+                        <select 
+                          id="service" 
+                          name="service" 
+                          value={formData.service}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                        >
+                          <option value="">Select a service</option>
+                          <option value="Family Law">Family Law</option>
+                          <option value="Business Law">Business & Commercial Law</option>
+                          <option value="Immigration Law">Immigration Law</option>
+                          <option value="Real Estate Law">Real Estate Law</option>
+                          <option value="Civil Litigation">Civil Litigation</option>
+                          <option value="Legal Consultation">Legal Consultation</option>
+                          <option value="Other">Other Legal Services</option>
+                        </select>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">Your Message *</label>
+                        <textarea 
+                          id="message" 
+                          name="message" 
+                          rows={6} 
+                          value={formData.message}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors resize-none"
+                          placeholder="Please describe your legal matter in detail..."
+                        ></textarea>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3">
+                        <input
+                          type="checkbox"
+                          id="consent"
+                          name="consent"
+                          checked={formData.consent}
+                          onChange={handleChange}
+                          required
+                          className="mt-1 h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+                        />
+                        <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed">
+                          I consent to having my data processed in accordance with the <a href="/privacy-policy" className="text-emerald-600 hover:text-emerald-700 underline">privacy policy</a>
+                        </label>
+                      </div>
+                      
+                      <button 
+                        type="submit" 
+                        className="w-full btn-primary flex items-center justify-center space-x-2"
+                      >
+                        <Send className="w-5 h-5" />
+                        <span>Request Free Case Evaluation</span>
+                      </button>
+                    </form>
+                  )}
                 </div>
               </div>
             </div>
-          </section>
-        </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Map Section */}
+        <section className="py-16">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Our Office</h2>
+              <p className="text-gray-600">Located in the heart of Dubai's business district</p>
+            </div>
+            <div className="rounded-xl overflow-hidden h-96 border border-gray-200 shadow-sm">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.849968906363!2d55.28207412537764!3d25.204781831864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428f71bbb7b7%3A0xf60cac23f6c2e27b!2sCity%20Tower%202%20-%20Sheikh%20Zayed%20Rd%20-%20Trade%20Centre%20-%20Trade%20Centre%201%20-%20Dubai!5e0!3m2!1sen!2sae!4v1649247014287!5m2!1sen!2sae"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Precedential Law office location" 
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-padding bg-section">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p className="text-gray-600">Common questions about our legal services</p>
+              </div>
+              <FAQ />
+            </div>
+          </div>
+        </section>
       </main>
       
       <Footer />

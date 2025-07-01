@@ -14,7 +14,7 @@ export default {
 		container: {
 			center: true,
 			padding: {
-				DEFAULT: '1rem',
+				DEFAULT: '1.5rem',
 				sm: '2rem',
 				lg: '4rem',
 				xl: '5rem',
@@ -63,60 +63,21 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-                // Updated brand colors per brand guidelines
-                precedential: {
-                    black: '#0A0A1F', // Deep Navy per brand guidelines
-                    gold: '#D4AF37', // Primary Gold per brand guidelines
-                    goldLight: '#E5C76B',
-                    goldDark: '#B8860B',
-                    white: '#FFFFFF',
-                    offWhite: '#F8F8F8',
-                    gray: '#222222'
-                }
 			},
             fontFamily: {
-                'playfair': ['Playfair Display', 'serif'],
-                'montserrat': ['Montserrat', 'sans-serif'], 
-                'cormorant': ['Cormorant Garamond', 'serif'],
                 'inter': ['Inter', 'sans-serif'],
-                'opensans': ['Open Sans', 'sans-serif']
             },
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+			spacing: {
+				'18': '4.5rem',
+				'22': '5.5rem',
 			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+			maxWidth: {
+				'7xl': '80rem',
 			}
 		}
 	},
