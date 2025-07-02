@@ -94,41 +94,6 @@ const NavHeader: React.FC = () => {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        .mobile-menu-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100vh;
-          background: rgba(0, 0, 0, 0.95);
-          z-index: 999;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .mobile-menu {
-          text-align: center;
-        }
-
-        .mobile-menu-item {
-          margin: 2rem 0;
-        }
-
-        .mobile-menu-item a {
-          color: white;
-          font-size: 2rem;
-          font-weight: 600;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .mobile-menu-item a:hover {
-          color: #D4AF37;
-        }
-      `}</style>
     </>
   );
 };

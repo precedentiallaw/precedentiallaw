@@ -93,105 +93,117 @@ const MaximaIndex: React.FC = () => {
           <main>
             <HeroSection />
             
-            {/* About Section Placeholder */}
+            {/* About Section */}
             <section id="about" className="content-section" data-scroll-section>
               <div className="container">
                 <div className="content-grid">
                   <div className="content-text" data-scroll data-scroll-speed="2">
-                    <h2>About Precedential Law</h2>
+                    <h2>We provide legal services in the most complex areas of law.</h2>
                     <p>
-                      We are a premier Dubai-based legal consultancy committed to delivering 
-                      clear, effective, and client-focused legal solutions. We understand the 
-                      unique and dynamic legal environment of Dubai and the wider UAE.
+                      Our experienced legal consultants offer tailored solutions across 
+                      family law, business law, immigration, real estate, and civil litigation.
                     </p>
                     <p>
-                      Our dedication lies in protecting your interests, acting as your trusted 
-                      shield against legal complexities.
+                      Licensed to practice in the UAE, we provide bilingual support and 
+                      transparent legal processes for both expatriates and corporate clients.
                     </p>
                   </div>
                   <div className="content-image" data-scroll data-scroll-speed="1">
                     <img 
                       src="/lovable-uploads/febbbdbe-5ee2-4d51-abbe-5f590a3a229f.png" 
                       alt="Precedential Law Office" 
+                      width={600}
+                      height={400}
                     />
                   </div>
                 </div>
               </div>
             </section>
 
-            {/* Services Section Placeholder */}
+            {/* Services Section */}
             <section id="services" className="content-section" data-scroll-section>
               <div className="container">
-                <div className="content-text" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                  <h2>Our Legal Services</h2>
-                  <p>
-                    Comprehensive legal support across key domains tailored to the specific 
-                    needs of individuals and businesses in the UAE.
+                <div className="content-text" style={{ textAlign: 'left', marginBottom: '6rem' }}>
+                  <h2>Our experience is confirmed by reputable world rating agencies.</h2>
+                  <p className="text-large">
+                    We help our clients achieve their goals through strategic legal guidance 
+                    and comprehensive support across all areas of UAE law.
                   </p>
                 </div>
                 
                 <div className="services-grid">
                   <div className="service-card fade-up">
                     <h3>Family Law</h3>
-                    <p>Including divorce, custody, inheritance, and personal status matters</p>
+                    <p>Including divorce, custody, inheritance, and personal status matters for expatriates and UAE nationals.</p>
                   </div>
                   <div className="service-card fade-up stagger-delay-1">
-                    <h3>Business Law</h3>
-                    <p>Contract formation, compliance, company setup and commercial law</p>
+                    <h3>Business & Commercial Law</h3>
+                    <p>Contract formation, compliance, company setup, and commercial law guidance for businesses in the UAE.</p>
                   </div>
                   <div className="service-card fade-up stagger-delay-2">
                     <h3>Immigration Law</h3>
-                    <p>Visa applications, golden visa eligibility, and legal residency</p>
+                    <p>Visa applications, golden visa eligibility, and legal residency support for individuals and families.</p>
                   </div>
                   <div className="service-card fade-up stagger-delay-3">
                     <h3>Real Estate Law</h3>
-                    <p>Property disputes, lease agreements, and transactions</p>
+                    <p>Property disputes, lease agreements, transactions, and RERA compliance in Dubai's property market.</p>
                   </div>
                   <div className="service-card fade-up stagger-delay-4">
                     <h3>Civil Litigation</h3>
-                    <p>Dispute resolution and representation in UAE courts</p>
+                    <p>Dispute resolution and representation in UAE courts for complex civil and commercial matters.</p>
                   </div>
                   <div className="service-card fade-up">
                     <h3>Debt Settlement</h3>
-                    <p>Financial dispute resolution and debt recovery services</p>
+                    <p>Financial dispute resolution and debt recovery services under UAE commercial law.</p>
                   </div>
                 </div>
               </div>
             </section>
 
-            {/* Contact Section Placeholder */}
+            {/* Contact Section */}
             <section id="contact" className="content-section" data-scroll-section>
               <div className="container">
-                <div className="content-text" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                  <h2>Get in Touch</h2>
-                  <p>
-                    Ready to discuss your legal needs? Contact us today for expert legal 
-                    support in the UAE.
-                  </p>
-                </div>
-                
-                <div className="contact-form">
-                  <form>
-                    <div className="form-group">
-                      <label>Name</label>
-                      <input type="text" required />
+                <div className="content-grid">
+                  <div className="content-text">
+                    <h2>Do you have any questions?</h2>
+                    <p className="mb-large">
+                      Ready to discuss your legal needs? Contact us today for expert legal 
+                      support in the UAE. We offer confidential consultations to understand 
+                      your situation and explore how we can help.
+                    </p>
+                    
+                    <div className="contact-info">
+                      <h4>DUBAI</h4>
+                      <p>City Tower 2 - Sheikh Zayed Road</p>
+                      <p>Trade Centre - Trade Centre 1 - Dubai</p>
+                      <p>+971 50 901 4120</p>
+                      <p>info@precedentiallaw.com</p>
                     </div>
-                    <div className="form-group">
-                      <label>Email</label>
-                      <input type="email" required />
-                    </div>
-                    <div className="form-group">
-                      <label>Phone</label>
-                      <input type="tel" />
-                    </div>
-                    <div className="form-group">
-                      <label>Message</label>
-                      <textarea rows={5} required></textarea>
-                    </div>
-                    <button type="submit" className="form-submit">
-                      Send Message
-                    </button>
-                  </form>
+                  </div>
+                  
+                  <div className="contact-form">
+                    <form>
+                      <div className="form-group">
+                        <label>Name</label>
+                        <input type="text" required />
+                      </div>
+                      <div className="form-group">
+                        <label>Email</label>
+                        <input type="email" required />
+                      </div>
+                      <div className="form-group">
+                        <label>Phone</label>
+                        <input type="tel" />
+                      </div>
+                      <div className="form-group">
+                        <label>Message</label>
+                        <textarea rows={5} required></textarea>
+                      </div>
+                      <button type="submit" className="form-submit">
+                        Send Message
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </section>
@@ -200,9 +212,22 @@ const MaximaIndex: React.FC = () => {
           {/* Footer */}
           <footer className="footer" data-scroll-section>
             <div className="container">
-              <p>&copy; 2024 Precedential Law. All rights reserved.</p>
-              <p>City Tower 2 - Sheikh Zayed Road, Dubai, UAE</p>
-              <p>Phone: +971 50 901 4120 | Email: info@precedentiallaw.com</p>
+              <div className="footer-content">
+                <div className="footer-section">
+                  <h4>Precedential Law</h4>
+                  <p>Premier legal consultancy in the UAE</p>
+                  <p>Licensed legal services across Dubai and the UAE</p>
+                </div>
+                <div className="footer-section">
+                  <h4>Contact Information</h4>
+                  <p>City Tower 2 - Sheikh Zayed Road, Dubai</p>
+                  <p>Phone: +971 50 901 4120</p>
+                  <p>Email: info@precedentiallaw.com</p>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center', paddingTop: '2rem', borderTop: '1px solid #333' }}>
+                <p>&copy; 2024 Precedential Law. All rights reserved.</p>
+              </div>
             </div>
           </footer>
         </div>

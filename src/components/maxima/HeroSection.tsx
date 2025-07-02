@@ -18,15 +18,15 @@ const HeroSection: React.FC = () => {
         { 
           opacity: 0, 
           y: 100,
-          rotation: 5
+          rotation: 2
         },
         {
           opacity: 1,
           y: 0,
           rotation: 0,
           duration: 1.2,
-          stagger: 0.2,
-          ease: "back.out(1.7)"
+          stagger: 0.15,
+          ease: "power3.out"
         }
       );
     }
@@ -43,8 +43,8 @@ const HeroSection: React.FC = () => {
     // Animate CTA button
     if (ctaRef.current) {
       tl.fromTo(ctaRef.current,
-        { opacity: 0, y: 30, scale: 0.8 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.7)" },
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
         "-=0.3"
       );
     }
@@ -61,10 +61,11 @@ const HeroSection: React.FC = () => {
     <section className="hero-section" data-scroll-section ref={heroRef}>
       <div className="container">
         <h1 className="hero-title" ref={titleRef}>
-          <span data-scroll data-scroll-speed="1">Trusted</span>{' '}
-          <span data-scroll data-scroll-speed="2">Legal</span>{' '}
-          <span data-scroll data-scroll-speed="1.5">Consultancy</span>{' '}
-          <span data-scroll data-scroll-speed="2.5">in the UAE</span>
+          <span data-scroll data-scroll-speed="1">Law</span>{' '}
+          <span data-scroll data-scroll-speed="2">with</span>{' '}
+          <span data-scroll data-scroll-speed="1.5">a</span>{' '}
+          <span data-scroll data-scroll-speed="2.5">special</span>{' '}
+          <span data-scroll data-scroll-speed="1.8">touch.</span>
         </h1>
         
         <p className="hero-subtitle" ref={subtitleRef}>
