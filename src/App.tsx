@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import AccessibilityWrapper from "@/components/AccessibilityEnhancements";
 
-import Index from "./pages/Index";
+import MaximaIndex from "./pages/MaximaIndex";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import WhyUs from "./pages/WhyUs";
@@ -61,7 +62,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<MaximaIndex />} />
               <Route path="/services" element={<Services />} />
               
               {/* Enhanced Service Pages */}
