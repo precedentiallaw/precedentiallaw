@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import MaximaLayout from '@/components/maxima/MaximaLayout';
 import ContentSection from '@/components/maxima/ContentSection';
+import HeroSection from '@/components/maxima/HeroSection';
 import { Building2, FileText, Scale, Shield, Heart, Plane } from 'lucide-react';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -69,22 +71,7 @@ const MaximaIndex: React.FC = () => {
       <MaximaLayout showLoader={true}>
         <div data-scroll-section>
           {/* Hero Section */}
-          <ContentSection>
-            <div className="service-hero">
-              <h1>Setting a Precedential Standard in Legal Services</h1>
-              <p className="text-large">
-                Your Shield in Dubai's Legal Landscape: Expert Guidance, Clear Solutions, Client Protection.
-              </p>
-              <p className="text-large">
-                Welcome to Precedential Law, a premier Dubai-based legal consultancy committed to delivering clear, effective, and client-focused legal solutions across the UAE.
-              </p>
-              <div className="mt-8">
-                <a href="/contact" className="hero-cta">
-                  Request a Confidential Consultation
-                </a>
-              </div>
-            </div>
-          </ContentSection>
+          <HeroSection />
 
           {/* Services Section */}
           <ContentSection background="alternate" id="services">
@@ -93,7 +80,7 @@ const MaximaIndex: React.FC = () => {
               <p className="text-large mb-12">
                 We offer expert legal counsel across a wide range of practice areas critical to individuals and businesses succeeding in the UAE.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((service) => (
                   <article key={service.title} className="service-card">
                     <service.icon className="w-12 h-12 text-gold-gradient mb-4" aria-hidden="true" />
