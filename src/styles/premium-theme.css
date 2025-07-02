@@ -298,3 +298,26 @@
 .focus-premium {
   @apply focus:outline-none focus:ring-4 focus:ring-gold-500 focus:ring-opacity-20 focus:border-gold-500;
 }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Color tokens */
+.bg-gold {
+  background-color: #D4AF37;
+}
+.hover\:bg-gold-dark:hover {
+  background-color: #B8860B;
+}
+
