@@ -1,13 +1,11 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import ServicePageLayout from '@/components/maxima/ServicePageLayout';
+import ContentSection from '@/components/maxima/ContentSection';
 import { Button } from '@/components/ui/button';
 import { Plane, FileCheck, Users, Clock } from 'lucide-react';
 import { ArticleSchema, FAQSchema } from '@/components/ui/enhanced-schema-markup';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const ImmigrationLaw: React.FC = () => {
   const services = [
@@ -53,18 +51,11 @@ const ImmigrationLaw: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>UAE Immigration Law Services | UAE Visa Lawyer | Golden Visa UAE | Precedential Law</title>
-        <meta name="description" content="Expert UAE immigration legal services. Visa applications, residency permits, family sponsorship, Golden Visa applications, and immigration advisory for expatriates across the UAE." />
-        <meta name="keywords" content="UAE immigration law, UAE visa services, residency permit UAE, family sponsorship UAE, visa applications UAE, immigration lawyer UAE, Golden Visa UAE, UAE visa consultant, expat visa services UAE" />
-        <link rel="canonical" href="https://precedentiallaw.com/services/immigration-law" />
-        
-        <meta property="og:title" content="UAE Immigration Law Services | Expert Visa & Residency Legal Support" />
-        <meta property="og:description" content="Professional UAE immigration legal services including visa applications, residency permits, and Golden Visa support for expatriates." />
-        <meta property="og:url" content="https://precedentiallaw.com/services/immigration-law" />
-      </Helmet>
-      
+    <ServicePageLayout
+      title="UAE Immigration Law Services | UAE Visa Lawyer | Golden Visa UAE | Precedential Law"
+      description="Expert UAE immigration legal services. Visa applications, residency permits, family sponsorship, Golden Visa applications, and immigration advisory for expatriates across the UAE."
+      canonical="https://precedentiallaw.com/services/immigration-law"
+    >
       {/* Schema Markup */}
       <ArticleSchema
         headline="UAE Immigration Law Services for Expatriates and International Professionals"
@@ -75,115 +66,97 @@ const ImmigrationLaw: React.FC = () => {
         url="https://precedentiallaw.com/services/immigration-law"
       />
       <FAQSchema faqs={faqData} />
-      
-      <NavBar />
-      
-      <main className="flex-grow pt-20">
-        {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-r from-precedential-black to-precedential-black/90">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-                UAE Immigration Law Services for <span className="text-gold-gradient">Expatriates</span>
-              </h1>
-              <p className="text-xl mb-8 opacity-90">
-                Navigate UAE immigration procedures with confidence through expert legal guidance. From visa applications to Golden Visa programs, we provide comprehensive immigration support across all UAE emirates.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight">
-                  Get Immigration Help
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-precedential-black">
-                  Download UAE Visa Guide
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Services Grid */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <header className="text-center mb-12">
-              <h2 className="text-3xl font-playfair font-bold">Our UAE Immigration Services</h2>
-              <p className="text-lg text-gray-600 mt-4">Comprehensive immigration legal support for all your UAE residency needs</p>
-            </header>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {services.map((service) => (
-                <article key={service.title} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                  <service.icon className="w-12 h-12 text-precedential-gold mb-4" aria-hidden="true" />
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Golden Visa Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <header className="mb-8">
-                <h2 className="text-3xl font-playfair font-bold">UAE Golden Visa Program</h2>
-                <p className="text-lg text-gray-600 mt-4">
-                  The UAE Golden Visa offers long-term residency (5-10 years) for qualified individuals and their families, providing greater stability and opportunities in the UAE.
-                </p>
-              </header>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <article className="bg-blue-50 p-6 rounded-xl">
-                  <h3 className="text-lg font-bold mb-3">Investors & Entrepreneurs</h3>
-                  <p className="text-gray-600">Real estate investors, business owners, and entrepreneurs meeting specific investment criteria.</p>
-                </article>
-                <article className="bg-green-50 p-6 rounded-xl">
-                  <h3 className="text-lg font-bold mb-3">Specialized Professionals</h3>
-                  <p className="text-gray-600">Doctors, engineers, scientists, researchers, and other specialized talent categories.</p>
-                </article>
-                <article className="bg-purple-50 p-6 rounded-xl">
-                  <h3 className="text-lg font-bold mb-3">Outstanding Students</h3>
-                  <p className="text-gray-600">High-achieving students and graduates from accredited universities worldwide.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <header className="text-center mb-12">
-                <h2 className="text-3xl font-playfair font-bold">UAE Immigration FAQ</h2>
-                <p className="text-lg text-gray-600 mt-4">Common questions about UAE immigration and visa processes</p>
-              </header>
-              <div className="space-y-6">
-                {faqData.map((faq, index) => (
-                  <article key={index} className="bg-white p-6 rounded-xl shadow-sm">
-                    <h3 className="text-lg font-bold mb-3">{faq.question}</h3>
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 bg-precedential-black text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-playfair font-bold mb-6">Ready to Secure Your UAE Residency?</h2>
-            <p className="text-xl mb-8 opacity-90">Get expert immigration legal support for your UAE visa and residency journey.</p>
-            <Button size="lg" className="bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight">
-              Schedule Immigration Consultation
+      {/* Hero Section */}
+      <ContentSection>
+        <div className="service-hero">
+          <h1>UAE Immigration Law Services for Expatriates</h1>
+          <p className="text-large">
+            Navigate UAE immigration procedures with confidence through expert legal guidance. From visa applications to Golden Visa programs, we provide comprehensive immigration support across all UAE emirates.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <a href="/contact" className="hero-cta">
+              Get Immigration Help
+            </a>
+            <Button variant="outline" size="lg">
+              Download UAE Visa Guide
             </Button>
           </div>
-        </section>
-      </main>
-      
-      <Footer />
-      <FloatingCTA />
+        </div>
+      </ContentSection>
+
+      {/* Services Grid */}
+      <ContentSection background="alternate">
+        <header className="text-center mb-12">
+          <h2>Our UAE Immigration Services</h2>
+          <p className="text-large">Comprehensive immigration legal support for all your UAE residency needs</p>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service) => (
+            <article key={service.title} className="service-card">
+              <service.icon className="w-12 h-12 text-gold-gradient mb-4" aria-hidden="true" />
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </article>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* Golden Visa Section */}
+      <ContentSection>
+        <div className="text-center">
+          <header className="mb-8">
+            <h2>UAE Golden Visa Program</h2>
+            <p className="text-large">
+              The UAE Golden Visa offers long-term residency (5-10 years) for qualified individuals and their families, providing greater stability and opportunities in the UAE.
+            </p>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <article className="service-card">
+              <h3>Investors & Entrepreneurs</h3>
+              <p>Real estate investors, business owners, and entrepreneurs meeting specific investment criteria.</p>
+            </article>
+            <article className="service-card">
+              <h3>Specialized Professionals</h3>
+              <p>Doctors, engineers, scientists, researchers, and other specialized talent categories.</p>
+            </article>
+            <article className="service-card">
+              <h3>Outstanding Students</h3>
+              <p>High-achieving students and graduates from accredited universities worldwide.</p>
+            </article>
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* FAQ Section */}
+      <ContentSection background="alternate">
+        <header className="text-center mb-12">
+          <h2>UAE Immigration FAQ</h2>
+          <p className="text-large">Common questions about UAE immigration and visa processes</p>
+        </header>
+        <div className="space-y-6">
+          {faqData.map((faq, index) => (
+            <article key={index} className="service-card">
+              <h3 className="text-lg font-bold mb-3">{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* CTA Section */}
+      <ContentSection>
+        <div className="text-center">
+          <h2>Ready to Secure Your UAE Residency?</h2>
+          <p className="text-large mb-8">Get expert immigration legal support for your UAE visa and residency journey.</p>
+          <a href="/contact" className="hero-cta">
+            Schedule Immigration Consultation
+          </a>
+        </div>
+      </ContentSection>
+
       <WhatsAppButton phoneNumber="971509014120" />
-    </div>
+    </ServicePageLayout>
   );
 };
 
