@@ -8,6 +8,8 @@ import AccessibilityWrapper from "@/components/AccessibilityEnhancements";
 
 // Import Maxima Index as default homepage
 import MaximaIndex from "./pages/MaximaIndex";
+import MaximaAbout from "./pages/MaximaAbout";
+import MaximaContact from "./pages/MaximaContact";
 
 // Import all existing pages with Maxima wrapper
 import Services from "./pages/Services";
@@ -19,7 +21,7 @@ import Blog from "./pages/Blog";
 import CaseStudies from "./pages/CaseStudies";
 import Resources from "./pages/Resources";
 
-// Service pages
+// Service pages - all now converted to Maxima
 import BusinessLaw from "./pages/services/BusinessLaw";
 import FamilyLaw from "./pages/services/FamilyLaw";
 import RealEstateLaw from "./pages/services/RealEstateLaw";
@@ -77,24 +79,22 @@ const App = () => (
               {/* Homepage using Maxima design */}
               <Route path="/" element={<MaximaIndex />} />
               
-              {/* Main pages */}
+              {/* Main pages - Maxima versions available */}
+              <Route path="/about" element={<MaximaAbout />} />
+              <Route path="/contact" element={<MaximaContact />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/about" element={<About />} />
               <Route path="/why-us" element={<WhyUs />} />
               <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/contact" element={<Contact />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/legal-guides" element={<LegalGuides />} />
               
-              {/* Service Pages - All accessible with Maxima option */}
+              {/* Service Pages - All converted to Maxima design */}
               <Route path="/services/business-law" element={<BusinessLaw />} />
               <Route path="/services/business-law-maxima" element={<MaximaBusinessLaw />} />
               <Route path="/services/business-law-enhanced" element={<EnhancedBusinessLaw />} />
-              
-              {/* ... keep existing code (all other service routes) */}
               <Route path="/services/corporate-law-dubai" element={<CorporateLawDubai />} />
               <Route path="/services/family-law" element={<FamilyLaw />} />
               <Route path="/services/divorce-lawyers-dubai" element={<DivorceLawyersDubai />} />

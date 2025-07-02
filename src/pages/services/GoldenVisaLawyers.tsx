@@ -1,249 +1,217 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
-import FinalCTA from '@/components/FinalCTA';
+import ServicePageLayout from '@/components/maxima/ServicePageLayout';
+import ContentSection from '@/components/maxima/ContentSection';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Award, Clock, Shield, FileText, Users } from 'lucide-react';
+import { Award, Users, Briefcase, GraduationCap, Building, Star } from 'lucide-react';
+import { ArticleSchema, FAQSchema } from '@/components/ui/enhanced-schema-markup';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const GoldenVisaLawyers: React.FC = () => {
-  const goldenVisaCategories = [
+  const categories = [
     {
-      category: "Investors",
-      requirement: "AED 2 Million Investment",
-      details: "Real estate investment, bank deposit, or investment fund",
-      processingTime: "30-60 days",
-      benefits: ["10-year renewable visa", "100% business ownership", "Family sponsorship"]
+      title: "Investors & Real Estate",
+      description: "Property investment and business investment pathways to UAE Golden Visa",
+      icon: Building
     },
     {
-      category: "Entrepreneurs",
-      requirement: "Innovative Startup",
-      details: "Approved by UAE incubators or with significant investment",
-      processingTime: "45-90 days",
-      benefits: ["10-year visa", "Business expansion support", "Investor network access"]
+      title: "Entrepreneurs & Business Owners",
+      description: "Startup founders and established business owners seeking long-term residency",
+      icon: Briefcase
     },
     {
-      category: "Professionals",
-      requirement: "Specialized Skills",
-      details: "Doctors, engineers, scientists, artists with proven expertise",
-      processingTime: "30-45 days",
-      benefits: ["Long-term stability", "Career development", "Premium healthcare"]
+      title: "Specialized Professionals",
+      description: "Doctors, engineers, scientists, and other specialized talent categories",
+      icon: Award
     },
     {
-      category: "Students",
-      requirement: "Academic Excellence",
-      details: "Outstanding academic performance in UAE universities",
-      processingTime: "15-30 days",
-      benefits: ["Study completion", "Job search period", "Career transition"]
+      title: "Outstanding Students",
+      description: "High-achieving students and graduates from top universities worldwide",
+      icon: GraduationCap
+    },
+    {
+      title: "Artists & Creatives",
+      description: "Talented individuals in arts, culture, and creative industries",
+      icon: Star
+    },
+    {
+      title: "Family Sponsorship",
+      description: "Sponsor family members including spouse, children, and parents",
+      icon: Users
     }
   ];
 
-  const legalRequirements = [
-    "Valid passport with 6+ months validity",
-    "UAE entry permit and Emirates ID",
-    "Medical fitness certificate",
-    "Police clearance certificate",
-    "Proof of investment or qualification",
-    "Bank statements and financial documents",
-    "Educational certificates (apostilled)",
-    "Professional licenses and certifications"
+  const faqData = [
+    {
+      question: "What is the UAE Golden Visa program?",
+      answer: "The UAE Golden Visa is a long-term residency program offering 5 or 10-year renewable visas to qualified individuals and their families, providing greater stability and opportunities in the UAE."
+    },
+    {
+      question: "What are the minimum investment requirements for Golden Visa?",
+      answer: "Investment requirements vary by category: Real estate investors need minimum AED 2 million, while business investors may need AED 10 million. Requirements can change based on current regulations."
+    },
+    {
+      question: "Can I include my family members in my Golden Visa application?",
+      answer: "Yes, Golden Visa holders can sponsor their spouse, children of any age, and in some cases parents, providing long-term security for the entire family."
+    },
+    {
+      question: "How long does the Golden Visa application process take?",
+      answer: "Processing time typically ranges from 2-6 months depending on the category and completeness of documentation. We help expedite the process through proper preparation."
+    }
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>Golden Visa Lawyers Dubai | UAE Golden Visa Legal Services 2024 | Precedential Law</title>
-        <meta name="description" content="Expert Golden Visa lawyers in Dubai. Get professional legal assistance for UAE Golden Visa applications, investment visas, and long-term residency. 95% success rate, fast processing." />
-        <meta name="keywords" content="golden visa lawyers Dubai, UAE golden visa legal services, Dubai golden visa application, UAE investment visa lawyers, long term visa Dubai, UAE residence visa lawyers" />
-        <link rel="canonical" href="https://precedentiallaw.com/services/golden-visa-lawyers" />
-        
-        <meta property="og:title" content="Golden Visa Lawyers Dubai | UAE Golden Visa Legal Services" />
-        <meta property="og:description" content="Professional legal assistance for UAE Golden Visa applications. Expert lawyers with 95% success rate for investment visas and long-term residency." />
-        <meta property="og:url" content="https://precedentiallaw.com/services/golden-visa-lawyers" />
-      </Helmet>
-      
-      <NavBar />
-      
-      <main className="flex-grow pt-20">
-        {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-precedential-black to-gray-900 text-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-playfair font-bold mb-6">
-                UAE Golden <span className="text-gold-gradient">Visa Lawyers</span>
-              </h1>
-              <p className="text-xl md:text-2xl opacity-90 mb-8">
-                Expert legal guidance for UAE Golden Visa applications with 95% success rate. 
-                Secure your 10-year renewable residence visa with Dubai's premier immigration lawyers.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight">
-                  Start Your Golden Visa Application
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
-                  Free Eligibility Assessment
-                </Button>
+    <ServicePageLayout
+      title="Golden Visa Lawyers UAE | Dubai Golden Visa Application | Long-term Residency | Precedential Law"
+      description="Expert UAE Golden Visa lawyers. Specialized assistance for Golden Visa applications, investor visas, and long-term residency permits in Dubai and UAE."
+      canonical="https://precedentiallaw.com/services/golden-visa-lawyers"
+    >
+      <ArticleSchema
+        headline="UAE Golden Visa Lawyers - Expert Long-term Residency Services"
+        description="Professional legal assistance for UAE Golden Visa applications including investor visas, entrepreneur visas, and family sponsorship"
+        datePublished="2025-07-01"
+        dateModified="2025-07-01"
+        authorName="Precedential Law"
+        url="https://precedentiallaw.com/services/golden-visa-lawyers"
+      />
+      <FAQSchema faqs={faqData} />
+
+      {/* Hero Section */}
+      <ContentSection>
+        <div className="service-hero">
+          <h1>UAE Golden Visa Lawyers - Long-term Residency Experts</h1>
+          <p className="text-large">
+            Secure your UAE Golden Visa with expert legal guidance. We specialize in long-term residency applications for investors, entrepreneurs, professionals, and their families.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <a href="/contact" className="hero-cta">
+              Golden Visa Assessment
+            </a>
+            <Button variant="outline" size="lg">
+              Download Golden Visa Guide
+            </Button>
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* Categories Grid */}
+      <ContentSection background="alternate">
+        <header className="text-center mb-12">
+          <h2>Golden Visa Categories We Serve</h2>
+          <p className="text-large">Comprehensive support for all UAE Golden Visa pathways and eligibility categories</p>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((category) => (
+            <article key={category.title} className="service-card">
+              <category.icon className="w-12 h-12 text-gold-gradient mb-4" aria-hidden="true" />
+              <h3>{category.title}</h3>
+              <p>{category.description}</p>
+            </article>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* Investment Requirements */}
+      <ContentSection>
+        <div className="text-center">
+          <header className="mb-8">
+            <h2>Golden Visa Investment Requirements</h2>
+            <p className="text-large">
+              Understanding the financial commitments and investment thresholds for UAE Golden Visa eligibility.
+            </p>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <article className="service-card">
+              <h3>Real Estate Investment</h3>
+              <ul className="list-disc list-inside text-left space-y-2">
+                <li>Minimum AED 2 million property investment</li>
+                <li>Property must be completed or off-plan</li>
+                <li>Can include residential or commercial properties</li>
+                <li>Joint ownership arrangements possible</li>
+              </ul>
+            </article>
+            <article className="service-card">
+              <h3>Business Investment</h3>
+              <ul className="list-disc list-inside text-left space-y-2">
+                <li>Minimum AED 10 million business investment</li>
+                <li>Established or new business ventures</li>
+                <li>Partnership with UAE nationals may be required</li>
+                <li>Job creation and economic contribution factors</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* Process Timeline */}
+      <ContentSection background="alternate">
+        <div className="text-center">
+          <header className="mb-8">
+            <h2>Golden Visa Application Process</h2>
+            <p className="text-large">Step-by-step guidance through the UAE Golden Visa application journey</p>
+          </header>
+          <div className="space-y-6">
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 bg-gold-gradient text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold mb-2">Eligibility Assessment</h3>
+                <p className="text-gray-600">Comprehensive review of your qualifications and documentation requirements</p>
+              </div>
+            </div>
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 bg-gold-gradient text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold mb-2">Document Preparation</h3>
+                <p className="text-gray-600">Professional assistance with all required documentation and attestations</p>
+              </div>
+            </div>
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 bg-gold-gradient text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold mb-2">Application Submission</h3>
+                <p className="text-gray-600">Strategic submission and follow-up with relevant UAE authorities</p>
+              </div>
+            </div>
+            <div className="flex gap-6 items-start">
+              <div className="w-12 h-12 bg-gold-gradient text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold mb-2">Visa Issuance</h3>
+                <p className="text-gray-600">Final processing and issuance of your UAE Golden Visa</p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </ContentSection>
 
-        {/* Key Stats */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-precedential-gold mb-2">95%</div>
-                <div className="text-gray-600">Success Rate</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-precedential-gold mb-2">500+</div>
-                <div className="text-gray-600">Golden Visas Processed</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-precedential-gold mb-2">30</div>
-                <div className="text-gray-600">Days Average Processing</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-precedential-gold mb-2">10</div>
-                <div className="text-gray-600">Years Visa Validity</div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* FAQ Section */}
+      <ContentSection>
+        <header className="text-center mb-12">
+          <h2>Golden Visa FAQ</h2>
+          <p className="text-large">Common questions about UAE Golden Visa applications and requirements</p>
+        </header>
+        <div className="space-y-6">
+          {faqData.map((faq, index) => (
+            <article key={index} className="service-card">
+              <h3 className="text-lg font-bold mb-3">{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </ContentSection>
 
-        {/* Golden Visa Categories */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">
-              UAE Golden Visa Categories 2024
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {goldenVisaCategories.map((category, index) => (
-                <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Award className="w-8 h-8 text-precedential-gold" />
-                    <h3 className="text-2xl font-bold">{category.category}</h3>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Requirement</h4>
-                      <p className="text-precedential-gold font-medium">{category.requirement}</p>
-                      <p className="text-gray-600">{category.details}</p>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-5 h-5 text-precedential-gold" />
-                      <span className="text-sm text-gray-600">Processing: {category.processingTime}</span>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Key Benefits</h4>
-                      <ul className="space-y-1">
-                        {category.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      {/* CTA Section */}
+      <ContentSection background="alternate">
+        <div className="text-center">
+          <h2>Ready to Secure Your UAE Golden Visa?</h2>
+          <p className="text-large mb-8">Get expert legal assistance for your UAE Golden Visa application and long-term residency planning.</p>
+          <a href="/contact" className="hero-cta">
+            Start Golden Visa Application
+          </a>
+        </div>
+      </ContentSection>
 
-        {/* Legal Requirements */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-center mb-12">
-                Golden Visa Legal Requirements & Documentation
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div>
-                  <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-precedential-gold" />
-                    Required Documents
-                  </h3>
-                  <ul className="space-y-3">
-                    {legalRequirements.map((req, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-precedential-gold" />
-                    Legal Process Overview
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-precedential-gold pl-4">
-                      <h4 className="font-semibold">1. Eligibility Assessment</h4>
-                      <p className="text-gray-600 text-sm">Review qualifications and investment options</p>
-                    </div>
-                    <div className="border-l-4 border-precedential-gold pl-4">
-                      <h4 className="font-semibold">2. Document Preparation</h4>
-                      <p className="text-gray-600 text-sm">Compile and authenticate required documents</p>
-                    </div>
-                    <div className="border-l-4 border-precedential-gold pl-4">
-                      <h4 className="font-semibold">3. Application Submission</h4>
-                      <p className="text-gray-600 text-sm">File application with ICP/GDRFA</p>
-                    </div>
-                    <div className="border-l-4 border-precedential-gold pl-4">
-                      <h4 className="font-semibold">4. Visa Issuance</h4>
-                      <p className="text-gray-600 text-sm">Receive Golden Visa and Emirates ID</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-precedential-gold/10 rounded-xl p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Why Choose Our Golden Visa Legal Services?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                  <div className="flex items-center gap-3">
-                    <Users className="w-8 h-8 text-precedential-gold" />
-                    <div className="text-left">
-                      <h4 className="font-semibold">Expert Team</h4>
-                      <p className="text-sm text-gray-600">Specialized immigration lawyers</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Shield className="w-8 h-8 text-precedential-gold" />
-                    <div className="text-left">
-                      <h4 className="font-semibold">Legal Protection</h4>
-                      <p className="text-sm text-gray-600">Full compliance guarantee</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-8 h-8 text-precedential-gold" />
-                    <div className="text-left">
-                      <h4 className="font-semibold">Fast Processing</h4>
-                      <p className="text-sm text-gray-600">Expedited application handling</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <FinalCTA />
-      </main>
-      
-      <Footer />
       <WhatsAppButton phoneNumber="971509014120" />
-    </div>
+    </ServicePageLayout>
   );
 };
 

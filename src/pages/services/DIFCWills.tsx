@@ -1,223 +1,207 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import ServicePageLayout from '@/components/maxima/ServicePageLayout';
+import ContentSection from '@/components/maxima/ContentSection';
 import { Button } from '@/components/ui/button';
-import { FileText, Shield, Users, Heart, Clock, CheckCircle } from 'lucide-react';
+import { FileText, Shield, Users, Home, Heart, CheckCircle } from 'lucide-react';
+import { ArticleSchema, FAQSchema } from '@/components/ui/enhanced-schema-markup';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const DIFCWills: React.FC = () => {
   const services = [
     {
       title: "DIFC Will Drafting",
-      description: "Professional drafting of wills under DIFC jurisdiction with English common law principles",
+      description: "Professional DIFC Will preparation for expatriate estate planning in UAE",
       icon: FileText
     },
     {
       title: "Asset Protection",
-      description: "Safeguarding UAE and international assets through proper will planning",
+      description: "Comprehensive asset protection strategies for UAE-based expatriates",
       icon: Shield
     },
     {
-      title: "Guardianship Arrangements",
-      description: "Securing child guardianship appointments for minor children",
+      title: "Guardianship Planning",
+      description: "Child guardianship arrangements and minor protection provisions",
       icon: Users
     },
     {
-      title: "Inheritance Planning",
-      description: "Strategic estate planning to minimize disputes and ensure proper distribution",
+      title: "Property Succession",
+      description: "UAE real estate succession planning and property transfer arrangements",
+      icon: Home
+    },
+    {
+      title: "Family Trust Services",
+      description: "Trust establishment and management for complex family structures",
       icon: Heart
     },
     {
       title: "Will Registration",
-      description: "Complete registration process with DIFC Wills Service Centre",
+      description: "Official DIFC Will registration and notarization services",
       icon: CheckCircle
+    }
+  ];
+
+  const faqData = [
+    {
+      question: "What is a DIFC Will and why do I need one as an expatriate?",
+      answer: "A DIFC Will is a legal document registered with DIFC Courts that allows non-Muslim expatriates to distribute their UAE assets according to their wishes, rather than UAE Sharia inheritance law. It's essential for expatriates who want control over their estate distribution."
     },
     {
-      title: "Ongoing Support",
-      description: "Annual reviews and updates to reflect changing circumstances",
-      icon: Clock
+      question: "What assets can be covered by a DIFC Will?",
+      answer: "DIFC Wills can cover UAE-based assets including real estate, bank accounts, investments, business interests, and personal property. It provides comprehensive coverage for expatriate assets within the UAE."
+    },
+    {
+      question: "How does a DIFC Will differ from my home country will?",
+      answer: "A DIFC Will specifically covers UAE assets and is recognized by UAE courts, while your home country will covers assets in that jurisdiction. You may need both to ensure comprehensive estate planning coverage."
+    },
+    {
+      question: "Can I appoint guardians for my children in a DIFC Will?",
+      answer: "Yes, DIFC Wills allow you to appoint guardians for minor children, ensuring their care and protection according to your wishes if both parents are unable to care for them."
     }
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>DIFC Wills Dubai | Estate Planning UAE | Will Writing Service | Precedential Law</title>
-        <meta name="description" content="Expert DIFC wills services in Dubai. Professional estate planning, will drafting, and asset protection for expats and UAE residents under English common law." />
-        <meta name="keywords" content="DIFC wills Dubai, estate planning UAE, will writing service, expat wills Dubai, inheritance planning, guardianship Dubai, asset protection UAE" />
-        <link rel="canonical" href="https://precedentiallaw.com/services/difc-wills" />
-        
-        <meta property="og:title" content="DIFC Wills Dubai | Expert Estate Planning Services UAE" />
-        <meta property="og:description" content="Professional DIFC wills and estate planning services in Dubai. Protecting your assets and family under English common law." />
-        <meta property="og:url" content="https://precedentiallaw.com/services/difc-wills" />
-      </Helmet>
-      
-      <NavBar />
-      
-      <main className="flex-grow pt-20">
-        <section className="py-16 bg-gradient-to-r from-precedential-black to-precedential-black/90">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-                DIFC Wills & Estate Planning in <span className="text-gold-gradient">Dubai</span>
-              </h1>
-              <p className="text-xl mb-8 opacity-90">
-                Protect your family's future with professionally drafted DIFC wills. Ensure your assets are distributed according to your wishes under English common law.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight">
-                  Will Planning Consultation
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-precedential-black">
-                  Download Will Guide
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+    <ServicePageLayout
+      title="DIFC Wills Dubai | UAE Estate Planning | Expat Will Services | Precedential Law"
+      description="Expert DIFC Will services in Dubai. Professional estate planning for UAE expatriates including will drafting, asset protection, and guardianship arrangements."
+      canonical="https://precedentiallaw.com/services/difc-wills"
+    >
+      <ArticleSchema
+        headline="DIFC Wills Dubai - Expert Estate Planning for UAE Expatriates"
+        description="Professional DIFC Will services including estate planning, asset protection, and guardianship arrangements for expatriates in UAE"
+        datePublished="2025-07-01"
+        dateModified="2025-07-01"
+        authorName="Precedential Law"
+        url="https://precedentiallaw.com/services/difc-wills"
+      />
+      <FAQSchema faqs={faqData} />
 
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-playfair font-bold text-center mb-12">DIFC Wills Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <div key={service.title} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                  <service.icon className="w-12 h-12 text-precedential-gold mb-4" />
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
-              ))}
-            </div>
+      {/* Hero Section */}
+      <ContentSection>
+        <div className="service-hero">
+          <h1>DIFC Wills Dubai - Estate Planning for UAE Expatriates</h1>
+          <p className="text-large">
+            Secure your family's future with expert DIFC Will services. Professional estate planning ensuring your UAE assets are distributed according to your wishes, not UAE inheritance law.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <a href="/contact" className="hero-cta">
+              Estate Planning Consultation
+            </a>
+            <Button variant="outline" size="lg">
+              Download DIFC Will Guide
+            </Button>
           </div>
-        </section>
+        </div>
+      </ContentSection>
 
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-playfair font-bold text-center mb-12">Why Choose DIFC Wills?</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold mb-4">English Common Law</h3>
-                  <p className="text-gray-600 mb-4">DIFC operates under English common law principles, providing:</p>
-                  <ul className="list-disc list-inside text-gray-600 space-y-2">
-                    <li>Freedom of disposition for non-Muslim expatriates</li>
-                    <li>Familiar legal framework for international families</li>
-                    <li>Comprehensive asset coverage</li>
-                    <li>Flexible inheritance arrangements</li>
-                  </ul>
-                </div>
-                <div className="bg-green-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold mb-4">Asset Protection Benefits</h3>
-                  <p className="text-gray-600 mb-4">DIFC wills offer extensive protection for:</p>
-                  <ul className="list-disc list-inside text-gray-600 space-y-2">
-                    <li>UAE real estate and properties</li>
-                    <li>Bank accounts and investments</li>
-                    <li>Business interests and shares</li>
-                    <li>Personal belongings and valuables</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* Services Grid */}
+      <ContentSection background="alternate">
+        <header className="text-center mb-12">
+          <h2>Our DIFC Will & Estate Planning Services</h2>
+          <p className="text-large">Comprehensive estate planning solutions for expatriate families in the UAE</p>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <article key={service.title} className="service-card">
+              <service.icon className="w-12 h-12 text-gold-gradient mb-4" aria-hidden="true" />
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </article>
+          ))}
+        </div>
+      </ContentSection>
 
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-playfair font-bold text-center mb-12">DIFC Will Registration Process</h2>
-              <div className="space-y-8">
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 bg-precedential-gold text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Initial Consultation</h3>
-                    <p className="text-gray-600">Discussion of your estate planning needs and asset structure</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 bg-precedential-gold text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Will Drafting</h3>
-                    <p className="text-gray-600">Professional preparation of your will in accordance with DIFC laws</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 bg-precedential-gold text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Review & Approval</h3>
-                    <p className="text-gray-600">Careful review of the will with you to ensure accuracy and completeness</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 bg-precedential-gold text-precedential-black rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Official Registration</h3>
-                    <p className="text-gray-600">Registration with DIFC Wills Service Centre and issuance of probate certificate</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-playfair font-bold text-center mb-12">Guardianship for Expat Families</h2>
-              <div className="bg-yellow-50 p-8 rounded-xl border-l-4 border-yellow-500">
-                <h3 className="text-xl font-bold mb-4 text-yellow-800">Critical Importance for Expat Parents</h3>
-                <p className="text-gray-700 mb-4">
-                  For expatriate families living in the UAE, appointing guardians for minor children is crucial. Without a properly registered DIFC will:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-bold mb-2 text-yellow-800">Risks Without a Will:</h4>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Children may become wards of the state</li>
-                      <li>Lengthy court proceedings</li>
-                      <li>Uncertain guardianship arrangements</li>
-                      <li>Financial complications</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2 text-yellow-800">Benefits of DIFC Will:</h4>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Clear guardian appointment</li>
-                      <li>Immediate effect upon registration</li>
-                      <li>Financial provision for children</li>
-                      <li>Peace of mind for parents</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 bg-precedential-black text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-playfair font-bold mb-6">Secure Your Family's Future</h2>
-            <p className="text-xl mb-8 opacity-90">
-              Don't leave your family's future to chance. Create a comprehensive DIFC will today.
+      {/* Why DIFC Wills */}
+      <ContentSection>
+        <div className="text-center">
+          <header className="mb-8">
+            <h2>Why Choose DIFC Wills for UAE Estate Planning?</h2>
+            <p className="text-large">
+              DIFC Wills provide expatriates with the security and control they need for effective estate planning in the UAE.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-precedential-gold text-precedential-black hover:bg-precedential-goldLight">
-                Start Will Planning
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-precedential-black">
-                Family Protection Guide
-              </Button>
-            </div>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <article className="service-card">
+              <h3>Sharia Law Alternative</h3>
+              <p>Non-Muslim expatriates can distribute assets according to their wishes rather than UAE Sharia inheritance law, providing family security and peace of mind.</p>
+            </article>
+            <article className="service-card">
+              <h3>DIFC Court Recognition</h3>
+              <p>DIFC Wills are recognized and enforced by DIFC Courts, providing legal certainty and streamlined probate processes for expatriate estates.</p>
+            </article>
+            <article className="service-card">
+              <h3>Comprehensive Asset Coverage</h3>
+              <p>Cover all UAE-based assets including real estate, bank accounts, investments, and business interests under one comprehensive will document.</p>
+            </article>
+            <article className="service-card">
+              <h3>Guardianship Provisions</h3>
+              <p>Appoint guardians for minor children and establish care arrangements, ensuring your children's welfare according to your specific wishes and values.</p>
+            </article>
           </div>
-        </section>
-      </main>
-      
-      <Footer />
-      <FloatingCTA />
+        </div>
+      </ContentSection>
+
+      {/* DIFC vs ADGM */}
+      <ContentSection background="alternate">
+        <div className="text-center">
+          <header className="mb-8">
+            <h2>DIFC Wills vs ADGM Wills</h2>
+            <p className="text-large">Understanding your options for expatriate estate planning in the UAE</p>
+          </header>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <article className="service-card">
+              <h3>DIFC Wills</h3>
+              <ul className="list-disc list-inside text-left space-y-2">
+                <li>Established longer with proven track record</li>
+                <li>Covers UAE assets outside DIFC jurisdiction</li>
+                <li>Recognized by Dubai Courts and other UAE courts</li>
+                <li>Comprehensive probate process</li>
+                <li>Suitable for most expatriate situations</li>
+              </ul>
+            </article>
+            <article className="service-card">
+              <h3>ADGM Wills</h3>
+              <ul className="list-disc list-inside text-left space-y-2">
+                <li>Abu Dhabi-based alternative option</li>
+                <li>Similar asset coverage capabilities</li>
+                <li>ADGM Court jurisdiction and recognition</li>
+                <li>May be preferred for Abu Dhabi residents</li>
+                <li>Newer but growing acceptance</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* FAQ Section */}
+      <ContentSection>
+        <header className="text-center mb-12">
+          <h2>DIFC Wills FAQ</h2>
+          <p className="text-large">Common questions about DIFC Wills and expatriate estate planning in the UAE</p>
+        </header>
+        <div className="space-y-6">
+          {faqData.map((faq, index) => (
+            <article key={index} className="service-card">
+              <h3 className="text-lg font-bold mb-3">{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* CTA Section */}
+      <ContentSection background="alternate">
+        <div className="text-center">
+          <h2>Protect Your Family's Future with DIFC Wills</h2>
+          <p className="text-large mb-8">Get expert estate planning assistance and secure your UAE assets with a professionally drafted DIFC Will.</p>
+          <a href="/contact" className="hero-cta">
+            Schedule Will Consultation
+          </a>
+        </div>
+      </ContentSection>
+
       <WhatsAppButton phoneNumber="971509014120" />
-    </div>
+    </ServicePageLayout>
   );
 };
 

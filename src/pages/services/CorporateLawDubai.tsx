@@ -3,220 +3,165 @@ import React from 'react';
 import ServicePageLayout from '@/components/maxima/ServicePageLayout';
 import ContentSection from '@/components/maxima/ContentSection';
 import { Button } from '@/components/ui/button';
-import { Building2, FileText, Scale, TrendingUp, Shield, Users, Briefcase, Calculator } from 'lucide-react';
+import { Building2, FileText, Scale, Users, Briefcase, Shield } from 'lucide-react';
+import { ArticleSchema, FAQSchema } from '@/components/ui/enhanced-schema-markup';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 const CorporateLawDubai: React.FC = () => {
-  const corporateServices = [
+  const services = [
     {
-      icon: Building2,
-      title: "Company Formation & Structuring",
-      description: "Expert guidance on UAE mainland companies, free zone establishments, and offshore company setup with optimal tax structures."
+      title: "Company Formation Dubai",
+      description: "Complete UAE company setup including LLC, FZE, and branch office establishment",
+      icon: Building2
     },
     {
-      icon: FileText,
       title: "Corporate Governance",
-      description: "Board resolutions, shareholder agreements, compliance frameworks, and corporate policy development for UAE entities."
+      description: "Board advisory, compliance frameworks, and corporate restructuring services",
+      icon: Scale
     },
     {
-      icon: Scale,
-      title: "Regulatory Compliance",
-      description: "UAE Corporate Tax compliance, VAT registration, WPS implementation, and ongoing regulatory adherence."
+      title: "M&A Transactions",
+      description: "Mergers, acquisitions, joint ventures, and strategic partnerships",
+      icon: Briefcase
     },
     {
-      icon: TrendingUp,
-      title: "Mergers & Acquisitions",
-      description: "Due diligence, transaction structuring, and legal documentation for M&A activities in the UAE market."
-    },
-    {
-      icon: Shield,
-      title: "Corporate Restructuring",
-      description: "Business reorganization, debt restructuring, and corporate recovery strategies under UAE commercial law."
-    },
-    {
-      icon: Briefcase,
       title: "Commercial Contracts",
-      description: "Drafting and reviewing distribution agreements, joint ventures, licensing agreements, and strategic partnerships."
+      description: "Comprehensive contract drafting, review, and negotiation services",
+      icon: FileText
+    },
+    {
+      title: "Regulatory Compliance", 
+      description: "UAE commercial law compliance, licensing, and regulatory advisory",
+      icon: Shield
+    },
+    {
+      title: "Shareholder Disputes",
+      description: "Corporate dispute resolution and shareholder rights protection",
+      icon: Users
     }
   ];
 
-  const complianceAreas = [
-    "UAE Federal Decree-Law No. 32 of 2021 (Companies Law)",
-    "UAE Corporate Tax Law (Federal Decree-Law No. 47 of 2022)",
-    "UAE Commercial Transactions Law",
-    "Securities and Commodities Authority (SCA) Regulations",
-    "Central Bank of UAE (CBUAE) Guidelines",
-    "Ministry of Economy Commercial Licensing Requirements"
+  const faqData = [
+    {
+      question: "What types of companies can I establish in Dubai?",
+      answer: "Dubai offers various business structures including Limited Liability Company (LLC), Free Zone Establishment (FZE), Free Zone Company (FZC), Public Joint Stock Company (PJSC), and branch offices of foreign companies."
+    },
+    {
+      question: "What are the minimum capital requirements for Dubai companies?",
+      answer: "Minimum capital varies by business type: LLC companies typically require AED 300,000, while free zone companies may have lower requirements starting from AED 50,000 depending on the specific free zone."
+    },
+    {
+      question: "Can foreign investors own 100% of a Dubai company?",
+      answer: "Yes, foreign investors can own 100% of companies in Dubai free zones and many mainland business activities under the new UAE Commercial Companies Law amendments."
+    }
   ];
 
   return (
     <ServicePageLayout
-      title="Corporate Lawyers Dubai | UAE Business Law Firm | Precedential Law"
-      description="Leading corporate lawyers in Dubai providing business law services, company formation, M&A, compliance, and corporate governance. Expert UAE commercial law advice."
+      title="Corporate Law Dubai | UAE Company Formation | Business Setup Lawyers | Precedential Law"
+      description="Expert corporate law services in Dubai. Company formation, M&A transactions, corporate governance, and UAE business legal advisory. Professional corporate lawyers."
       canonical="https://precedentiallaw.com/services/corporate-law-dubai"
     >
+      <ArticleSchema
+        headline="Corporate Law Services Dubai - UAE Company Formation & Business Legal Advisory"
+        description="Comprehensive corporate law services including company formation, M&A, and corporate governance in Dubai and UAE"
+        datePublished="2025-07-01"
+        dateModified="2025-07-01"
+        authorName="Precedential Law"
+        url="https://precedentiallaw.com/services/corporate-law-dubai"
+      />
+      <FAQSchema faqs={faqData} />
+
       {/* Hero Section */}
       <ContentSection>
         <div className="service-hero">
-          <h1>Corporate Law Dubai</h1>
+          <h1>Corporate Law Services in Dubai</h1>
           <p className="text-large">
-            Premier corporate lawyers in Dubai providing comprehensive business law services. 
-            From company formation to complex M&A transactions and regulatory compliance.
+            Comprehensive corporate legal support for businesses in Dubai and the UAE. From company formation to complex M&A transactions, we provide strategic legal guidance for corporate success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <a href="/contact" className="hero-cta">
-              Schedule Business Consultation
+              Corporate Legal Consultation
             </a>
             <Button variant="outline" size="lg">
-              Download Corporate Guide
+              Download Company Formation Guide
             </Button>
           </div>
         </div>
       </ContentSection>
 
-      {/* Key Metrics */}
+      {/* Services Grid */}
       <ContentSection background="alternate">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-3xl font-bold text-gold-gradient mb-2">500+</div>
-            <div className="text-secondary">Companies Formed</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-gold-gradient mb-2">AED 2B+</div>
-            <div className="text-secondary">Transaction Value</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-gold-gradient mb-2">15+</div>
-            <div className="text-secondary">Years UAE Experience</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-gold-gradient mb-2">98%</div>
-            <div className="text-secondary">Client Satisfaction</div>
-          </div>
-        </div>
-      </ContentSection>
-
-      {/* Corporate Services */}
-      <ContentSection>
-        <h2 className="text-center mb-12">Comprehensive Corporate Legal Services</h2>
+        <header className="text-center mb-12">
+          <h2>Our Corporate Law Services</h2>
+          <p className="text-large">Comprehensive legal support for all aspects of corporate operations in Dubai and the UAE</p>
+        </header>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {corporateServices.map((service, index) => (
-            <div key={index} className="service-card">
-              <service.icon className="w-12 h-12 text-gold-gradient mb-4" />
+          {services.map((service) => (
+            <article key={service.title} className="service-card">
+              <service.icon className="w-12 h-12 text-gold-gradient mb-4" aria-hidden="true" />
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </div>
+            </article>
           ))}
         </div>
       </ContentSection>
 
-      {/* UAE Corporate Tax Section */}
-      <ContentSection background="alternate">
+      {/* Company Formation Section */}
+      <ContentSection>
         <div className="text-center">
-          <h2 className="mb-12">UAE Corporate Tax Compliance 2024</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 justify-center">
-                <Calculator className="w-8 h-8 text-gold-gradient" />
-                Corporate Tax Overview
-              </h3>
-              <div className="space-y-4">
-                <div className="service-card">
-                  <h4 className="font-bold text-gold-gradient">Tax Rate: 9%</h4>
-                  <p>On taxable income exceeding AED 375,000</p>
-                </div>
-                <div className="service-card">
-                  <h4 className="font-bold text-green-700">Tax-Free Threshold</h4>
-                  <p>First AED 375,000 of taxable income</p>
-                </div>
-                <div className="service-card">
-                  <h4 className="font-bold text-blue-700">Effective Date</h4>
-                  <p>Financial years starting 1 June 2023 onwards</p>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Key Compliance Requirements</h3>
-              <ul className="space-y-3 text-left">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-gold-gradient rounded-full mt-2"></div>
-                  <span>Tax registration within specified timeframes</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-gold-gradient rounded-full mt-2"></div>
-                  <span>Quarterly tax return filing obligations</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-gold-gradient rounded-full mt-2"></div>
-                  <span>Annual tax return submissions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-gold-gradient rounded-full mt-2"></div>
-                  <span>Transfer pricing documentation</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-gold-gradient rounded-full mt-2"></div>
-                  <span>Economic substance reporting</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-gold-gradient rounded-full mt-2"></div>
-                  <span>Country-by-country reporting (for MNEs)</span>
-                </li>
+          <header className="mb-8">
+            <h2>Dubai Company Formation Options</h2>
+            <p className="text-large">
+              Choose the right business structure for your operations in Dubai with expert legal guidance.
+            </p>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <article className="service-card">
+              <h3>Mainland Companies</h3>
+              <ul className="list-disc list-inside text-left space-y-2">
+                <li>Limited Liability Company (LLC)</li>
+                <li>Public Joint Stock Company (PJSC)</li>
+                <li>Partnership Companies</li>
+                <li>Sole Proprietorship</li>
               </ul>
-            </div>
+            </article>
+            <article className="service-card">
+              <h3>Free Zone Companies</h3>
+              <ul className="list-disc list-inside text-left space-y-2">
+                <li>Free Zone Establishment (FZE)</li>
+                <li>Free Zone Company (FZC)</li>
+                <li>Branch Office</li>
+                <li>Representative Office</li>
+              </ul>
+            </article>
           </div>
         </div>
       </ContentSection>
 
-      {/* Regulatory Compliance */}
-      <ContentSection>
-        <div className="text-center">
-          <h2 className="mb-12">UAE Corporate Regulatory Framework</h2>
-          
-          <div className="service-card">
-            <h3 className="text-xl font-bold mb-6">Key Legislation & Regulations</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {complianceAreas.map((area, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-                  <Scale className="w-6 h-6 text-gold-gradient flex-shrink-0" />
-                  <span className="text-gray-700">{area}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 bg-background-dark text-white rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-6 text-center">Why Choose Our Corporate Law Services?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <Users className="w-12 h-12 text-gold-gradient mx-auto mb-4" />
-                <h4 className="font-bold mb-2">Expert Team</h4>
-                <p className="text-gray-300 text-sm">Specialized corporate lawyers with deep UAE market knowledge</p>
-              </div>
-              <div className="text-center">
-                <Shield className="w-12 h-12 text-gold-gradient mx-auto mb-4" />
-                <h4 className="font-bold mb-2">Compliance Assurance</h4>
-                <p className="text-gray-300 text-sm">Full regulatory compliance and ongoing legal support</p>
-              </div>
-              <div className="text-center">
-                <TrendingUp className="w-12 h-12 text-gold-gradient mx-auto mb-4" />
-                <h4 className="font-bold mb-2">Business Growth</h4>
-                <p className="text-gray-300 text-sm">Strategic legal advice to drive business success</p>
-              </div>
-            </div>
-          </div>
+      {/* FAQ Section */}
+      <ContentSection background="alternate">
+        <header className="text-center mb-12">
+          <h2>Corporate Law FAQ</h2>
+          <p className="text-large">Common questions about corporate law and company formation in Dubai</p>
+        </header>
+        <div className="space-y-6">
+          {faqData.map((faq, index) => (
+            <article key={index} className="service-card">
+              <h3 className="text-lg font-bold mb-3">{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </ContentSection>
 
       {/* CTA Section */}
-      <ContentSection background="alternate">
+      <ContentSection>
         <div className="text-center">
-          <h2>Ready to Elevate Your Business?</h2>
-          <p className="text-large mb-8">Get expert corporate legal support for your UAE business ventures.</p>
+          <h2>Ready to Establish Your Dubai Business?</h2>
+          <p className="text-large mb-8">Get expert corporate law guidance for your business setup and operations in Dubai.</p>
           <a href="/contact" className="hero-cta">
-            Schedule Corporate Consultation
+            Schedule Corporate Law Consultation
           </a>
         </div>
       </ContentSection>
