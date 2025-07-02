@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,7 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import AccessibilityWrapper from "@/components/AccessibilityEnhancements";
 
+// Import Maxima Index as default homepage
 import MaximaIndex from "./pages/MaximaIndex";
+
+// Import all existing pages with Maxima wrapper
 import Services from "./pages/Services";
 import About from "./pages/About";
 import WhyUs from "./pages/WhyUs";
@@ -16,6 +18,8 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import CaseStudies from "./pages/CaseStudies";
 import Resources from "./pages/Resources";
+
+// Service pages
 import BusinessLaw from "./pages/services/BusinessLaw";
 import FamilyLaw from "./pages/services/FamilyLaw";
 import RealEstateLaw from "./pages/services/RealEstateLaw";
@@ -30,19 +34,27 @@ import DebtSettlement from "./pages/services/DebtSettlement";
 import ContractDisputes from "./pages/services/ContractDisputes";
 import EmploymentLawUAE from "./pages/services/EmploymentLawUAE";
 import DIFCWills from "./pages/services/DIFCWills";
+
+// Enhanced service pages
+import EnhancedBusinessLaw from "./pages/services/EnhancedBusinessLaw";
+
+// High-value content pages
 import UAECompanyFormation from "./pages/UAECompanyFormation";
 import DubaiBusinessSetupLawyers from "./pages/DubaiBusinessSetupLawyers";
 import ExpatLegalServicesDubai from "./pages/ExpatLegalServicesDubai";
 import ExpatLegalServicesDubaiEnhanced from "./pages/ExpatLegalServicesDubaiEnhanced";
 import ExpatLegalGuides from "./pages/ExpatLegalGuides";
 import UAECorporateTaxLawyers from "./pages/UAECorporateTaxLawyers";
+
+// Tools and utilities
 import LegalTools from "./pages/LegalTools";
+import LegalToolsEnhanced from "./pages/LegalToolsEnhanced";
+import ClientPortalPage from "./pages/ClientPortalPage";
 import FAQ from "./pages/FAQ";
 import LegalGuides from "./pages/LegalGuides";
 import NotFound from "./pages/NotFound";
-import EnhancedBusinessLaw from "./pages/services/EnhancedBusinessLaw";
-import LegalToolsEnhanced from "./pages/LegalToolsEnhanced";
-import ClientPortalPage from "./pages/ClientPortalPage";
+
+import MaximaBusinessLaw from "./pages/services/MaximaBusinessLaw";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -62,12 +74,27 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
+              {/* Homepage using Maxima design */}
               <Route path="/" element={<MaximaIndex />} />
-              <Route path="/services" element={<Services />} />
               
-              {/* Enhanced Service Pages */}
+              {/* Main pages */}
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/why-us" element={<WhyUs />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/legal-guides" element={<LegalGuides />} />
+              
+              {/* Service Pages - All accessible with Maxima option */}
               <Route path="/services/business-law" element={<BusinessLaw />} />
+              <Route path="/services/business-law-maxima" element={<MaximaBusinessLaw />} />
               <Route path="/services/business-law-enhanced" element={<EnhancedBusinessLaw />} />
+              
+              {/* ... keep existing code (all other service routes) */}
               <Route path="/services/corporate-law-dubai" element={<CorporateLawDubai />} />
               <Route path="/services/family-law" element={<FamilyLaw />} />
               <Route path="/services/divorce-lawyers-dubai" element={<DivorceLawyersDubai />} />
@@ -90,21 +117,10 @@ const App = () => (
               <Route path="/expat-legal-guides" element={<ExpatLegalGuides />} />
               <Route path="/uae-corporate-tax-lawyers" element={<UAECorporateTaxLawyers />} />
               
-              {/* Enhanced Tools & Features */}
+              {/* Tools & Client Portal */}
+              <Route path="/legal-tools" element={<LegalTools />} />
               <Route path="/legal-tools-enhanced" element={<LegalToolsEnhanced />} />
               <Route path="/client-portal" element={<ClientPortalPage />} />
-              
-              {/* Information Pages */}
-              <Route path="/about" element={<About />} />
-              <Route path="/why-us" element={<WhyUs />} />
-              <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/case-studies" element={<CaseStudies />} />
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/legal-tools" element={<LegalTools />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/legal-guides" element={<LegalGuides />} />
               
               {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
