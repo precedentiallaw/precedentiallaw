@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 const HeroSection: React.FC = () => {
@@ -86,16 +87,6 @@ const HeroSection: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
-
   return (
     <section className="hero-section" data-scroll-section ref={heroRef}>
       <div className="container">
@@ -115,14 +106,13 @@ const HeroSection: React.FC = () => {
           clear, effective, and client-focused legal solutions.
         </p>
         
-        <a 
-          href="#contact" 
+        <Link 
+          to="/contact" 
           className="hero-cta"
           ref={ctaRef}
-          onClick={(e) => { e.preventDefault(); scrollToContact(); }}
         >
           Request a Confidential Consultation
-        </a>
+        </Link>
       </div>
       
       {/* Subtle background elements */}

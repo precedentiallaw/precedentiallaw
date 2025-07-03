@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import MaximaLayout from '@/components/maxima/MaximaLayout';
 import ContentSection from '@/components/maxima/ContentSection';
 import HeroSection from '@/components/maxima/HeroSection';
@@ -129,18 +130,18 @@ const MaximaIndex: React.FC = () => {
                   <article key={service.title} className="service-card">
                     <service.icon className="w-12 h-12 text-gold-gradient mb-4" aria-hidden="true" />
                     <h3>
-                      <a href={service.href} className="hover:text-gold-gradient transition-colors">
+                      <Link to={service.href} className="hover:text-gold-gradient transition-colors">
                         {service.title}
-                      </a>
+                      </Link>
                     </h3>
                     <p>{service.description}</p>
                   </article>
                 ))}
               </div>
               <div className="mt-12">
-                <a href="/services" className="hero-cta">
+                <Link to="/services" className="hero-cta">
                   Explore All Practice Areas
-                </a>
+                </Link>
               </div>
             </div>
           </ContentSection>
@@ -161,9 +162,9 @@ const MaximaIndex: React.FC = () => {
                 ))}
               </div>
               <div className="mt-12">
-                <a href="/about" className="hero-cta">
+                <Link to="/about" className="hero-cta">
                   Learn More About Us
-                </a>
+                </Link>
               </div>
             </div>
           </ContentSection>
@@ -194,9 +195,9 @@ const MaximaIndex: React.FC = () => {
                 </blockquote>
               </div>
               <div className="mt-12">
-                <a href="/testimonials" className="hero-cta">
+                <Link to="/testimonials" className="hero-cta">
                   Read More Testimonials
-                </a>
+                </Link>
               </div>
             </div>
           </ContentSection>
@@ -231,9 +232,9 @@ const MaximaIndex: React.FC = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <a href="/contact" className="hero-cta">
+                <Link to="/contact" className="hero-cta">
                   Get Legal Support Now
-                </a>
+                </Link>
               </div>
             </div>
           </ContentSection>

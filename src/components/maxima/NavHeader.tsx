@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 const NavHeader: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const menuItemsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,15 +71,7 @@ const NavHeader: React.FC = () => {
     }
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-    
+  const closeMobileMenu = () => {
     if (isMobileMenuOpen) {
       toggleMobileMenu();
     }
@@ -88,7 +80,7 @@ const NavHeader: React.FC = () => {
   return (
     <>
       <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="header-logo">
+        <Link to="/" className="header-logo">
           <img 
             src="/lovable-uploads/528af0d8-ee12-44b7-8329-dee683d3d962.png" 
             alt="Precedential Law"
@@ -96,27 +88,12 @@ const NavHeader: React.FC = () => {
             height={48}
             style={{ transition: 'all 0.3s ease' }}
           />
-        </div>
+        </Link>
         
         <nav className="nav__list">
-          <a 
-            href="#about" 
-            onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
-          >
-            About
-          </a>
-          <a 
-            href="#services" 
-            onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
-          >
-            Services
-          </a>
-          <a 
-            href="#contact" 
-            onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
-          >
-            Contact
-          </a>
+          <Link to="/about">About</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
 
         <div className="burger" onClick={toggleMobileMenu}>
@@ -143,28 +120,13 @@ const NavHeader: React.FC = () => {
       >
         <div className="mobile-menu">
           <div className="mobile-menu-item">
-            <a 
-              href="#about" 
-              onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
-            >
-              About
-            </a>
+            <Link to="/about" onClick={closeMobileMenu}>About</Link>
           </div>
           <div className="mobile-menu-item">
-            <a 
-              href="#services" 
-              onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
-            >
-              Services
-            </a>
+            <Link to="/services" onClick={closeMobileMenu}>Services</Link>
           </div>
           <div className="mobile-menu-item">
-            <a 
-              href="#contact" 
-              onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
-            >
-              Contact
-            </a>
+            <Link to="/contact" onClick={closeMobileMenu}>Contact</Link>
           </div>
           
           {/* Contact Info in Mobile Menu */}
