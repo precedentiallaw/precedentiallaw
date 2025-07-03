@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { QueryClient } from 'react-query';
-import { Toaster } from 'react-hot-toast';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Toaster } from 'sonner';
 
 import Index from '@/pages/Index';
 import MaximaIndex from '@/pages/MaximaIndex';
@@ -21,11 +21,13 @@ import MaximaBusinessLaw from '@/pages/services/MaximaBusinessLaw';
 import Testimonials from '@/pages/Testimonials';
 import MaximaAbout from '@/pages/MaximaAbout';
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
     <BrowserRouter>
       <HelmetProvider>
-        <QueryClient>
+        <QueryClientProvider client={queryClient}>
           <Toaster />
           <Routes>
             <Route path="/" element={<Index />} />
@@ -45,9 +47,10 @@ function App() {
             <Route path="/services/maxima-business-law" element={<MaximaBusinessLaw />} />
             <Route path="/testimonials" element={<Testimonials />} />
           </Routes>
-        </QueryClient>
+        </QueryClientProvider>
       </HelmetProvider>
     </BrowserRouter>
   );
 }
+
 export default App;
