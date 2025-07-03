@@ -1,138 +1,174 @@
+
 import React from 'react';
+import MaximaLayout from '@/components/maxima/MaximaLayout';
+import ContentSection from '@/components/maxima/ContentSection';
 import { Helmet } from 'react-helmet-async';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
+import { Star, Quote, Building, User, Heart } from 'lucide-react';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import FinalCTA from '@/components/FinalCTA';
-import ScrollReveal from '@/components/ScrollReveal';
-import { MessageSquare } from 'lucide-react';
-
-interface TestimonialProps {
-  quote: string;
-  author: string;
-  position?: string;
-  service: string;
-}
-
-const TestimonialCard: React.FC<TestimonialProps> = ({ quote, author, position, service }) => {
-  return (
-    <div className="bg-white p-8 rounded-xl shadow-sm border border-precedential-gold/10">
-      <div className="flex justify-center mb-6">
-        <MessageSquare className="w-12 h-12 text-precedential-gold opacity-70" />
-      </div>
-      <blockquote className="text-lg italic text-precedential-black/80 text-center mb-6">
-        "{quote}"
-      </blockquote>
-      <div className="text-center">
-        <div className="font-bold">{author}</div>
-        {position && <div className="text-precedential-black/60 text-sm">{position}</div>}
-        <div className="mt-4">
-          <span className="bg-precedential-gold/10 text-precedential-black/70 text-xs px-3 py-1 rounded-full">
-            {service}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      quote: "Precedential Law provided invaluable guidance for my business setup in Dubai. Their team demonstrated exceptional knowledge of UAE commercial regulations and streamlined what could have been an overwhelming process. Professional, clear, and highly effective.",
-      author: "Ahmed H.",
-      position: "SME Owner, Dubai",
-      service: "Business & Commercial Law"
+      name: "Sarah Mitchell",
+      role: "CEO, Tech Startup",
+      company: "InnovateX Solutions",
+      rating: 5,
+      quote: "Setting up our technology business in Dubai free zone seemed daunting initially, but Precedential Law made the entire process remarkably seamless. They expertly handled everything from navigating the licensing requirements to drafting robust shareholder agreements. Their proactive advice on ongoing compliance matters was invaluable for avoiding future pitfalls.",
+      service: "Commercial Law & Company Formation",
+      icon: Building
     },
     {
-      quote: "Navigating my divorce felt overwhelming until I contacted Precedential Law. Their support was exceptional, explaining the process clearly and protecting my interests at every stage. They managed complex negotiations with sensitivity and strength, achieving an outcome that exceeded my expectations.",
-      author: "Sarah M.",
-      position: "Expat Resident",
-      service: "Family Law"
+      name: "Ahmed Al Rashid",
+      role: "Expat Professional",
+      company: "Banking Sector",
+      rating: 5,
+      quote: "Going through a divorce is incredibly stressful, particularly when navigating a different legal system as an expat. Precedential Law provided sensitive, clear, and strong representation throughout. They patiently explained the UAE legal process concerning divorce and custody and fought diligently for a fair outcome regarding the division of assets and arrangements for our children.",
+      service: "Divorce Law",
+      icon: Heart
     },
     {
-      quote: "When facing unexpected immigration issues that threatened my residency status, Precedential Law provided immediate, expert guidance. They clearly explained my options and developed a strategic approach that resolved the situation efficiently. Their knowledge of UAE immigration procedures was impressive.",
-      author: "James K.",
-      position: "Finance Professional",
-      service: "Immigration Law"
+      name: "Maria Gonzalez",
+      role: "Property Landlord",
+      company: "Real Estate Investment",
+      rating: 4,
+      quote: "I encountered a complex rental dispute with a tenant regarding unpaid rent and property damage. Precedential Law provided expert guidance, navigating me through the Dubai Rental Dispute Centre (RDC) procedures efficiently. They demonstrated a strong understanding of Dubai tenancy law and were highly responsive to my queries.",
+      service: "Real Estate Legal Services",
+      icon: Building
     },
     {
-      quote: "After encountering complications with a property purchase in Dubai, I engaged Precedential Law to review the contract and represent my interests. Their attention to detail identified several issues that could have caused significant problems later. Their negotiation skills secured favorable terms, and the transaction proceeded smoothly.",
-      author: "Layla T.",
-      position: "Property Investor",
-      service: "Real Estate Law"
+      name: "The Johnson Family",
+      role: "Expat Family",
+      company: "Dubai Residents",
+      rating: 5,
+      quote: "As an expatriate family living in Dubai, ensuring our children's guardianship arrangements and the distribution of our assets were legally secured under UAE law was a top priority. Precedential Law clearly explained the various options available, including the DIFC Wills service, and helped us draft and register our Wills efficiently.",
+      service: "Will Writing",
+      icon: User
+    },
+    {
+      name: "Hassan Al Mahmoud",
+      role: "Business Owner",
+      company: "Trading Company",
+      rating: 5,
+      quote: "When we faced a complex commercial dispute with a supplier, Precedential Law's litigation team provided exceptional representation. Their deep knowledge of UAE commercial law and strategic approach helped us achieve a favorable settlement without lengthy court proceedings. Professional and results-driven.",
+      service: "Commercial Litigation",
+      icon: Building
+    },
+    {
+      name: "Jennifer Thompson",
+      role: "HR Director",
+      company: "Multinational Corporation",
+      rating: 5,
+      quote: "Our company needed comprehensive employment law guidance for our UAE operations. Precedential Law provided clear advice on UAE labor law compliance, helped draft employment contracts, and supported us through several HR matters. Their expertise saved us from potential legal complications.",
+      service: "Employment Law",
+      icon: User
     }
   ];
 
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, index) => (
+      <Star
+        key={index}
+        className={`w-5 h-5 ${
+          index < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+        }`}
+      />
+    ));
+  };
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <MaximaLayout>
       <Helmet>
-        <title>Client Testimonials | Precedential Law Dubai</title>
-        <meta name="description" content="Read what our clients say about their experience with Precedential Law, Dubai's trusted legal consultancy delivering exceptional legal services." />
+        <title>Client Testimonials | Legal Services Reviews Dubai | Precedential Law</title>
+        <meta name="description" content="Read genuine client testimonials and reviews for Precedential Law's legal services in Dubai. Real experiences from business owners, expatriates, and UAE residents." />
+        <link rel="canonical" href="https://precedentiallaw.com/testimonials" />
+        
+        <meta property="og:title" content="Client Testimonials - Precedential Law Dubai" />
+        <meta property="og:description" content="Discover what our clients say about our legal services in Dubai. Genuine testimonials from satisfied clients." />
+        <meta property="og:url" content="https://precedentiallaw.com/testimonials" />
       </Helmet>
-      
-      <NavBar />
-      
-      <main className="flex-grow">
-        {/* Hero Banner */}
-        <div className="bg-precedential-black py-16 px-4">
-          <div className="container mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6">
-              Client <span className="text-gold-gradient">Testimonials</span>
-            </h1>
-            <p className="text-white/80 max-w-3xl mx-auto text-lg">
-              Hear directly from those we've had the privilege to represent. Our clients' experiences reflect our commitment to excellence, clarity, and results.
-            </p>
+
+      {/* Hero Section */}
+      <ContentSection>
+        <div className="service-hero">
+          <h1>Client Testimonials</h1>
+          <p className="text-large">
+            Valued feedback from our clients. At Precedential Law, client satisfaction is our ultimate measure of success. 
+            Here's what our clients have to say about their journey with us.
+          </p>
+        </div>
+      </ContentSection>
+
+      {/* Testimonials Grid */}
+      <ContentSection background="alternate">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <article key={index} className="service-card">
+              <div className="flex items-start gap-4 mb-4">
+                <testimonial.icon className="w-12 h-12 text-gold-gradient flex-shrink-0" />
+                <div>
+                  <h3 className="font-bold text-lg">{testimonial.name}</h3>
+                  <p className="text-gray-600">{testimonial.role}</p>
+                  <p className="text-sm text-gray-500">{testimonial.company}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-2 mb-4">
+                {renderStars(testimonial.rating)}
+                <span className="text-sm text-gray-600 ml-2">{testimonial.service}</span>
+              </div>
+              
+              <blockquote className="relative">
+                <Quote className="w-8 h-8 text-gold-gradient opacity-20 absolute -top-2 -left-2" />
+                <p className="italic text-gray-700 leading-relaxed pl-6">
+                  "{testimonial.quote}"
+                </p>
+              </blockquote>
+            </article>
+          ))}
+        </div>
+      </ContentSection>
+
+      {/* Statistics Section */}
+      <ContentSection>
+        <div className="text-center">
+          <header className="mb-12">
+            <h2>Our Track Record</h2>
+            <p className="text-large">Numbers that reflect our commitment to client success</p>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="service-card">
+              <div className="text-3xl font-bold text-gold-gradient mb-2">500+</div>
+              <p>Successful Cases</p>
+            </div>
+            <div className="service-card">
+              <div className="text-3xl font-bold text-gold-gradient mb-2">98%</div>
+              <p>Client Satisfaction</p>
+            </div>
+            <div className="service-card">
+              <div className="text-3xl font-bold text-gold-gradient mb-2">10+</div>
+              <p>Years Experience</p>
+            </div>
+            <div className="service-card">
+              <div className="text-3xl font-bold text-gold-gradient mb-2">50+</div>
+              <p>Nationalities Served</p>
+            </div>
           </div>
         </div>
-        
-        {/* Testimonials Grid */}
-        <ScrollReveal>
-          <section className="py-16 px-4">
-            <div className="container mx-auto max-w-6xl">
-              <p className="text-lg text-precedential-black/80 text-center max-w-3xl mx-auto mb-12">
-                At Precedential Law, we measure our success through the positive outcomes and experiences of our clients. We're proud of the relationships we've built and the trust we've earned across Dubai and the UAE.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {testimonials.map((testimonial, index) => (
-                  <TestimonialCard 
-                    key={index}
-                    quote={testimonial.quote}
-                    author={testimonial.author}
-                    position={testimonial.position}
-                    service={testimonial.service}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* Client Trust Section */}
-        <ScrollReveal>
-          <section className="py-16 px-4 bg-precedential-offWhite">
-            <div className="container mx-auto max-w-4xl text-center">
-              <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-6">Our Commitment to You</h2>
-              <div className="bg-white p-8 rounded-xl shadow-sm">
-                <p className="text-lg text-precedential-black/80 mb-4">
-                  These testimonials represent more than just successful cases—they embody our commitment to being trusted advisors who deliver both legal results and peace of mind. We approach each client relationship with the same level of dedication, expertise, and personalized attention.
-                </p>
-                <p className="text-lg text-precedential-black/80">
-                  Whether you're facing complex business challenges, navigating personal legal matters, or seeking preventative legal guidance, our team is ready to provide the same caliber of service that has earned the trust of clients across Dubai.
-                </p>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-        
-        {/* Final CTA */}
-        <FinalCTA />
-      </main>
-      
-      <Footer />
+      </ContentSection>
+
+      {/* CTA Section */}
+      <ContentSection background="alternate">
+        <div className="text-center">
+          <h2>Ready to Join Our Satisfied Clients?</h2>
+          <p className="text-large mb-8">Experience the Precedential standard of legal service excellence.</p>
+          <a href="/contact" className="hero-cta">
+            Start Your Legal Journey
+          </a>
+        </div>
+      </ContentSection>
+
       <WhatsAppButton phoneNumber="971509014120" />
-    </div>
+    </MaximaLayout>
   );
 };
 

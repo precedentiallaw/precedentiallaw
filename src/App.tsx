@@ -1,135 +1,53 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import AccessibilityWrapper from "@/components/AccessibilityEnhancements";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { QueryClient } from 'react-query';
+import { Toaster } from 'react-hot-toast';
 
-// Import Maxima Index as default homepage
-import MaximaIndex from "./pages/MaximaIndex";
-import MaximaAbout from "./pages/MaximaAbout";
-import MaximaContact from "./pages/MaximaContact";
+import Index from '@/pages/Index';
+import MaximaIndex from '@/pages/MaximaIndex';
+import BusinessLaw from '@/pages/services/BusinessLaw';
+import FamilyLaw from '@/pages/services/FamilyLaw';
+import ImmigrationLaw from '@/pages/services/ImmigrationLaw';
+import RealEstateLaw from '@/pages/services/RealEstateLaw';
+import CivilLitigation from '@/pages/services/CivilLitigation';
+import Contact from '@/pages/Contact';
+import EnhancedBusinessLaw from '@/pages/services/EnhancedBusinessLaw';
+import CommercialLitigationDubai from '@/pages/services/CommercialLitigationDubai';
+import DivorceLawyersDubai from '@/pages/services/DivorceLawyersDubai';
+import CorporateLawDubai from '@/pages/services/CorporateLawDubai';
+import CriminalDefense from '@/pages/services/CriminalDefense';
+import MaximaBusinessLaw from '@/pages/services/MaximaBusinessLaw';
+import Testimonials from '@/pages/Testimonials';
+import MaximaAbout from '@/pages/MaximaAbout';
 
-// Import all existing pages with Maxima wrapper
-import Services from "./pages/Services";
-import About from "./pages/About";
-import WhyUs from "./pages/WhyUs";
-import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import CaseStudies from "./pages/CaseStudies";
-import Resources from "./pages/Resources";
-
-// Service pages - all now converted to Maxima
-import BusinessLaw from "./pages/services/BusinessLaw";
-import FamilyLaw from "./pages/services/FamilyLaw";
-import RealEstateLaw from "./pages/services/RealEstateLaw";
-import ImmigrationLaw from "./pages/services/ImmigrationLaw";
-import CorporateLawDubai from "./pages/services/CorporateLawDubai";
-import DivorceLawyersDubai from "./pages/services/DivorceLawyersDubai";
-import GoldenVisaLawyers from "./pages/services/GoldenVisaLawyers";
-import CivilLitigation from "./pages/services/CivilLitigation";
-import CommercialLitigationDubai from "./pages/services/CommercialLitigationDubai";
-import CriminalDefense from "./pages/services/CriminalDefense";
-import DebtSettlement from "./pages/services/DebtSettlement";
-import ContractDisputes from "./pages/services/ContractDisputes";
-import EmploymentLawUAE from "./pages/services/EmploymentLawUAE";
-import DIFCWills from "./pages/services/DIFCWills";
-
-// Enhanced service pages
-import EnhancedBusinessLaw from "./pages/services/EnhancedBusinessLaw";
-
-// High-value content pages
-import UAECompanyFormation from "./pages/UAECompanyFormation";
-import DubaiBusinessSetupLawyers from "./pages/DubaiBusinessSetupLawyers";
-import ExpatLegalServicesDubai from "./pages/ExpatLegalServicesDubai";
-import ExpatLegalServicesDubaiEnhanced from "./pages/ExpatLegalServicesDubaiEnhanced";
-import ExpatLegalGuides from "./pages/ExpatLegalGuides";
-import UAECorporateTaxLawyers from "./pages/UAECorporateTaxLawyers";
-
-// Tools and utilities
-import LegalTools from "./pages/LegalTools";
-import LegalToolsEnhanced from "./pages/LegalToolsEnhanced";
-import ClientPortalPage from "./pages/ClientPortalPage";
-import FAQ from "./pages/FAQ";
-import LegalGuides from "./pages/LegalGuides";
-import NotFound from "./pages/NotFound";
-
-import MaximaBusinessLaw from "./pages/services/MaximaBusinessLaw";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes
-    },
-  },
-});
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
-      <TooltipProvider>
-        <AccessibilityWrapper>
+function App() {
+  return (
+    <BrowserRouter>
+      <HelmetProvider>
+        <QueryClient>
           <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              {/* Homepage using Maxima design */}
-              <Route path="/" element={<MaximaIndex />} />
-              
-              {/* Main pages - Maxima versions available */}
-              <Route path="/about" element={<MaximaAbout />} />
-              <Route path="/contact" element={<MaximaContact />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/why-us" element={<WhyUs />} />
-              <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/case-studies" element={<CaseStudies />} />
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/legal-guides" element={<LegalGuides />} />
-              
-              {/* Service Pages - All converted to Maxima design */}
-              <Route path="/services/business-law" element={<BusinessLaw />} />
-              <Route path="/services/business-law-maxima" element={<MaximaBusinessLaw />} />
-              <Route path="/services/business-law-enhanced" element={<EnhancedBusinessLaw />} />
-              <Route path="/services/corporate-law-dubai" element={<CorporateLawDubai />} />
-              <Route path="/services/family-law" element={<FamilyLaw />} />
-              <Route path="/services/divorce-lawyers-dubai" element={<DivorceLawyersDubai />} />
-              <Route path="/services/immigration-law" element={<ImmigrationLaw />} />
-              <Route path="/services/golden-visa-lawyers" element={<GoldenVisaLawyers />} />
-              <Route path="/services/real-estate-law" element={<RealEstateLaw />} />
-              <Route path="/services/civil-litigation" element={<CivilLitigation />} />
-              <Route path="/services/commercial-litigation-dubai" element={<CommercialLitigationDubai />} />
-              <Route path="/services/criminal-defense" element={<CriminalDefense />} />
-              <Route path="/services/debt-settlement" element={<DebtSettlement />} />
-              <Route path="/services/contract-disputes" element={<ContractDisputes />} />
-              <Route path="/services/employment-law-uae" element={<EmploymentLawUAE />} />
-              <Route path="/services/difc-wills" element={<DIFCWills />} />
-              
-              {/* High-Value Content Pages */}
-              <Route path="/uae-company-formation" element={<UAECompanyFormation />} />
-              <Route path="/dubai-business-setup-lawyers" element={<DubaiBusinessSetupLawyers />} />
-              <Route path="/expat-legal-services-dubai" element={<ExpatLegalServicesDubai />} />
-              <Route path="/expat-legal-services-enhanced" element={<ExpatLegalServicesDubaiEnhanced />} />
-              <Route path="/expat-legal-guides" element={<ExpatLegalGuides />} />
-              <Route path="/uae-corporate-tax-lawyers" element={<UAECorporateTaxLawyers />} />
-              
-              {/* Tools & Client Portal */}
-              <Route path="/legal-tools" element={<LegalTools />} />
-              <Route path="/legal-tools-enhanced" element={<LegalToolsEnhanced />} />
-              <Route path="/client-portal" element={<ClientPortalPage />} />
-              
-              {/* Catch-all route */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </AccessibilityWrapper>
-      </TooltipProvider>
-    </HelmetProvider>
-  </QueryClientProvider>
-);
-
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/maxima" element={<MaximaIndex />} />
+            <Route path="/about" element={<MaximaAbout />} />
+            <Route path="/services/business-law" element={<BusinessLaw />} />
+            <Route path="/services/family-law" element={<FamilyLaw />} />
+            <Route path="/services/immigration-law" element={<ImmigrationLaw />} />
+            <Route path="/services/real-estate-law" element={<RealEstateLaw />} />
+            <Route path="/services/civil-litigation" element={<CivilLitigation />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/services/enhanced-business-law" element={<EnhancedBusinessLaw />} />
+            <Route path="/services/commercial-litigation-dubai" element={<CommercialLitigationDubai />} />
+            <Route path="/services/divorce-lawyers-dubai" element={<DivorceLawyersDubai />} />
+            <Route path="/services/corporate-law-dubai" element={<CorporateLawDubai />} />
+            <Route path="/services/criminal-defense" element={<CriminalDefense />} />
+            <Route path="/services/maxima-business-law" element={<MaximaBusinessLaw />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+          </Routes>
+        </QueryClient>
+      </HelmetProvider>
+    </BrowserRouter>
+  );
+}
 export default App;
