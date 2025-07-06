@@ -1,12 +1,22 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Heart, Plane, Home, Scale, FileText } from 'lucide-react';
+import {
+  ArrowRight,
+  Building2,
+  Heart,
+  Plane,
+  Home,
+  Scale,
+  FileText,
+  UserCheck,
+  Briefcase,
+  FileSignature
+} from 'lucide-react';
 
 const ServicesPreview: React.FC = () => {
   const services = [
     {
-      icon: Building2,
+      icon: Briefcase,
       title: "Business & Commercial Law",
       description: "Company formation, contracts, regulatory compliance, and corporate governance for UAE businesses.",
       href: "/services/business-law"
@@ -14,7 +24,7 @@ const ServicesPreview: React.FC = () => {
     {
       icon: Heart,
       title: "Family Law & Divorce",
-      description: "Sensitive legal support for family matters, divorce proceedings, and child custody arrangements.",
+      description: "Support for family matters, divorce proceedings, and child custody arrangements.",
       href: "/services/family-law"
     },
     {
@@ -31,63 +41,84 @@ const ServicesPreview: React.FC = () => {
     },
     {
       icon: Scale,
-      title: "Civil Litigation",
-      description: "Expert court representation, dispute resolution, and civil case management in UAE courts.",
-      href: "/services/civil-cases"
+      title: "Civil Litigation & Disputes",
+      description: "Court representation and resolution for civil disputes, bounced cheques, debt claims, and rental disputes.",
+      href: "/services/civil-litigation"
     },
     {
       icon: FileText,
-      title: "Legal Documentation",
-      description: "Professional drafting of wills, power of attorney, contracts, and legal agreements.",
+      title: "Contract Disputes",
+      description: "Analysis, negotiation, mediation, arbitration, or court action for contract enforcement.",
+      href: "/services/contract-disputes"
+    },
+    {
+      icon: UserCheck,
+      title: "Personal Injury Claims",
+      description: "Representation and compensation negotiation for accident and injury cases.",
+      href: "/services/personal-injury"
+    },
+    {
+      icon: FileSignature,
+      title: "Wills & Power of Attorney",
+      description: "Drafting and registration for wills, POAs, DIFC/ADGM wills, and estate planning.",
+      href: "/services/will-writing"
+    },
+    {
+      icon: FileText,
+      title: "Legal Consulting",
+      description: "Strategic legal advice, risk assessment, legal documentation, and compliance guidance.",
       href: "/services/legal-consulting"
+    },
+    {
+      icon: Briefcase,
+      title: "Legal Retainer",
+      description: "Ongoing legal support and advisory services on a subscription basis.",
+      href: "/services/legal-retainer"
+    },
+    {
+      icon: FileSignature,
+      title: "Document Creator",
+      description: "Custom legal document creation — contracts, agreements, and more — tailored to your needs.",
+      href: "/services/document-creator"
     }
   ];
 
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Comprehensive Legal Services Tailored for Dubai
+          <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4">
+            Our Comprehensive Legal Services
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            We offer expert legal counsel across a wide range of practice areas critical 
-            to individuals and businesses succeeding in the UAE.
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+            We offer a full suite of legal solutions—covering everything from consultancy, documentation & litigation, to retainers and automated services—tailored for the UAE.
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+          {services.map((service, i) => (
+            <div
+              key={i}
+              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow transition-shadow duration-200"
             >
               <div className="space-y-4">
-                {/* Icon */}
-                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
-                  <service.icon className="w-6 h-6 text-amber-600" />
+                <div className="w-10 h-10 bg-amber-100 rounded-md flex items-center justify-center">
+                  <service.icon className="w-5 h-5 text-amber-600" />
                 </div>
-
-                {/* Content */}
-                <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-slate-900">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-slate-900">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600">
                     {service.description}
                   </p>
                 </div>
-
-                {/* CTA */}
-                <div className="pt-2">
-                  <Link 
+                <div>
+                  <Link
                     to={service.href}
-                    className="inline-flex items-center text-amber-600 font-medium hover:text-amber-700 transition-colors"
+                    className="inline-flex items-center text-sm font-medium text-amber-600 hover:text-amber-700 transition"
                   >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    Learn More <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </div>
               </div>
@@ -95,25 +126,23 @@ const ServicesPreview: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center bg-slate-50 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">
-            Need Legal Guidance? We're Here to Help
+        <div className="text-center bg-slate-50 border border-slate-100 rounded-xl p-8">
+          <h3 className="text-xl font-semibold text-slate-900 mb-3">
+            Ready to Get Started?
           </h3>
-          <p className="text-lg text-slate-600 mb-6 max-w-2xl mx-auto">
-            Every legal situation is unique. Let our experienced team provide personalized 
-            advice tailored to your specific needs and circumstances.
+          <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
+            Explore our services in detail—request a consultation, get your documents created, or start a legal retainer plan.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/contact">
-              <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8">
-                Schedule Free Consultation
-              </Button>
+              <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium px-6 py-2 rounded transition">
+                Contact Us
+              </button>
             </Link>
             <Link to="/services">
-              <Button variant="outline" size="lg" className="border-2 border-amber-600 text-amber-600 hover:bg-amber-50 px-8">
+              <button className="border border-amber-600 text-amber-600 hover:bg-amber-50 font-medium px-6 py-2 rounded transition">
                 View All Services
-              </Button>
+              </button>
             </Link>
           </div>
         </div>
