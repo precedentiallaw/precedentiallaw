@@ -1,38 +1,26 @@
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'sonner';
 
-// Main Pages
-import Homepage from '@/pages/Homepage';
-import About from '@/pages/About';
-import Services from '@/pages/Services';
-import Contact from '@/pages/Contact';
-
-// Core Services (These exist — keep them active)
+import Index from '@/pages/Index';
+import MaximaIndex from '@/pages/MaximaIndex';
 import BusinessLaw from '@/pages/services/BusinessLaw';
 import FamilyLaw from '@/pages/services/FamilyLaw';
-import RealEstateLaw from '@/pages/services/RealEstateLaw';
 import ImmigrationLaw from '@/pages/services/ImmigrationLaw';
-import DebtSettlement from '@/pages/services/DebtSettlement';
-import ContractDisputes from '@/pages/services/ContractDisputes';
+import RealEstateLaw from '@/pages/services/RealEstateLaw';
+import CivilLitigation from '@/pages/services/CivilLitigation';
+import Contact from '@/pages/Contact';
+import EnhancedBusinessLaw from '@/pages/services/EnhancedBusinessLaw';
+import CommercialLitigationDubai from '@/pages/services/CommercialLitigationDubai';
+import DivorceLawyersDubai from '@/pages/services/DivorceLawyersDubai';
+import CorporateLawDubai from '@/pages/services/CorporateLawDubai';
 import CriminalDefense from '@/pages/services/CriminalDefense';
-
-// ⛔ Commented out missing service components
-// import CivilCases from '@/pages/services/CivilCases';
-// import BouncedCheque from '@/pages/services/BouncedCheque';
-// import PersonalInjury from '@/pages/services/PersonalInjury';
-// import RentalDisputes from '@/pages/services/RentalDisputes';
-// import WillWriting from '@/pages/services/WillWriting';
-// import PowerOfAttorney from '@/pages/services/PowerOfAttorney';
-// import LegalConsulting from '@/pages/services/LegalConsulting';
-
-// Legal Tools (Comment out if not yet implemented)
-// import TrackCase from '@/pages/tools/TrackCase';
-// import TravelBanCheck from '@/pages/tools/TravelBanCheck';
-// import ArrestWarrantCheck from '@/pages/tools/ArrestWarrantCheck';
-// import PoliceStationGuide from '@/pages/tools/PoliceStationGuide';
+import MaximaBusinessLaw from '@/pages/services/MaximaBusinessLaw';
+import Testimonials from '@/pages/Testimonials';
+import MaximaAbout from '@/pages/MaximaAbout';
 
 const queryClient = new QueryClient();
 
@@ -43,29 +31,22 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <Toaster />
           <Routes>
-            {/* Main Pages */}
-            <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-
-            {/* Service Pages */}
+            <Route path="/" element={<Index />} />
+            <Route path="/maxima" element={<MaximaIndex />} />
+            <Route path="/about" element={<MaximaAbout />} />
             <Route path="/services/business-law" element={<BusinessLaw />} />
             <Route path="/services/family-law" element={<FamilyLaw />} />
-            <Route path="/services/real-estate-law" element={<RealEstateLaw />} />
             <Route path="/services/immigration-law" element={<ImmigrationLaw />} />
-            <Route path="/services/debt-settlement" element={<DebtSettlement />} />
-            <Route path="/services/contract-disputes" element={<ContractDisputes />} />
+            <Route path="/services/real-estate-law" element={<RealEstateLaw />} />
+            <Route path="/services/civil-litigation" element={<CivilLitigation />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/services/enhanced-business-law" element={<EnhancedBusinessLaw />} />
+            <Route path="/services/commercial-litigation-dubai" element={<CommercialLitigationDubai />} />
+            <Route path="/services/divorce-lawyers-dubai" element={<DivorceLawyersDubai />} />
+            <Route path="/services/corporate-law-dubai" element={<CorporateLawDubai />} />
             <Route path="/services/criminal-defense" element={<CriminalDefense />} />
-
-            {/* Legal Tools — Uncomment when available */}
-            {/* <Route path="/tools/track-case" element={<TrackCase />} /> */}
-            {/* <Route path="/tools/travel-ban-check" element={<TravelBanCheck />} /> */}
-            {/* <Route path="/tools/arrest-warrant-check" element={<ArrestWarrantCheck />} /> */}
-            {/* <Route path="/tools/police-station-guide" element={<PoliceStationGuide />} /> */}
-
-            {/* Optional 404 Page */}
-            <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+            <Route path="/services/maxima-business-law" element={<MaximaBusinessLaw />} />
+            <Route path="/testimonials" element={<Testimonials />} />
           </Routes>
         </QueryClientProvider>
       </HelmetProvider>
