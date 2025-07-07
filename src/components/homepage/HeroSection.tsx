@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
 
-          {/* Trust Indicators */}
+          {/* Trust Signals */}
           <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-sm text-slate-600">
             <div className="flex items-center space-x-2">
               <Shield className="w-4 h-4 text-amber-600" />
@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Headline */}
+          {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">
             Setting a <span className="text-amber-600">Precedential Standard</span>
           </h1>
@@ -37,19 +37,25 @@ const HeroSection: React.FC = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Link to="/contact">
-              <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg text-base font-medium transition">
+              <button
+                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg text-base font-medium transition"
+                aria-label="Request a confidential legal consultation"
+              >
                 Request Confidential Consultation
               </button>
             </Link>
             <a href="tel:+971509014120">
-              <button className="border-2 border-amber-600 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg text-base font-medium transition flex items-center gap-2">
+              <button
+                className="border-2 border-amber-600 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg text-base font-medium transition flex items-center gap-2"
+                aria-label="Call Precedential Law"
+              >
                 <Phone className="w-4 h-4" />
                 Call +971 50 901 4120
               </button>
             </a>
           </div>
 
-          {/* Quick Services Grid */}
+          {/* Services Snapshot */}
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 sm:p-8 max-w-5xl mx-auto">
             <h2 className="text-xl font-semibold text-slate-900 mb-4">Our Legal Expertise</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left text-sm text-slate-700">
