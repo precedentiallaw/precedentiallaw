@@ -18,7 +18,7 @@ import CivilCases from '@/pages/services/CivilCases';
 import RealEstateLaw from '@/pages/services/RealEstateLaw';
 import ImmigrationLaw from '@/pages/services/ImmigrationLaw';
 import DebtSettlement from '@/pages/services/DebtSettlement';
-import BouncedCheque from '@/pages/services/BouncedCheque';
+//import BouncedCheque from '@/pages/services/BouncedCheque';
 import PersonalInjury from '@/pages/services/PersonalInjury';
 import RentalDisputes from '@/pages/services/RentalDisputes';
 import CriminalDefense from '@/pages/services/CriminalDefense';
