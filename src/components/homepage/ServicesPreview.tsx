@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Briefcase, Home, UserCheck, Globe2, ShieldCheck, Scale, Landmark, Users2, Building2, Gavel
+  Briefcase, Home, UserCheck, Globe2, ShieldCheck, Scale,
+  Landmark, Users2, Building2, Gavel
 } from 'lucide-react';
 
 const services = [
@@ -70,12 +71,12 @@ const ServicesPreview: React.FC = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Services Grid */}
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Legal Services</h2>
           <p className="text-slate-600 text-lg">
-            Precedential Law delivers expert legal counsel tailored to both individuals and businesses across the UAE.
+            Expert legal support for life and business in the UAE — from startups to family matters and litigation.
           </p>
         </div>
 
@@ -84,6 +85,7 @@ const ServicesPreview: React.FC = () => {
             <Link
               key={index}
               to={service.link}
+              aria-label={`Learn more about ${service.title}`}
               className="group border border-gray-200 rounded-xl p-6 hover:shadow-lg transition text-center"
             >
               <div className="flex justify-center mb-3">{service.icon}</div>
@@ -99,7 +101,7 @@ const ServicesPreview: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center mb-10">
           <h2 className="text-2xl font-semibold text-slate-900 mb-4">Who We Help</h2>
           <p className="text-slate-600">
-            Our services are built around the real legal needs of people living and doing business in the UAE.
+            Tailored legal support for expats, entrepreneurs, families, and UAE nationals.
           </p>
         </div>
 
@@ -115,6 +117,7 @@ const ServicesPreview: React.FC = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
