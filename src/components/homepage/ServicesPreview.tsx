@@ -1,150 +1,119 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight,
-  Building2,
-  Heart,
-  Plane,
-  Home,
-  Scale,
-  FileText,
-  UserCheck,
-  Briefcase,
-  FileSignature
+  Briefcase, Home, UserCheck, Globe2, ShieldCheck, Scale, Landmark, Users2, Building2, Gavel
 } from 'lucide-react';
 
-const ServicesPreview: React.FC = () => {
-  const services = [
-    {
-      icon: Briefcase,
-      title: "Business & Commercial Law",
-      description: "Company formation, contracts, regulatory compliance, and corporate governance for UAE businesses.",
-      href: "/services/business-law"
-    },
-    {
-      icon: Heart,
-      title: "Family Law & Divorce",
-      description: "Support for family matters, divorce proceedings, and child custody arrangements.",
-      href: "/services/family-law"
-    },
-    {
-      icon: Plane,
-      title: "Immigration Law",
-      description: "Visa applications, Golden Visa eligibility, residency permits, and immigration compliance.",
-      href: "/services/immigration-law"
-    },
-    {
-      icon: Home,
-      title: "Real Estate Law",
-      description: "Property transactions, rental disputes, lease agreements, and real estate compliance.",
-      href: "/services/real-estate-law"
-    },
-    {
-      icon: Scale,
-      title: "Civil Litigation & Disputes",
-      description: "Court representation and resolution for civil disputes, bounced cheques, debt claims, and rental disputes.",
-      href: "/services/civil-litigation"
-    },
-    {
-      icon: FileText,
-      title: "Contract Disputes",
-      description: "Analysis, negotiation, mediation, arbitration, or court action for contract enforcement.",
-      href: "/services/contract-disputes"
-    },
-    {
-      icon: UserCheck,
-      title: "Personal Injury Claims",
-      description: "Representation and compensation negotiation for accident and injury cases.",
-      href: "/services/personal-injury"
-    },
-    {
-      icon: FileSignature,
-      title: "Wills & Power of Attorney",
-      description: "Drafting and registration for wills, POAs, DIFC/ADGM wills, and estate planning.",
-      href: "/services/will-writing"
-    },
-    {
-      icon: FileText,
-      title: "Legal Consulting",
-      description: "Strategic legal advice, risk assessment, legal documentation, and compliance guidance.",
-      href: "/services/legal-consulting"
-    },
-    {
-      icon: Briefcase,
-      title: "Legal Retainer",
-      description: "Ongoing legal support and advisory services on a subscription basis.",
-      href: "/services/legal-retainer"
-    },
-    {
-      icon: FileSignature,
-      title: "Document Creator",
-      description: "Custom legal document creation — contracts, agreements, and more — tailored to your needs.",
-      href: "/services/document-creator"
-    }
-  ];
+const services = [
+  {
+    icon: <Briefcase className="w-6 h-6 text-amber-600" />,
+    title: 'Business Law',
+    description: 'Company formation, contracts, corporate compliance.',
+    link: '/services/business-law',
+  },
+  {
+    icon: <UserCheck className="w-6 h-6 text-amber-600" />,
+    title: 'Family Law',
+    description: 'Divorce, custody, inheritance, and personal status.',
+    link: '/services/family-law',
+  },
+  {
+    icon: <Globe2 className="w-6 h-6 text-amber-600" />,
+    title: 'Immigration Law',
+    description: 'Visas, Golden Visa, legal residency solutions.',
+    link: '/services/immigration-law',
+  },
+  {
+    icon: <Home className="w-6 h-6 text-amber-600" />,
+    title: 'Real Estate Law',
+    description: 'Property disputes, leases, transactions.',
+    link: '/services/real-estate-law',
+  },
+  {
+    icon: <Scale className="w-6 h-6 text-amber-600" />,
+    title: 'Civil Litigation',
+    description: 'UAE court disputes, representation, settlements.',
+    link: '/services/civil-cases',
+  },
+  {
+    icon: <ShieldCheck className="w-6 h-6 text-amber-600" />,
+    title: 'Criminal Defense',
+    description: 'Advisory legal protection and defense strategy.',
+    link: '/services/criminal-defense',
+  },
+];
 
+const clients = [
+  {
+    icon: <Users2 className="w-6 h-6 text-amber-600" />,
+    title: 'Expat Residents',
+    text: 'Navigating family matters, visas, property, or disputes.',
+  },
+  {
+    icon: <Building2 className="w-6 h-6 text-amber-600" />,
+    title: 'Business Owners',
+    text: 'Corporate setup, shareholder agreements, and contracts.',
+  },
+  {
+    icon: <Landmark className="w-6 h-6 text-amber-600" />,
+    title: 'UAE Nationals',
+    text: 'Legal clarity with bilingual services and strategic guidance.',
+  },
+  {
+    icon: <Gavel className="w-6 h-6 text-amber-600" />,
+    title: 'Litigation Clients',
+    text: 'Facing civil, commercial, or criminal legal disputes.',
+  },
+];
+
+const ServicesPreview: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4">
-            Our Comprehensive Legal Services
-          </h2>
-          <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-            We offer a full suite of legal solutions—covering everything from consultancy, documentation & litigation, to retainers and automated services—tailored for the UAE.
+        
+        {/* Services Grid */}
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Legal Services</h2>
+          <p className="text-slate-600 text-lg">
+            Precedential Law delivers expert legal counsel tailored to both individuals and businesses across the UAE.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, i) => (
-            <div
-              key={i}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow transition-shadow duration-200"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+          {services.map((service, index) => (
+            <Link
+              key={index}
+              to={service.link}
+              className="group border border-gray-200 rounded-xl p-6 hover:shadow-lg transition text-center"
             >
-              <div className="space-y-4">
-                <div className="w-10 h-10 bg-amber-100 rounded-md flex items-center justify-center">
-                  <service.icon className="w-5 h-5 text-amber-600" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-slate-900">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-slate-600">
-                    {service.description}
-                  </p>
-                </div>
-                <div>
-                  <Link
-                    to={service.href}
-                    className="inline-flex items-center text-sm font-medium text-amber-600 hover:text-amber-700 transition"
-                  >
-                    Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </div>
-              </div>
-            </div>
+              <div className="flex justify-center mb-3">{service.icon}</div>
+              <h3 className="text-lg font-semibold text-slate-900 group-hover:text-amber-600 transition mb-1">
+                {service.title}
+              </h3>
+              <p className="text-sm text-slate-600">{service.description}</p>
+            </Link>
           ))}
         </div>
 
-        <div className="text-center bg-slate-50 border border-slate-100 rounded-xl p-8">
-          <h3 className="text-xl font-semibold text-slate-900 mb-3">
-            Ready to Get Started?
-          </h3>
-          <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
-            Explore our services in detail—request a consultation, get your documents created, or start a legal retainer plan.
+        {/* Who We Help */}
+        <div className="max-w-4xl mx-auto text-center mb-10">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-4">Who We Help</h2>
+          <p className="text-slate-600">
+            Our services are built around the real legal needs of people living and doing business in the UAE.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/contact">
-              <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium px-6 py-2 rounded transition">
-                Contact Us
-              </button>
-            </Link>
-            <Link to="/services">
-              <button className="border border-amber-600 text-amber-600 hover:bg-amber-50 font-medium px-6 py-2 rounded transition">
-                View All Services
-              </button>
-            </Link>
-          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {clients.map((client, index) => (
+            <div
+              key={index}
+              className="bg-slate-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm"
+            >
+              <div className="flex justify-center mb-3">{client.icon}</div>
+              <h4 className="font-semibold text-slate-800 mb-1">{client.title}</h4>
+              <p className="text-sm text-slate-600">{client.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
