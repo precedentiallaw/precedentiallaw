@@ -18,20 +18,20 @@ import CivilCases from '@/pages/services/CivilCases';
 import RealEstateLaw from '@/pages/services/RealEstateLaw';
 import ImmigrationLaw from '@/pages/services/ImmigrationLaw';
 import DebtSettlement from '@/pages/services/DebtSettlement';
-//import BouncedCheque from '@/pages/services/BouncedCheque';
-//import PersonalInjury from '@/pages/services/PersonalInjury';
-
+import BouncedCheque from '@/pages/services/BouncedCheque';
+import PersonalInjury from '@/pages/services/PersonalInjury';
+import RentalDisputes from '@/pages/services/RentalDisputes';
 import CriminalDefense from '@/pages/services/CriminalDefense';
 import ContractDisputes from '@/pages/services/ContractDisputes';
-//import WillWriting from '@/pages/services/WillWriting';
-//import PowerOfAttorney from '@/pages/services/PowerOfAttorney';
-//import LegalConsulting from '@/pages/services/LegalConsulting';
+import WillWriting from '@/pages/services/WillWriting';
+import PowerOfAttorney from '@/pages/services/PowerOfAttorney';
+import LegalConsulting from '@/pages/services/LegalConsulting';
 
 // Special Tools Pages
-//import TrackCase from '@/pages/tools/TrackCase';
+import TrackCase from '@/pages/tools/TrackCase';
 import TravelBanCheck from '@/pages/tools/TravelBanCheck';
-//import ArrestWarrantCheck from '@/pages/tools/ArrestWarrantCheck';
-//import PoliceStationGuide from '@/pages/tools/PoliceStationGuide';
+import ArrestWarrantCheck from '@/pages/tools/ArrestWarrantCheck';
+import PoliceStationGuide from '@/pages/tools/PoliceStationGuide';
 
 const queryClient = new QueryClient();
 

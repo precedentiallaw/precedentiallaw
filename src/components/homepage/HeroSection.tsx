@@ -1,14 +1,15 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Shield, Scale, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const HeroSection: React.FC = () => {
   return (
     <section className="pt-20 pb-16 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-
-          {/* Trust Signals */}
+          {/* Trust Indicators */}
           <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-sm text-slate-600">
             <div className="flex items-center space-x-2">
               <Shield className="w-4 h-4 text-amber-600" />
@@ -24,68 +25,65 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">
-            Setting a <span className="text-amber-600">Precedential Standard</span>
+          {/* Main Heading */}
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            Setting a Precedential Standard
+            <span className="text-amber-600 block">in Legal Services</span>
           </h1>
-
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Your Shield in the UAE Legal Landscape — Strategic legal guidance for individuals, families, and businesses.
+          
+          {/* Subheading */}
+          <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Your Shield in Dubai's Legal Landscape. Expert guidance, clear solutions, 
+            and client protection for individuals and businesses across the UAE.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
             <Link to="/contact">
-              <button
-                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg text-base font-medium transition"
-                aria-label="Request a confidential legal consultation"
-              >
+              <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
                 Request Confidential Consultation
-              </button>
+              </Button>
             </Link>
             <a href="tel:+971509014120">
-              <button
-                className="border-2 border-amber-600 text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-lg text-base font-medium transition flex items-center gap-2"
-                aria-label="Call Precedential Law"
-              >
-                <Phone className="w-4 h-4" />
+              <Button variant="outline" size="lg" className="border-2 border-amber-600 text-amber-600 hover:bg-amber-50 px-8 py-4 text-lg">
+                <Phone className="w-5 h-5 mr-2" />
                 Call +971 50 901 4120
-              </button>
+              </Button>
             </a>
           </div>
 
-          {/* Services Snapshot */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 sm:p-8 max-w-5xl mx-auto">
-            <h2 className="text-xl font-semibold text-slate-900 mb-4">Our Legal Expertise</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left text-sm text-slate-700">
-              <div>
-                <h3 className="font-semibold text-slate-900">Business & Commercial</h3>
-                <p>Company formation, contracts, compliance</p>
+          {/* Key Services Preview */}
+          <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-8 max-w-5xl mx-auto">
+            <h2 className="text-2xl font-semibold text-slate-900 mb-6 text-center">
+              Comprehensive Legal Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="text-center">
+                <h3 className="font-semibold text-slate-900 mb-2">Business & Commercial Law</h3>
+                <p className="text-sm text-slate-600">Company formation, contracts, compliance</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-slate-900">Family & Divorce Law</h3>
-                <p>Custody, separation, inheritance law</p>
+              <div className="text-center">
+                <h3 className="font-semibold text-slate-900 mb-2">Family Law & Divorce</h3>
+                <p className="text-sm text-slate-600">Divorce proceedings, custody, inheritance</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-slate-900">Immigration & Residency</h3>
-                <p>Visa applications, Golden Visa, UAE entry</p>
+              <div className="text-center">
+                <h3 className="font-semibold text-slate-900 mb-2">Immigration Law</h3>
+                <p className="text-sm text-slate-600">Visa applications, Golden Visa, residency</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-slate-900">Real Estate Disputes</h3>
-                <p>Rental, sales, and property transactions</p>
+              <div className="text-center">
+                <h3 className="font-semibold text-slate-900 mb-2">Real Estate Law</h3>
+                <p className="text-sm text-slate-600">Property disputes, rental issues, transactions</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-slate-900">Civil Litigation</h3>
-                <p>UAE court representation, dispute resolution</p>
+              <div className="text-center">
+                <h3 className="font-semibold text-slate-900 mb-2">Civil Litigation</h3>
+                <p className="text-sm text-slate-600">Court representation, dispute resolution</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-slate-900">Criminal Advisory</h3>
-                <p>Legal defense and expert guidance</p>
+              <div className="text-center">
+                <h3 className="font-semibold text-slate-900 mb-2">Criminal Defense</h3>
+                <p className="text-sm text-slate-600">Legal representation, case advisory</p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
