@@ -20,7 +20,7 @@ import ImmigrationLaw from '@/pages/services/ImmigrationLaw';
 import DebtSettlement from '@/pages/services/DebtSettlement';
 //import BouncedCheque from '@/pages/services/BouncedCheque';
 //import PersonalInjury from '@/pages/services/PersonalInjury';
-import RentalDisputes from '@/pages/services/RentalDisputes';
+//import RentalDisputes from '@/pages/services/RentalDisputes';
 import CriminalDefense from '@/pages/services/CriminalDefense';
 import ContractDisputes from '@/pages/services/ContractDisputes';
 //import WillWriting from '@/pages/services/WillWriting';
