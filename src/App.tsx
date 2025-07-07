@@ -23,7 +23,7 @@ import DebtSettlement from '@/pages/services/DebtSettlement';
 import RentalDisputes from '@/pages/services/RentalDisputes';
 import CriminalDefense from '@/pages/services/CriminalDefense';
 import ContractDisputes from '@/pages/services/ContractDisputes';
-import WillWriting from '@/pages/services/WillWriting';
+//import WillWriting from '@/pages/services/WillWriting';
 import PowerOfAttorney from '@/pages/services/PowerOfAttorney';
 import LegalConsulting from '@/pages/services/LegalConsulting';
 
