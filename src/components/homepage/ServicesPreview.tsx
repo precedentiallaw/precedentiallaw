@@ -1,4 +1,4 @@
-
+import { Button } from '@/components/ui/button'; // or correct relative path
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Heart, Plane, Home, Scale, FileText } from 'lucide-react';
